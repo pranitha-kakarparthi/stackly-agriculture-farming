@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Manager Dashboard - Stackly Agriculture & Farming</title>
+  <meta name="description" content="Dedicated operations dashboard for Stackly Farm Managers. Monitor field soil tension, LoRaWAN sensors, tractor fleet status, and crop harvest cycles.">
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background-color: var(--color-bg);">
+
+  <!-- Preloader -->
+  <div id="app-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Loading Farm Manager Telemetry...</p>
+    </div>
+  </div>
+
+  <div class="dashboard-wrapper">
+    <!-- =======================================================================
+         SIDEBAR NAVIGATION
+         ======================================================================= -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Farm Manager Navigation">
+      <!-- Clickable Brand Logo redirecting to index.html -->
+      <div class="dash-brand-wrap">
+        <a href="../index.html" aria-label="Return to Stackly Homepage">
+          <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+        </a>
+      </div>
+
+      <!-- User Profile Box -->
+      <div class="dash-user-badge-box">
+        <div class="dash-avatar-mini">
+          <img src="../assets/images/farm-manager-david-chen.webp" alt="David Chen" class="dash-user-avatar">
+        </div>
+        <div class="dash-user-info">
+          <h5 class="dash-user-name">David Chen</h5>
+          <span class="dash-role-pill dash-user-role">Farm Manager</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="dash-nav-section-title">Farm Operations</div>
+      <ul class="dash-nav-list">
+        <li>
+          <a href="dashboard-farm-manager.html" class="dash-nav-link active">
+            <span class="dash-nav-icon">📊</span>
+            <span>Farm Overview</span>
+          </a>
+        </li>
+        <li>
+          <a href="dashboard-manager-crops.html" class="dash-nav-link">
+            <span class="dash-nav-icon">🌾</span>
+            <span>Crop & Harvest Monitor</span>
+          </a>
+        </li>
+        <li>
+          <a href="dashboard-manager-equipment.html" class="dash-nav-link">
+            <span class="dash-nav-icon">🚜</span>
+            <span>IoT Probes & Fleet</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="dash-nav-section-title">Actionable Reports</div>
+      <ul class="dash-nav-list">
+        <li>
+          <a href="../404.html" class="dash-nav-link">
+            <span class="dash-nav-icon">💧</span>
+            <span>Irrigation Logs</span>
+          </a>
+        </li>
+        <li>
+          <a href="../404.html" class="dash-nav-link">
+            <span class="dash-nav-icon">🧪</span>
+            <span>Soil NPK Lab Vault</span>
+          </a>
+        </li>
+        <li>
+          <a href="../404.html" class="dash-nav-link">
+            <span class="dash-nav-icon">⚙️</span>
+            <span>Farm Settings</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Sidebar Footer with Secure Sign Out -->
+      <div class="dash-sidebar-footer">
+        <button class="btn btn-outline-light btn-sm btn-sign-out" style="width: 100%;">
+          <span>🚪</span> Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- =======================================================================
+         MAIN DASHBOARD BODY
+         ======================================================================= -->
+    <div class="dashboard-main">
+      <!-- Top Navigation & Profile Bar -->
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="dash-mobile-sidebar-toggle nav-hamburger" style="display: none; background: var(--color-surface-alt); border-color: var(--color-border);" aria-label="Toggle Dashboard Menu">
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+          </button>
+          <div class="dash-greeting-wrap">
+            <h3 class="dash-greeting-text">Good Day, Farm Manager David!</h3>
+            <span class="dash-greeting-time">Local Time: 14:30 | Agronomy Season: Active Harvest Cycle</span>
+          </div>
+        </div>
+
+        <div class="dash-topbar-actions">
+          <div class="dash-last-login" style="font-size: 0.82rem; color: var(--color-text-muted); display: none;"></div>
+          <button class="btn btn-secondary btn-sm dash-action-btn">
+            <span>➕</span> New Field Log
+          </button>
+          <button class="btn btn-primary btn-sm btn-sign-out">
+            Sign Out
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Content Container (7 Sections) -->
+      <main class="dashboard-content-body">
+        <!-- SECTION 1: FIELD TELEMETRY BANNER -->
+        <section style="background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%); color: #FFFFFF; padding: 1.75rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 1rem;">
+          <div>
+            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Salem Agro Sector A-D</span>
+            <h2 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.5rem;">Central Farm Node Status: Optimal Soil Moisture</h2>
+            <p style="color: #D2E3D6; font-size: 0.92rem; margin: 0;">Microclimate weather station reports 28°C, 62% Relative Humidity, Barometric 1012 hPa. Next scheduled micro-drip cycle in 45 mins.</p>
+          </div>
+          <button class="btn btn-accent btn-sm dash-action-btn">Trigger Solenoid Valves</button>
+        </section>
+
+        <!-- SECTION 2: 4x KPI METRIC CARDS -->
+        <section class="dash-kpi-grid">
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Total Active Acreage</span>
+              <h3>1,420</h3>
+              <span class="kpi-badge positive">↑ 100% Organic Sown</span>
+            </div>
+            <div class="kpi-card-icon">🌱</div>
+          </div>
+
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Mean Soil Tension</span>
+              <h3>24.8 kPa</h3>
+              <span class="kpi-badge positive">Optimal Root Uptake</span>
+            </div>
+            <div class="kpi-card-icon">💧</div>
+          </div>
+
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>IoT Ground Nodes</span>
+              <h3>48 / 48</h3>
+              <span class="kpi-badge positive">100% Online LoRaWAN</span>
+            </div>
+            <div class="kpi-card-icon">🛰️</div>
+          </div>
+
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Next Harvest Window</span>
+              <h3>6 Days</h3>
+              <span class="kpi-badge neutral">Heirloom Emmer Wheat</span>
+            </div>
+            <div class="kpi-card-icon">🌾</div>
+          </div>
+        </section>
+
+        <!-- SECTION 3: CROP FIELDS STATUS MATRIX -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Active Farmland Sectors</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Real-time agronomy monitoring across all 4 production zones.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Export Sector Telemetry</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Field Code</th>
+                  <th>Primary Crop</th>
+                  <th>Acreage</th>
+                  <th>Growth Stage</th>
+                  <th>Soil Moisture</th>
+                  <th>Sensor Health</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sector A-North</strong></td>
+                  <td>Khapli Emmer Wheat</td>
+                  <td>450 Acres</td>
+                  <td>Grain Ripening (94%)</td>
+                  <td>26% VWC (Normal)</td>
+                  <td><span class="status-tag active">Online</span></td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Inspect Field</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Sector B-East</strong></td>
+                  <td>Organic Heritage Carrots</td>
+                  <td>280 Acres</td>
+                  <td>Root Bulking (72%)</td>
+                  <td>31% VWC (Moist)</td>
+                  <td><span class="status-tag active">Online</span></td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Inspect Field</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Sector C-Valley</strong></td>
+                  <td>Protected Greenhouse Greens</td>
+                  <td>120 Acres</td>
+                  <td>Continuous Harvest</td>
+                  <td>28% VWC (Optimal)</td>
+                  <td><span class="status-tag active">Online</span></td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Inspect Field</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Sector D-Ridge</strong></td>
+                  <td>Pollinator Wildflowers & Apiary</td>
+                  <td>570 Acres</td>
+                  <td>Full Blossom</td>
+                  <td>22% VWC (Normal)</td>
+                  <td><span class="status-tag verified">Verified</span></td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Inspect Field</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 4: REAL-TIME SOIL SENSOR TELEMETRY LOGS -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Live LoRaWAN Sensor Node Feeds</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Transmitted every 15 minutes over solar RF repeater array.</p>
+            </div>
+            <span class="status-tag active">● Live Stream</span>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Node ID</th>
+                  <th>Location</th>
+                  <th>Depth</th>
+                  <th>Temperature</th>
+                  <th>Moisture (VWC)</th>
+                  <th>EC / Salinity</th>
+                  <th>Battery</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>NODE-SLM-01</code></td>
+                  <td>Sector A, Plot 3</td>
+                  <td>30 cm</td>
+                  <td>24.2 °C</td>
+                  <td>27.4%</td>
+                  <td>0.82 dS/m (Good)</td>
+                  <td>98% (Solar)</td>
+                </tr>
+                <tr>
+                  <td><code>NODE-SLM-02</code></td>
+                  <td>Sector A, Plot 8</td>
+                  <td>60 cm</td>
+                  <td>22.8 °C</td>
+                  <td>29.1%</td>
+                  <td>0.78 dS/m (Good)</td>
+                  <td>96% (Solar)</td>
+                </tr>
+                <tr>
+                  <td><code>NODE-SLM-03</code></td>
+                  <td>Sector B, Plot 2</td>
+                  <td>15 cm</td>
+                  <td>26.5 °C</td>
+                  <td>31.2%</td>
+                  <td>0.91 dS/m (Good)</td>
+                  <td>100% (Solar)</td>
+                </tr>
+                <tr>
+                  <td><code>NODE-SLM-04</code></td>
+                  <td>Sector C, Greenhouse 4</td>
+                  <td>20 cm</td>
+                  <td>25.1 °C</td>
+                  <td>28.0%</td>
+                  <td>0.85 dS/m (Good)</td>
+                  <td>97% (Solar)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 5: MACHINERY & DRONE FLEET STATUS -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Machinery Fleet & Drone Operations</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Telemetry for tractors, automated harvesters, and multispectral drones.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Schedule Dispatch</button>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <strong>John Deere 5050D (Bio-Fuel)</strong>
+                <span class="status-tag active">Active</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Sector A Disc Harrowing &bull; Operator: Murugan R.</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">Fuel: 84% | Hours Run: 3.5 hrs today</div>
+            </div>
+
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <strong>DJI Agras T40 Multispectral</strong>
+                <span class="status-tag pending">Docked</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Hangar Pad 2 &bull; Completed 450 Acre NDVI Sweep</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">Battery: 100% | Next Flight: Tomorrow 06:00</div>
+            </div>
+
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <strong>Claas Crop Combine 320</strong>
+                <span class="status-tag active">Standby</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Service Check Passed &bull; Calibration Ready</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">Readiness: 100% for Wheat Harvest</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 6: DAILY FIELD LABOR & TASKS -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Agronomy Work Orders & Crew Tasks</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Task assignments for field crew in Salem agro cluster.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Assign Task</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Task Title</th>
+                  <th>Assigned Sector</th>
+                  <th>Crew Lead</th>
+                  <th>Priority</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Apply Jeevamrutha Microbial Inoculant</td>
+                  <td>Sector B - Heirloom Carrots</td>
+                  <td>K. Selvam (Crew 1)</td>
+                  <td><span class="status-tag pending">High</span></td>
+                  <td>In Progress</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Update</button></td>
+                </tr>
+                <tr>
+                  <td>Inspect Apiary Brood Boxes & Supers</td>
+                  <td>Sector D - Apiary Ridge</td>
+                  <td>Dr. Arulmani</td>
+                  <td><span class="status-tag verified">Medium</span></td>
+                  <td>Completed</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Review</button></td>
+                </tr>
+                <tr>
+                  <td>Flush Micro-Drip Sand Filters</td>
+                  <td>Central Well Station 2</td>
+                  <td>V. Ramesh</td>
+                  <td><span class="status-tag pending">Scheduled</span></td>
+                  <td>Pending</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Start</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 7: HARVEST BATCH LOGS & TRACEABILITY DISPATCH -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Recent Harvest Batches Logged For Dispatch</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Certified batches routed to cold pre-cooling terminal.</p>
+            </div>
+            <button class="btn btn-primary btn-sm dash-action-btn">Generate Harvest Manifest</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Batch Number</th>
+                  <th>Crop Variety</th>
+                  <th>Weight Logged</th>
+                  <th>Harvest Date</th>
+                  <th>Moisture Content</th>
+                  <th>QC Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>HB-2026-SLM-089</code></td>
+                  <td>Spinach & Baby Greens</td>
+                  <td>3,200 kg</td>
+                  <td>Today, 06:15 AM</td>
+                  <td>91%</td>
+                  <td><span class="status-tag active">Passed QC</span></td>
+                </tr>
+                <tr>
+                  <td><code>HB-2026-SLM-088</code></td>
+                  <td>Organic Bell Peppers</td>
+                  <td>5,400 kg</td>
+                  <td>Yesterday</td>
+                  <td>88%</td>
+                  <td><span class="status-tag active">Passed QC</span></td>
+                </tr>
+                <tr>
+                  <td><code>HB-2026-SLM-087</code></td>
+                  <td>A2 Raw Milk Chilled Lot</td>
+                  <td>2,800 Liters</td>
+                  <td>Yesterday</td>
+                  <td>Fat: 4.8%</td>
+                  <td><span class="status-tag verified">Certified</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

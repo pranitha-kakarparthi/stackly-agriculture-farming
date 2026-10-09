@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Organic Produce & Harvest Catalog - Stackly Farming</title>
+  <meta name="description" content="Browse Stackly's certified organic farm produce catalog: heirloom grains, fresh vegetables, crisp orchard fruits, raw forest honey, and pasture A2 dairy.">
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="app-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Cataloging Fresh Harvest Lots...</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="top-bar-notice">
+      <div class="top-bar-inner">
+        <div class="greeting-ticker">
+          <span class="ticker-dot"></span> Good Day &bull; Live Agronomy Operations Active
+        </div>
+        <div class="top-contact-mini">
+          <span>📍 MMR Complex, Chinna Thirupathi, Salem, TN</span>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+        <span class="brand-badge">Agriculture</span>
+      </a>
+      <nav class="nav-menu" role="navigation">
+        <div class="nav-item"><a href="../index.html" class="nav-link">Home</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About Us</a></div>
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">Services <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown-menu">
+            <a href="service-organic-crops.html" class="dropdown-link">🌾 Organic Crop Production</a>
+            <a href="service-smart-farming.html" class="dropdown-link">🛰️ Precision Smart Farming</a>
+            <a href="service-livestock.html" class="dropdown-link">🐄 Livestock Management</a>
+            <a href="service-supply-chain.html" class="dropdown-link">🚛 Direct Produce Supply Chain</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="products.html" class="nav-link active">Fresh Produce</a></div>
+        <div class="nav-item"><a href="pricing.html" class="nav-link">Pricing & Plans</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="sign-in.html" class="btn btn-outline-light btn-sm btn-login-header">Sign In</a>
+        <a href="sign-up.html" class="btn btn-accent btn-sm">Register Farm</a>
+        <button class="nav-hamburger" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-nav-overlay">
+    <ul class="mobile-nav-list">
+      <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li>
+        <a href="services.html" class="mobile-nav-link mobile-dropdown-toggle">Services <span>+</span></a>
+        <div class="mobile-dropdown-list">
+          <a href="service-organic-crops.html" class="mobile-dropdown-sublink">Organic Crop Production</a>
+          <a href="service-smart-farming.html" class="mobile-dropdown-sublink">Precision Smart Farming</a>
+          <a href="service-livestock.html" class="mobile-dropdown-sublink">Livestock Management</a>
+          <a href="service-supply-chain.html" class="mobile-dropdown-sublink">Direct Produce Supply Chain</a>
+        </div>
+      </li>
+      <li><a href="products.html" class="mobile-nav-link active">Fresh Produce</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Pricing & Plans</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="../404.html" class="btn btn-outline-light">Sign In to Dashboard</a>
+      <a href="../404.html" class="btn btn-accent">Create New Account</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section class="hero-section" style="padding: 4.5rem 0 3.5rem 0;">
+      <div class="hero-overlay-pattern"></div>
+      <div class="container text-center" data-animate="fade-up">
+        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Farm To Table Purity</span>
+        <h1 style="color: #FFFFFF; margin-bottom: 1rem;">Direct From Soil: Certified Harvest Lots</h1>
+        <p style="color: #D2E3D6; max-width: 680px; margin: 0 auto;">
+          Picked at optimum ripeness from our regenerative Salem acreage. Available for wholesale lot booking, institutional contracts, and cooperative distribution.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: HARVEST CATALOG GRID (Diverse Products) -->
+    <section class="section-padding" style="background-color: #FFFFFF;">
+      <div class="container">
+        <div class="section-header mx-auto text-center" data-animate="fade-up">
+          <span class="section-tag">Seasonal Selections</span>
+          <h2>Current Harvest Batches Ready For Cold Dispatch</h2>
+          <p>Every lot includes full laboratory pesticide residue test sheets and temperature tracking.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Item 1 -->
+          <div class="produce-card tilt-card" data-animate="fade-up">
+            <div class="card-image-wrap">
+              <img src="../assets/images/fresh-harvest-organic-vegetables.webp" alt="Fresh crisp organic heirloom vegetables and leafy greens">
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="status-tag active">In Harvest</span>
+                <strong style="color: var(--color-primary);">₹45 / kg (Bulk)</strong>
+              </div>
+              <h3>Organic Heritage Greens & Carrots</h3>
+              <p>Hand-pulled baby spinach, rainbow carrots, and crisp broccoli grown in mineral vermicompost without synthetic sprays.</p>
+              <a href="../404.html" class="btn btn-secondary btn-sm">Order Wholesale Lot</a>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="produce-card tilt-card" data-animate="fade-up">
+            <div class="card-image-wrap">
+              <img src="../assets/images/organic-orchard-fruit-apples.webp" alt="Crisp fresh organic red apples harvested from mountain orchard">
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="status-tag active">Peak Season</span>
+                <strong style="color: var(--color-primary);">₹110 / kg</strong>
+              </div>
+              <h3>Crisp Organic Mountain Apples</h3>
+              <p>Sun-ripened orchard apples cultivated without wax coatings, fungicides, or synthetic ripening gas.</p>
+              <a href="../404.html" class="btn btn-secondary btn-sm">Order Wholesale Lot</a>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="produce-card tilt-card" data-animate="fade-up">
+            <div class="card-image-wrap">
+              <img src="../assets/images/golden-wheat-harvest-combine.webp" alt="Organic heirloom golden wheat grain freshly harvested">
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="status-tag active">Grain Silo</span>
+                <strong style="color: var(--color-primary);">₹65 / kg</strong>
+              </div>
+              <h3>Heirloom Khapli Emmer Wheat</h3>
+              <p>Ancient grain rich in soluble fiber and resistant starch, stonemilled or supplied as whole raw berries.</p>
+              <a href="../404.html" class="btn btn-secondary btn-sm">Order Grain Silo Lot</a>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="produce-card tilt-card" data-animate="fade-up">
+            <div class="card-image-wrap">
+              <img src="../assets/images/organic-honey-harvest-jars.webp" alt="Raw unpasteurized wildflower honey jars">
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="status-tag active">Cold Extracted</span>
+                <strong style="color: var(--color-primary);">₹520 / kg</strong>
+              </div>
+              <h3>Raw Wildflower Forest Honey</h3>
+              <p>Unheated, unfiltered raw honey straight from our pollinator apiary with natural enzymes intact.</p>
+              <a href="../404.html" class="btn btn-secondary btn-sm">Order Honey Crate</a>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="produce-card tilt-card" data-animate="fade-up">
+            <div class="card-image-wrap">
+              <img src="../assets/images/artisan-farm-cheese-dairy-products.webp" alt="Artisan natural aged cheddar and gouda cheese wheels">
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="status-tag active">Cellar Aged</span>
+                <strong style="color: var(--color-primary);">₹750 / kg</strong>
+              </div>
+              <h3>Handcrafted Farmstead Cheeses</h3>
+              <p>Aged 60 to 180 days in solar humidity cellars, prepared exclusively from raw pasture-fed A2 milk.</p>
+              <a href="../404.html" class="btn btn-secondary btn-sm">Order Cheese Batch</a>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="produce-card tilt-card" data-animate="fade-up">
+            <div class="card-image-wrap">
+              <img src="../assets/images/farmer-market-produce-display.webp" alt="Assorted organic farmer market harvest produce display">
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="status-tag active">Weekly Subscription</span>
+                <strong style="color: var(--color-primary);">Custom Contracts</strong>
+              </div>
+              <h3>Wholesale Cooperative Mixed Crates</h3>
+              <p>Custom tailored pallets of seasonal vegetables and herbs packed to supermarket specifications.</p>
+              <a href="../404.html" class="btn btn-secondary btn-sm">Request Pallet Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ORGANIC QUALITY TESTING RIGOR -->
+    <section class="section-padding" style="background-color: var(--color-bg);">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center;">
+          <div data-animate="slide-right">
+            <span class="section-tag">Quality Assurance</span>
+            <h2>Multi-Residue Testing on Every Harvest Lot</h2>
+            <p>
+              Before any crate leaves our farm cold facility, sample batches are analyzed using Gas Chromatography-Mass Spectrometry (GC-MS). We test for 240+ synthetic insecticides, organophosphates, and heavy metals.
+            </p>
+            <p>
+              All test certificates are uploaded to the Produce Buyer portal and stamped with cryptographic batch IDs for complete consumer trust.
+            </p>
+            <div style="margin-top: 1.5rem;">
+              <a href="../404.html" class="btn btn-primary">Sign In To Download Batch Certs ➔</a>
+            </div>
+          </div>
+          <div data-animate="slide-left">
+            <div class="card-image-wrap" style="height: 400px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+              <img src="../assets/images/agronomist-soil-scientist-testing.webp" alt="Food scientist verifying chemical purity and testing harvest lots in lab">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PACKAGING & COLD STORAGE SPECS -->
+    <section class="section-padding" style="background-color: #FFFFFF;">
+      <div class="container">
+        <div class="section-header mx-auto text-center" data-animate="fade-up">
+          <span class="section-tag">Sustainable Packaging</span>
+          <h2>Eco-Conscious Packaging Designed For Zero Spoilage</h2>
+          <p>We eliminate single-use plastics from farm gates to retail distribution.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="feature-card tilt-card" data-animate="fade-up">
+            <div class="card-body">
+              <div class="card-icon-pill">♻️</div>
+              <h4>Reusable Returnable Crates</h4>
+              <p>Sanitized food-grade polypropylene returnable collapsible containers circulating in closed supply loops.</p>
+            </div>
+          </div>
+
+          <div class="feature-card tilt-card" data-animate="fade-up">
+            <div class="card-body">
+              <div class="card-icon-pill">🌿</div>
+              <h4>Biodegradable Cornstarch Liners</h4>
+              <p>Breathable plant-based bio-films maintaining optimal humidity and slowing ethylene ripening gas buildup.</p>
+            </div>
+          </div>
+
+          <div class="feature-card tilt-card" data-animate="fade-up">
+            <div class="card-body">
+              <div class="card-icon-pill">❄️</div>
+              <h4>Phase-Change Ice Gel Packs</h4>
+              <p>Non-toxic plant-gel chilling inserts keeping microgreens crisp without creating soggy melting water puddles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: BUYER REVIEWS & CHEF ENDORSEMENTS -->
+    <section class="section-padding" style="background-color: var(--color-bg);">
+      <div class="container">
+        <div class="section-header mx-auto text-center" data-animate="fade-up">
+          <span class="section-tag">Buyer Testimonials</span>
+          <h2>What Leading Procurement Directors Say About Stackly Produce</h2>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="testimonial-card tilt-card" data-animate="fade-up">
+            <p class="testimonial-quote">
+              "The shelf-life of Stackly organic greens is almost double that of conventional market produce because of their rapid solar pre-cooling. Our waste shrink dropped from 14% to under 2%."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="../assets/images/organic-produce-buyer-customer.webp" alt="Wholesale produce customer review">
+              </div>
+              <div class="author-info">
+                <h4>Pooja Raman</h4>
+                <span>Procurement Lead, Salem Organic Grocers</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card tilt-card" data-animate="fade-up">
+            <p class="testimonial-quote">
+              "Their Khapli wheat flour makes sourdough bread with exceptional aroma and crust color. Our artisan bakery orders 4 tons every single month without fail."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="../assets/images/commercial-produce-distributor-face.webp" alt="Artisan baker and wholesale partner">
+              </div>
+              <div class="author-info">
+                <h4>Arun Prakash</h4>
+                <span>Master Baker, Crust & Hearth Co.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CTA BANNER -->
+    <section class="section-padding" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner" data-animate="zoom-in">
+          <h2>Order Certified Harvest Batches Directly Online</h2>
+          <p>Login to your Produce Buyer dashboard to browse daily stock levels, track reefer trucks, and download lab sheets.</p>
+          <div class="cta-banner-buttons">
+            <a href="../404.html" class="btn btn-accent btn-lg">Produce Buyer Sign In ➔</a>
+            <a href="../404.html" class="btn btn-outline-light btn-lg">Request Custom Harvest Lot</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Standard Footer -->
+    <!-- =========================================================================
+       STANDARDIZED FOOTER
+       ========================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="../index.html" aria-label="Stackly Agriculture Home">
+            <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Brand Logo">
+          </a>
+          <p>
+            Stackly Agriculture & Farming is an industry leader in regenerative crop production, precision farm analytics, and transparent organic supply chains.
+          </p>
+          <div class="footer-social-row">
+            <a href="../404.html" class="footer-social-pill" aria-label="Facebook"><span>📘</span> Facebook</a>
+            <a href="../404.html" class="footer-social-pill" aria-label="Twitter / X"><span>𝕏</span> Twitter</a>
+            <a href="../404.html" class="footer-social-pill" aria-label="Instagram"><span>📷</span> Instagram</a>
+            <a href="../404.html" class="footer-social-pill" aria-label="LinkedIn"><span>💼</span> LinkedIn</a>
+            <a href="../404.html" class="footer-social-pill" aria-label="YouTube"><span>▶️</span> YouTube</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links (All Redirect to 404 per Specification) -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="../404.html">➔ Home</a></li>
+            <li><a href="../404.html">➔ About Us</a></li>
+            <li><a href="../404.html">➔ Our Services</a></li>
+            <li><a href="../404.html">➔ Fresh Produce</a></li>
+            <li><a href="../404.html">➔ Pricing & Plans</a></li>
+            <li><a href="../404.html">➔ Contact Headquarters</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services (Redirect to 404 per Specification) -->
+        <div>
+          <h4 class="footer-heading">Farming Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="../404.html">➔ Soil Microbial Profiling</a></li>
+            <li><a href="../404.html">➔ Drone Multispectral Surveys</a></li>
+            <li><a href="../404.html">➔ Drip Irrigation Automation</a></li>
+            <li><a href="../404.html">➔ Cold-Chain Logistics Hub</a></li>
+            <li><a href="../404.html">➔ Organic Certification Audit</a></li>
+            <li><a href="../404.html">➔ Contract Farming Alliances</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Details (Address + Phone/Email to 404 per Specification, No sign-in button) -->
+        <div>
+          <h4 class="footer-heading">Farm Headquarters</h4>
+          <div class="footer-contact-item">
+            <span class="contact-icon">📍</span>
+            <span>MMR Complex, Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="../404.html">+91 9876543210</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="contact-icon">✉️</span>
+            <a href="../404.html">hello@thestackly.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 Stackly Agriculture & Farming Ltd. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="../404.html">Privacy Policy</a>
+          <a href="../404.html">Terms & Conditions</a>
+          <a href="../404.html">Agricultural Quality Standards</a>
+          <a href="../404.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+

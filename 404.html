@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Harvest Field Not Found | Stackly Agriculture & Farming</title>
+  <meta name="description" content="The page or agricultural record you are seeking is currently unavailable or has been relocated to another crop sector.">
+  <link rel="icon" type="image/webp" href="assets/images/logoStackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; background: radial-gradient(circle at center, #F0F4EE 0%, #E8EFE5 100%);">
+
+  <!-- Preloader -->
+  <div id="app-loader" aria-live="polite" aria-label="Loading Stackly Agriculture">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="assets/images/logoStackly.webp" alt="Stackly Agriculture and Farming Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Locating Harvest Field...</p>
+    </div>
+  </div>
+
+  <!-- 404 Hero Card (No Navbar, No Footer) -->
+  <main class="error-page-wrapper" style="flex: 1; min-height: 100vh; padding: 2rem 1.5rem;">
+    <div class="error-card" data-animate="zoom-in" style="width: 100%; max-width: 620px;">
+      <!-- Brand Logo linking to index.html -->
+      <div style="margin-bottom: 1.5rem;">
+        <a href="index.html" aria-label="Stackly Agriculture Homepage" style="display: inline-block;">
+          <img src="assets/images/logoStackly.webp" alt="Stackly Agriculture Logo" style="height: 44px; margin: 0 auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));">
+        </a>
+      </div>
+
+      <div class="error-badge-404">404</div>
+      <span class="section-tag">Crop Field Unavailable</span>
+      <h2>Oops! This Harvest Path Leads To An Uncultivated Field</h2>
+      <p>
+        The page, agronomy module, or action you requested is currently out of seasonal rotation or undergoing maintenance. Our agricultural sensors are actively tending the grounds.
+      </p>
+      <div class="error-btn-row">
+        <a href="index.html" class="btn btn-primary btn-lg">Return To Home Page ➔</a>
+        <a href="javascript:history.back()" class="btn btn-secondary btn-lg">Go Back</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

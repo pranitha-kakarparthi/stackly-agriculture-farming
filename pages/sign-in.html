@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Farm Manager & Produce Buyer Portal | Stackly Agriculture</title>
+  <meta name="description" content="Secure login for Stackly Agriculture Farm Managers and Produce Buyers. Access real-time crop telemetry, harvest allocation, and cold chain logistics.">
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background-color: #FFFFFF;">
+
+  <!-- Preloader -->
+  <div id="app-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Securing Agro Session...</p>
+    </div>
+  </div>
+
+  <!-- AUTHENTICATION WRAPPER (Split Layout - NO NAVBAR) -->
+  <div class="auth-wrapper">
+    <!-- Left Visual & Brand Sidebar -->
+    <div class="auth-sidebar-hero">
+      <div class="auth-brand-head">
+        <a href="../index.html" class="auth-brand-logo" aria-label="Return to Stackly Homepage">
+          <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+        </a>
+        <a href="../index.html" class="btn-back-home">
+          <span>←</span> Back to Home
+        </a>
+      </div>
+
+      <div class="auth-hero-copy">
+        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.3);">Agro Cloud Network</span>
+        <h2>Access Real-Time Field Telemetry & Harvest Allocations</h2>
+        <p>
+          Select your dedicated role to enter your custom dashboard. Manage field soil probes or track cold-chain wholesale vegetable dispatches.
+        </p>
+
+        <div class="auth-trust-list">
+          <div class="trust-item">
+            <span class="trust-item-icon">✔</span>
+            <span>Independent standalone data environments for Farm Managers & Produce Buyers</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-item-icon">✔</span>
+            <span>End-to-end encrypted session persistence and automated field telemetry</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-item-icon">✔</span>
+            <span>Real-time harvest batch pesticide residue lab testing certificates</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial snippet on sidebar -->
+      <div class="auth-card-testimonial">
+        <p>"The Produce Buyer portal revolutionized how we purchase organic staples directly from Salem growers."</p>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="../assets/images/produce-buyer-dashboard-avatar.webp" alt="Sarah Jenkins" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">
+          <div>
+            <strong style="color: #FFFFFF; font-size: 0.85rem; display: block;">Sarah Jenkins</strong>
+            <span style="color: #A3BFAB; font-size: 0.75rem;">Produce Buyer Partner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Form Section -->
+    <div class="auth-form-container">
+      <div class="auth-header">
+        <h2>Sign In to Agriculture Portal</h2>
+        <p>Don't have an account yet? <a href="sign-up.html">Create Account</a></p>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="signInForm" novalidate>
+        <!-- Role Selector: Mandatory (2 standard roles without dependencies) -->
+        <div class="form-group">
+          <label class="form-label" for="signinRole">
+            <span>Login As / Role <span class="req-star">*</span></span>
+          </label>
+          <select id="signinRole" class="form-control" required>
+            <option value="" disabled selected>Select your account role...</option>
+            <option value="Farm Manager">👨‍🌾 Farm Manager (Field Telemetry & Crops)</option>
+            <option value="Produce Buyer">🛒 Produce Buyer (Wholesale Lots & Invoices)</option>
+          </select>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <!-- Email: Mandatory -->
+        <div class="form-group">
+          <label class="form-label" for="signinEmail">
+            <span>Email Address <span class="req-star">*</span></span>
+          </label>
+          <input type="email" id="signinEmail" class="form-control" placeholder="name@domain.com" required autocomplete="email">
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <!-- Password: Mandatory -->
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <label class="form-label" for="signinPassword" style="margin-bottom: 0;">
+              <span>Password <span class="req-star">*</span></span>
+            </label>
+            <a href="../404.html" style="font-size: 0.8rem; color: var(--color-primary); font-weight: 600;">Forgot Password?</a>
+          </div>
+          <div class="input-wrapper">
+            <input type="password" id="signinPassword" class="form-control" placeholder="Enter password (min 8 chars, Upper, Lower, Num, Symbol)" required autocomplete="current-password">
+            <button type="button" class="btn-password-toggle" data-target="signinPassword" aria-label="Toggle password visibility">👁️‍🗨️</button>
+          </div>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;">
+          Sign In to Dashboard ➔
+        </button>
+      </form>
+
+      <div class="auth-divider">Or Continue With</div>
+
+      <!-- Social Logins (Icon + Label -> redirect to 404 per specs) -->
+      <div class="social-auth-grid">
+        <a href="../404.html" class="btn-social"><span>🌐</span> Google</a>
+        <a href="../404.html" class="btn-social"><span>💼</span> Microsoft</a>
+        <a href="../404.html" class="btn-social"><span>📘</span> Facebook</a>
+        <a href="../404.html" class="btn-social"><span>💼</span> LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/auth.js"></script>
+</body>
+</html>
+

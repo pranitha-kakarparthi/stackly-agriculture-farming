@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop & Harvest Monitor - Farm Manager | Stackly Agriculture</title>
+  <meta name="description" content="Detailed crop cultivation schedules, phenology stages, and projected harvest yields for Stackly Farm Managers.">
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background-color: var(--color-bg);">
+
+  <div id="app-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Loading Crop Phenology Data...</p>
+    </div>
+  </div>
+
+  <div class="dashboard-wrapper">
+    <aside class="dashboard-sidebar" role="navigation">
+      <div class="dash-brand-wrap">
+        <a href="../index.html">
+          <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+        </a>
+      </div>
+
+      <div class="dash-user-badge-box">
+        <div class="dash-avatar-mini">
+          <img src="../assets/images/farm-manager-david-chen.webp" alt="David Chen" class="dash-user-avatar">
+        </div>
+        <div class="dash-user-info">
+          <h5 class="dash-user-name">David Chen</h5>
+          <span class="dash-role-pill dash-user-role">Farm Manager</span>
+        </div>
+      </div>
+
+      <div class="dash-nav-section-title">Farm Operations</div>
+      <ul class="dash-nav-list">
+        <li>
+          <a href="dashboard-farm-manager.html" class="dash-nav-link">
+            <span class="dash-nav-icon">📊</span>
+            <span>Farm Overview</span>
+          </a>
+        </li>
+        <li>
+          <a href="dashboard-manager-crops.html" class="dash-nav-link active">
+            <span class="dash-nav-icon">🌾</span>
+            <span>Crop & Harvest Monitor</span>
+          </a>
+        </li>
+        <li>
+          <a href="dashboard-manager-equipment.html" class="dash-nav-link">
+            <span class="dash-nav-icon">🚜</span>
+            <span>IoT Probes & Fleet</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="dash-nav-section-title">Actionable Reports</div>
+      <ul class="dash-nav-list">
+        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">💧</span><span>Irrigation Logs</span></a></li>
+        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">🧪</span><span>Soil NPK Lab Vault</span></a></li>
+      </ul>
+
+      <div class="dash-sidebar-footer">
+        <button class="btn btn-outline-light btn-sm btn-sign-out" style="width: 100%;">
+          <span>🚪</span> Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="dash-greeting-wrap">
+            <h3 class="dash-greeting-text">Crop Phenology & Harvest Analytics</h3>
+            <span class="dash-greeting-time">Season: Winter-Spring Harvest Cycle</span>
+          </div>
+        </div>
+        <div class="dash-topbar-actions">
+          <button class="btn btn-secondary btn-sm dash-action-btn">Log Seed Planting</button>
+          <button class="btn btn-primary btn-sm btn-sign-out">Sign Out</button>
+        </div>
+      </header>
+
+      <main class="dashboard-content-body">
+        <!-- Section 1: KPI Summary -->
+        <section class="dash-kpi-grid">
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Standing Biomass</span>
+              <h3>2,840 MT</h3>
+              <span class="kpi-badge positive">↑ 14% vs Last Season</span>
+            </div>
+            <div class="kpi-card-icon">🌿</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Estimated Harvest Yield</span>
+              <h3>480 MT</h3>
+              <span class="kpi-badge positive">Wheat & Root Crops</span>
+            </div>
+            <div class="kpi-card-icon">🌾</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Chlorophyll Index (NDVI)</span>
+              <h3>0.78 Avg</h3>
+              <span class="kpi-badge positive">Dense Photosynthesis</span>
+            </div>
+            <div class="kpi-card-icon">🛰️</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Days To Grain Cut</span>
+              <h3>6 Days</h3>
+              <span class="kpi-badge neutral">Readiness 94%</span>
+            </div>
+            <div class="kpi-card-icon">✂️</div>
+          </div>
+        </section>
+
+        <!-- Section 2: Detailed Crop Table -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Active Crop Plots & Yield Projections</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Real-time phenology stages verified by agronomist field observations.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Download Crop Matrix</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Crop Variety</th>
+                  <th>Plot Location</th>
+                  <th>Sowing Date</th>
+                  <th>Current Phenology Stage</th>
+                  <th>Projected Harvest</th>
+                  <th>Expected Yield</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Khapli Emmer Wheat</strong></td>
+                  <td>Sector A - Plots 1-6</td>
+                  <td>12 Nov 2025</td>
+                  <td>Grain Hardening / Desiccation</td>
+                  <td>15 Feb 2026</td>
+                  <td>320 Metric Tons</td>
+                  <td><span class="status-tag active">Ripening</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Heritage Rainbow Carrots</strong></td>
+                  <td>Sector B - Plots 1-4</td>
+                  <td>05 Dec 2025</td>
+                  <td>Root Expansion Stage</td>
+                  <td>28 Feb 2026</td>
+                  <td>85 Metric Tons</td>
+                  <td><span class="status-tag active">Healthy</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Protected Baby Spinach</strong></td>
+                  <td>Greenhouses 1-6</td>
+                  <td>Continuous</td>
+                  <td>Leaf Rosette Maturity</td>
+                  <td>Daily Harvest</td>
+                  <td>12 MT / Month</td>
+                  <td><span class="status-tag active">Picking</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Honey Pollinator Wildflowers</strong></td>
+                  <td>Sector D Apiary Ridge</td>
+                  <td>20 Oct 2025</td>
+                  <td>Full Blossom / Nectar Flow</td>
+                  <td>Continuous</td>
+                  <td>4.5 MT Raw Honey</td>
+                  <td><span class="status-tag verified">Nectar Flow</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 3: Soil Microbiology & Inoculation Schedule -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Rhizosphere Inoculation & Organic Inputs</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Bio-compost, mycorrhizae, and neem-oil applications schedule.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Log Application</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Treatment Type</th>
+                  <th>Target Sector</th>
+                  <th>Scheduled Date</th>
+                  <th>Carrier Method</th>
+                  <th>Agronomist Sign-Off</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Azospirillum & PSB Bio-Fertilizer</td>
+                  <td>Sector B (Carrots)</td>
+                  <td>Yesterday</td>
+                  <td>Solar Micro-Drip Line</td>
+                  <td><span class="status-tag active">Approved Dr. Elena</span></td>
+                </tr>
+                <tr>
+                  <td>Cold-Pressed Neem Oil 10,000 PPM</td>
+                  <td>Sector A (Wheat Perimeter)</td>
+                  <td>Today</td>
+                  <td>Drone Micro-Sprayer</td>
+                  <td><span class="status-tag active">Approved Marcus V.</span></td>
+                </tr>
+                <tr>
+                  <td>Aerobic Vermicompost Topdressing</td>
+                  <td>Sector C Greenhouses</td>
+                  <td>Next Monday</td>
+                  <td>Manual Spreading</td>
+                  <td><span class="status-tag pending">Scheduled</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 4: Crop Phenology Cards -->
+        <section class="grid grid-2">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+            <h4>🌾 Khapli Wheat Moisture Curve</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">Targeting 12.5% grain moisture for combine cutting.</p>
+            <div style="height: 12px; background: #E0E0E0; border-radius: 6px; overflow: hidden; margin-bottom: 0.5rem;">
+              <div style="width: 86%; height: 100%; background: #2E7D32;"></div>
+            </div>
+            <span style="font-size: 0.82rem; color: var(--color-text-muted);">Current Grain Moisture: 13.8% (Almost Ready)</span>
+          </div>
+
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+            <h4>🥦 Greenhouse Spinach Harvest Pace</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">Daily dawn harvest quotas fulfilled for wholesale buyers.</p>
+            <div style="height: 12px; background: #E0E0E0; border-radius: 6px; overflow: hidden; margin-bottom: 0.5rem;">
+              <div style="width: 95%; height: 100%; background: #40916C;"></div>
+            </div>
+            <span style="font-size: 0.82rem; color: var(--color-text-muted);">Current Picking Rate: 420 kg / morning</span>
+          </div>
+        </section>
+
+        <!-- Section 5: Action Link -->
+        <section style="text-align: right;">
+          <a href="../404.html" class="btn btn-secondary dash-action-btn">Generate Comprehensive Seasonal Harvest Report ➔</a>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

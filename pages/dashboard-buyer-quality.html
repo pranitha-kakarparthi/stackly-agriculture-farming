@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quality Lab & Organic Certifications - Produce Buyer | Stackly Agriculture</title>
+  <meta name="description" content="View GC-MS pesticide residue laboratory analysis, NPOP/USDA organic certificates, and traceability sheets for Produce Buyers.">
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background-color: var(--color-bg);">
+
+  <div id="app-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Decrypting Quality Lab Vault...</p>
+    </div>
+  </div>
+
+  <div class="dashboard-wrapper">
+    <aside class="dashboard-sidebar" role="navigation">
+      <div class="dash-brand-wrap">
+        <a href="../index.html">
+          <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+        </a>
+      </div>
+
+      <div class="dash-user-badge-box">
+        <div class="dash-avatar-mini">
+          <img src="../assets/images/produce-buyer-dashboard-avatar.webp" alt="Sarah Jenkins" class="dash-user-avatar">
+        </div>
+        <div class="dash-user-info">
+          <h5 class="dash-user-name">Sarah Jenkins</h5>
+          <span class="dash-role-pill dash-user-role" style="background: rgba(212, 163, 115, 0.25); color: var(--color-accent-dark);">Produce Buyer</span>
+        </div>
+      </div>
+
+      <div class="dash-nav-section-title">Procurement Hub</div>
+      <ul class="dash-nav-list">
+        <li>
+          <a href="dashboard-produce-buyer.html" class="dash-nav-link">
+            <span class="dash-nav-icon">📦</span>
+            <span>Procurement Overview</span>
+          </a>
+        </li>
+        <li>
+          <a href="dashboard-buyer-orders.html" class="dash-nav-link">
+            <span class="dash-nav-icon">🚛</span>
+            <span>Wholesale Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="dashboard-buyer-quality.html" class="dash-nav-link active">
+            <span class="dash-nav-icon">📜</span>
+            <span>Quality Lab Certs</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="dash-nav-section-title">Commercial & Billing</div>
+      <ul class="dash-nav-list">
+        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">💳</span><span>Invoices & Escrow</span></a></li>
+        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">🏷️</span><span>Price Index</span></a></li>
+      </ul>
+
+      <div class="dash-sidebar-footer">
+        <button class="btn btn-outline-light btn-sm btn-sign-out" style="width: 100%;">
+          <span>🚪</span> Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="dash-greeting-wrap">
+            <h3 class="dash-greeting-text">Organic Purity Vault & Quality Lab Reports</h3>
+            <span class="dash-greeting-time">Status: 100% Passed Multi-Residue Testing</span>
+          </div>
+        </div>
+        <div class="dash-topbar-actions">
+          <button class="btn btn-secondary btn-sm dash-action-btn">Request Third-Party Audit</button>
+          <button class="btn btn-primary btn-sm btn-sign-out">Sign Out</button>
+        </div>
+      </header>
+
+      <main class="dashboard-content-body">
+        <!-- Section 1: KPI Grid -->
+        <section class="dash-kpi-grid">
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Verified Harvest Batches</span>
+              <h3>48 Lots</h3>
+              <span class="kpi-badge positive">All Certified Organic</span>
+            </div>
+            <div class="kpi-card-icon">📜</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Chemical Detections</span>
+              <h3>0.00%</h3>
+              <span class="kpi-badge positive">240 Analytes Screened</span>
+            </div>
+            <div class="kpi-card-icon">🔬</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Heavy Metal Index</span>
+              <h3>Below LOD</h3>
+              <span class="kpi-badge positive">Pb, Cd, As, Hg Safe</span>
+            </div>
+            <div class="kpi-card-icon">🛡️</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>NPOP Compliance</span>
+              <h3>100% Active</h3>
+              <span class="kpi-badge verified">Valid Thru Nov 2026</span>
+            </div>
+            <div class="kpi-card-icon">🌿</div>
+          </div>
+        </section>
+
+        <!-- Section 2: Laboratory Certificate Master Table -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Batch-Level Gas Chromatography Test Certificates</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Independent laboratory reports with cryptographic verification hashes.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Download All Vault PDFs</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Batch ID</th>
+                  <th>Commodity</th>
+                  <th>Accredited Lab</th>
+                  <th>Testing Scope</th>
+                  <th>Result</th>
+                  <th>Audit Date</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>HB-2026-SLM-089</code></td>
+                  <td>Spinach & Baby Greens</td>
+                  <td>TÜV SÜD South Asia</td>
+                  <td>240 Synthetic Pesticides (GC-MS/MS)</td>
+                  <td><span class="status-tag active">Not Detected (ND)</span></td>
+                  <td>Yesterday</td>
+                  <td><button class="btn btn-sm btn-primary dash-action-btn">PDF (1.2 MB)</button></td>
+                </tr>
+                <tr>
+                  <td><code>HB-2026-SLM-088</code></td>
+                  <td>Khapli Emmer Wheat</td>
+                  <td>SGS India Agri-Lab</td>
+                  <td>Glyphosate, Glufosinate & Metals</td>
+                  <td><span class="status-tag active">Not Detected (ND)</span></td>
+                  <td>02 Feb 2026</td>
+                  <td><button class="btn btn-sm btn-primary dash-action-btn">PDF (1.8 MB)</button></td>
+                </tr>
+                <tr>
+                  <td><code>HB-2026-SLM-087</code></td>
+                  <td>Raw Forest Honey</td>
+                  <td>Intertek Food Services</td>
+                  <td>C4 Sugars, Antibiotics, HMF</td>
+                  <td><span class="status-tag active">100% Pure Floral</span></td>
+                  <td>28 Jan 2026</td>
+                  <td><button class="btn btn-sm btn-primary dash-action-btn">PDF (980 KB)</button></td>
+                </tr>
+                <tr>
+                  <td><code>HB-2026-SLM-086</code></td>
+                  <td>Pasture A2 Whole Milk</td>
+                  <td>National Dairy Lab</td>
+                  <td>A2/A2 Beta Casein DNA Verification</td>
+                  <td><span class="status-tag verified">100% Pure A2 DNA</span></td>
+                  <td>25 Jan 2026</td>
+                  <td><button class="btn btn-sm btn-primary dash-action-btn">PDF (1.1 MB)</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 3: Traceability QR & Cluster Map Info -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Field Origin Traceability Metadata</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Exact geo-coordinates and farmer cluster profiles for your shipments.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Print QR Pallet Labels</button>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <strong>Sector B - Heirloom Greens</strong>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0.35rem 0;">Salem Agro Basin, GPS: 11.6845° N, 78.1634° E</p>
+              <div style="font-size: 0.78rem;">Grower Cluster Lead: K. Selvam &bull; Soil Type: Red Loam Humus</div>
+            </div>
+
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <strong>Sector A - Khapli Wheat</strong>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0.35rem 0;">Salem North Plains, GPS: 11.6912° N, 78.1580° E</p>
+              <div style="font-size: 0.78rem;">Grower Cluster Lead: V. Ramesh &bull; Soil Type: Black Clay Loam</div>
+            </div>
+
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <strong>Sector D - Apiary Valley</strong>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0.35rem 0;">Shevaroy Foothills, GPS: 11.7100° N, 78.1820° E</p>
+              <div style="font-size: 0.78rem;">Beekeeper Incharge: Dr. Arulmani &bull; Flora: Wild Neem & Jamun</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 4: Accreditations Vault -->
+        <section class="grid grid-2">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+            <h4>📜 NPOP Certified Organic Scope Certificate</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Certificate No: ORG-IND-2026-788192</p>
+            <p style="font-size: 0.88rem; margin: 0;">Issued by Aditi Organic Certifications under APEDA regulations. Covers 1,420 cultivated acres across Salem district.</p>
+          </div>
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+            <h4>🛡️ ISO 22000:2018 Food Safety Management</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Certificate No: FSMS-IN-99410</p>
+            <p style="font-size: 0.88rem; margin: 0;">Covers decentralized solar cold rooms, washing/grading facilities, and refrigerated logistics fleet.</p>
+          </div>
+        </section>
+
+        <!-- Section 5: Action Link -->
+        <section style="text-align: right;">
+          <a href="../404.html" class="btn btn-secondary dash-action-btn">Request Custom Multi-Residue Testing For Next Batch ➔</a>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

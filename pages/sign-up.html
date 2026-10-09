@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Account - Farm Manager & Produce Buyer | Stackly Agriculture</title>
+  <meta name="description" content="Register an agricultural account with Stackly. Join as a certified Farm Manager or commercial Produce Buyer with strict role-aware data isolation.">
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background-color: #FFFFFF;">
+
+  <!-- Preloader -->
+  <div id="app-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Preparing Farm Registration...</p>
+    </div>
+  </div>
+
+  <!-- AUTHENTICATION WRAPPER (Split Layout - NO NAVBAR) -->
+  <div class="auth-wrapper">
+    <!-- Left Visual & Brand Sidebar -->
+    <div class="auth-sidebar-hero">
+      <div class="auth-brand-head">
+        <a href="../index.html" class="auth-brand-logo" aria-label="Return to Stackly Homepage">
+          <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+        </a>
+        <a href="../index.html" class="btn-back-home">
+          <span>←</span> Back to Home
+        </a>
+      </div>
+
+      <div class="auth-hero-copy">
+        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.3);">Join The Agricultural Network</span>
+        <h2>Cultivate Prosperity With Modern Precision Agtech</h2>
+        <p>
+          Whether deploying LoRaWAN wireless ground sensors across your fields or procuring certified organic harvest lots for supermarket distribution, join over 450 agricultural partners today.
+        </p>
+
+        <div class="auth-trust-list">
+          <div class="trust-item">
+            <span class="trust-item-icon">🌱</span>
+            <span>Independent data isolation for Farm Managers & Produce Buyers</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-item-icon">🛰️</span>
+            <span>Free initial soil electrical conductivity & organic carbon baseline audit</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-item-icon">📜</span>
+            <span>Direct access to NPOP and USDA organic certificate repositories</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-card-testimonial">
+        <p>"Registering our 120-acre estate brought immediate visibility over irrigation valves and automated daily worker tasks."</p>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="../assets/images/farm-manager-david-chen.webp" alt="David Chen" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">
+          <div>
+            <strong style="color: #FFFFFF; font-size: 0.85rem; display: block;">David Chen</strong>
+            <span style="color: #A3BFAB; font-size: 0.75rem;">Farm Manager Partner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Form Section -->
+    <div class="auth-form-container" style="max-width: 640px; padding-top: 3rem; padding-bottom: 3rem;">
+      <div class="auth-header">
+        <h2>Create Your Agricultural Account</h2>
+        <p>Already registered? <a href="sign-in.html">Sign In Here</a></p>
+      </div>
+
+      <!-- Sign Up Form -->
+      <form id="signUpForm" novalidate>
+        <!-- Role Selector: Mandatory (2 standard roles without dependencies) -->
+        <div class="form-group">
+          <label class="form-label" for="signupRole">
+            <span>Account Role / Type <span class="req-star">*</span></span>
+          </label>
+          <select id="signupRole" class="form-control" required>
+            <option value="" disabled selected>Select your account role...</option>
+            <option value="Farm Manager">👨‍🌾 Farm Manager (Field Operations, Crops & Telemetry)</option>
+            <option value="Produce Buyer">🛒 Produce Buyer (Wholesale Lots, Quality & Logistics)</option>
+          </select>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <!-- First & Last Name: Mandatory, Alphabets Only -->
+        <div class="grid grid-2" style="gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="signupFirstName">
+              <span>First Name <span class="req-star">*</span></span>
+            </label>
+            <input type="text" id="signupFirstName" class="form-control" placeholder="Letters only (e.g. Ramesh)" required autocomplete="given-name">
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signupLastName">
+              <span>Last Name <span class="req-star">*</span></span>
+            </label>
+            <input type="text" id="signupLastName" class="form-control" placeholder="Letters only (e.g. Kumar)" required autocomplete="family-name">
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <!-- Username (Optional) & Email (Mandatory) -->
+        <div class="grid grid-2" style="gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="signupUsername">
+              <span>Username</span>
+              <span class="optional-tag">(Optional)</span>
+            </label>
+            <input type="text" id="signupUsername" class="form-control" placeholder="e.g. ramesh_farm" autocomplete="username">
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signupEmail">
+              <span>Email Address <span class="req-star">*</span></span>
+            </label>
+            <input type="email" id="signupEmail" class="form-control" placeholder="ramesh@agrifarm.com" required autocomplete="email">
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <!-- Mobile Number: Country Code + Exact 10 Digits -->
+        <div class="form-group">
+          <label class="form-label" for="signupPhone">
+            <span>Mobile Phone <span class="req-star">*</span></span>
+          </label>
+          <div class="phone-input-group">
+            <select id="signupPhoneCode" class="phone-code-select" aria-label="Country Dial Code">
+              <option value="+91">🇮🇳 +91 (IN)</option>
+              <option value="+1">🇺🇸 +1 (US)</option>
+              <option value="+44">🇬🇧 +44 (UK)</option>
+              <option value="+971">🇦🇪 +971 (UAE)</option>
+              <option value="+61">🇦🇺 +61 (AU)</option>
+            </select>
+            <input type="tel" id="signupPhone" class="form-control" placeholder="Exact 10-digit number" maxlength="10" required autocomplete="tel-national">
+          </div>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <!-- Password: Mandatory with Strength Meter & Eye Toggle -->
+        <div class="form-group">
+          <label class="form-label" for="signupPassword">
+            <span>Create Password <span class="req-star">*</span></span>
+          </label>
+          <div class="input-wrapper">
+            <input type="password" id="signupPassword" class="form-control" placeholder="Min 8 chars (Upper, Lower, Number, Symbol)" required autocomplete="new-password">
+            <button type="button" class="btn-password-toggle" data-target="signupPassword" aria-label="Toggle password visibility">👁️‍🗨️</button>
+          </div>
+          <div class="password-strength-bar">
+            <div id="passwordStrengthFill" class="password-strength-fill"></div>
+          </div>
+          <div class="strength-feedback-text">
+            <span id="passwordStrengthText">Requires: 8+ chars, upper, lower, number, special symbol</span>
+          </div>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <!-- Confirm Password: Mandatory -->
+        <div class="form-group">
+          <label class="form-label" for="signupConfirmPassword">
+            <span>Confirm Password <span class="req-star">*</span></span>
+          </label>
+          <div class="input-wrapper">
+            <input type="password" id="signupConfirmPassword" class="form-control" placeholder="Re-enter your password" required autocomplete="new-password">
+            <button type="button" class="btn-password-toggle" data-target="signupConfirmPassword" aria-label="Toggle password visibility">👁️‍🗨️</button>
+          </div>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <!-- Country & Address (Optional) -->
+        <div class="grid grid-2" style="gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="signupCountry">
+              <span>Country</span>
+              <span class="optional-tag">(Optional)</span>
+            </label>
+            <select id="signupCountry" class="form-control">
+              <option value="India" selected>India</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="Australia">Australia</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signupAddress">
+              <span>Farm / Office Address</span>
+              <span class="optional-tag">(Optional)</span>
+            </label>
+            <input type="text" id="signupAddress" class="form-control" placeholder="e.g. Salem Agro Cluster, TN">
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <!-- Mandatory Checkbox: Terms of Use & Privacy Policy (Links to 404 per specs) -->
+        <div class="form-check">
+          <input type="checkbox" id="signupTerms" class="form-check-input" required>
+          <label class="form-check-label" for="signupTerms">
+            I agree to the <a href="../404.html">Terms of Use</a> and <a href="../404.html">Privacy Policy</a>. <span class="req-star">*</span>
+          </label>
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <!-- Optional Checkbox: Newsletter Opt-In (Link to 404 per specs) -->
+        <div class="form-check">
+          <input type="checkbox" id="signupNewsletter" class="form-check-input">
+          <label class="form-check-label" for="signupNewsletter">
+            I would like to receive newsletters, promotional content, updates, product announcements, and agronomic market communication. (<a href="../404.html">Read More</a>)
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">
+          Complete Registration ➔
+        </button>
+      </form>
+
+      <div class="auth-divider">Or Register With Social Account</div>
+
+      <!-- Social Logins (Redirect to 404 per specs) -->
+      <div class="social-auth-grid">
+        <a href="../404.html" class="btn-social"><span>🌐</span> Google</a>
+        <a href="../404.html" class="btn-social"><span>💼</span> Microsoft</a>
+        <a href="../404.html" class="btn-social"><span>📘</span> Facebook</a>
+        <a href="../404.html" class="btn-social"><span>💼</span> LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/auth.js"></script>
+</body>
+</html>
+

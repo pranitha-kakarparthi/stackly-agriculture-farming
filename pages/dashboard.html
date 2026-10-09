@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Router - Stackly Agriculture & Farming</title>
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background: #0F241D; display: flex; align-items: center; justify-content: center; min-height: 100vh; color: #FFFFFF;">
+  <div style="text-align: center; padding: 2rem;">
+    <div style="width: 160px; margin: 0 auto 1.5rem auto;">
+      <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture">
+    </div>
+    <div class="loader-spinner" style="margin: 0 auto 1.5rem auto;"></div>
+    <h3>Routing To Your Agricultural Dashboard...</h3>
+    <p style="color: #A3BFAB; font-size: 0.9rem; margin-top: 0.5rem;">Verifying role credentials and isolated session storage...</p>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginStatus = localStorage.getItem('loginStatus');
+      const currentUser = localStorage.getItem('currentUser');
+      const role = localStorage.getItem('role');
+
+      if (!loginStatus || loginStatus !== 'true' || !currentUser) {
+        window.location.href = 'sign-in.html';
+        return;
+      }
+
+      setTimeout(() => {
+        if (role === 'Produce Buyer') {
+          window.location.href = 'dashboard-produce-buyer.html';
+        } else {
+          // Default to Farm Manager
+          window.location.href = 'dashboard-farm-manager.html';
+        }
+      }, 400);
+    });
+  </script>
+</body>
+</html>
+

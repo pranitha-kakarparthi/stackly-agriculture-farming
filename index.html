@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Agriculture & Farming - Sustainable Agtech, Organic Crops & Fresh Harvest</title>
+  <meta name="description" content="Stackly Agriculture empowers modern farmers and wholesale produce buyers with precision smart farming, certified organic crop cultivation, and sustainable harvest solutions.">
+  <meta name="keywords" content="agriculture, farming, organic farming, precision agriculture, agtech, harvest, fresh produce, smart farming">
+  <link rel="icon" type="image/webp" href="assets/images/logoStackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       PRELOADER (Full Viewport, Brand Logo & Pure CSS 2s Circular Spinner)
+       ========================================================================= -->
+  <div id="app-loader" aria-live="polite" aria-label="Loading Stackly Agriculture">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="assets/images/logoStackly.webp" alt="Stackly Agriculture and Farming Logo">
+      </div>
+      <div class="loader-spinner" role="status" aria-label="Loading spinner"></div>
+      <p class="loader-text">Cultivating Sustainable Agriculture...</p>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SECTION 1: TOP NOTIFICATION BAR & STICKY NAVBAR
+       ========================================================================= -->
+  <header class="site-header" role="banner">
+    <!-- Main Navigation Bar -->
+    <div class="navbar-container">
+      <!-- Clickable Logo linking to index.html -->
+      <a href="index.html" class="nav-brand" aria-label="Stackly Agriculture Homepage">
+        <img src="assets/images/logoStackly.webp" alt="Stackly Agriculture and Farming Brand Logo">
+        <span class="brand-badge">Agriculture</span>
+      </a>
+
+      <!-- Desktop Nav Menu (Highlight Active Item) -->
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link active">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="pages/about.html" class="nav-link">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a href="pages/services.html" class="nav-link">
+            Services <span class="dropdown-arrow">▼</span>
+          </a>
+          <!-- Multi-level Dropdown for Services -->
+          <div class="dropdown-menu" role="menu">
+            <a href="pages/service-organic-crops.html" class="dropdown-link" role="menuitem">🌾 Organic Crop Production</a>
+            <a href="pages/service-smart-farming.html" class="dropdown-link" role="menuitem">🛰️ Precision Smart Farming</a>
+            <a href="pages/service-livestock.html" class="dropdown-link" role="menuitem">🐄 Livestock Management</a>
+            <a href="pages/service-supply-chain.html" class="dropdown-link" role="menuitem">🚛 Direct Produce Supply Chain</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="pages/products.html" class="nav-link">Fresh Produce</a>
+        </div>
+        <div class="nav-item">
+          <a href="pages/pricing.html" class="nav-link">Pricing & Plans</a>
+        </div>
+        <div class="nav-item">
+          <a href="pages/contact.html" class="nav-link">Contact</a>
+        </div>
+      </nav>
+
+      <!-- Nav Action CTAs -->
+      <div class="nav-actions">
+        <a href="pages/sign-in.html" class="btn btn-outline-light btn-sm btn-login-header">Sign In</a>
+        <a href="pages/sign-up.html" class="btn btn-accent btn-sm">Register Farm</a>
+        <button class="nav-hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Fullscreen Navigation Overlay -->
+  <div class="mobile-nav-overlay" aria-hidden="true">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+      <li><a href="pages/about.html" class="mobile-nav-link">About Us</a></li>
+      <li>
+        <a href="pages/services.html" class="mobile-nav-link mobile-dropdown-toggle">
+          Services <span>+</span>
+        </a>
+        <div class="mobile-dropdown-list">
+          <a href="pages/service-organic-crops.html" class="mobile-dropdown-sublink">Organic Crop Production</a>
+          <a href="pages/service-smart-farming.html" class="mobile-dropdown-sublink">Precision Smart Farming</a>
+          <a href="pages/service-livestock.html" class="mobile-dropdown-sublink">Livestock Management</a>
+          <a href="pages/service-supply-chain.html" class="mobile-dropdown-sublink">Direct Produce Supply Chain</a>
+        </div>
+      </li>
+      <li><a href="pages/products.html" class="mobile-nav-link">Fresh Produce</a></li>
+      <li><a href="pages/pricing.html" class="mobile-nav-link">Pricing & Plans</a></li>
+      <li><a href="pages/contact.html" class="mobile-nav-link">Contact Us</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="pages/sign-in.html" class="btn btn-outline-light">Sign In to Dashboard</a>
+      <a href="pages/sign-up.html" class="btn btn-accent">Create New Account</a>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SECTION 2: HERO SECTION (Conversion Oriented, Agtech Innovation)
+       ========================================================================= -->
+  <section class="hero-section" aria-label="Hero Introduction">
+    <div class="hero-overlay-pattern"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content" data-animate="slide-right">
+          <span class="section-tag">Pioneering Modern Agriculture</span>
+          <h1>Cultivating Nature With <span>Smart Agtech</span> & Organic Purity</h1>
+          <p>
+            Stackly Agriculture bridges regenerative organic farming with real-time IoT crop telemetry. We empower progressive farm managers with intelligent field insights and provide wholesale buyers with 100% certified pesticide-free harvest batches.
+          </p>
+          <div class="hero-buttons">
+            <a href="404.html" class="btn btn-accent btn-lg">Explore Dashboard ➔</a>
+            <a href="404.html" class="btn btn-outline-light btn-lg">Browse Organic Harvest</a>
+          </div>
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <h3>12,500+</h3>
+              <p>Acres Cultivated</p>
+            </div>
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Certified Organic</p>
+            </div>
+            <div class="stat-item">
+              <h3>48 Hrs</h3>
+              <p>Farm to Wholesale</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media-wrapper" data-animate="zoom-in">
+          <div class="hero-main-card tilt-card">
+            <img src="assets/images/farmer-senior-agronomist-field.webp" alt="Senior Agronomist inspecting organic golden wheat field at Stackly Agriculture">
+          </div>
+          <div class="hero-floating-badge">
+            <div class="floating-icon">🌾</div>
+            <div class="floating-text">
+              <strong>Zero Chemical Residue</strong>
+              <span>NPOP & USDA Certified Organic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 3: ABOUT US SECTION (Trust Building & Organic Philosophy)
+       ========================================================================= -->
+  <section class="section-padding" style="background-color: #FFFFFF;" aria-label="About Stackly Agriculture">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div class="about-visual-col" data-animate="slide-right">
+          <div class="card-image-wrap" style="height: 440px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            <img src="assets/images/female-agronomist-smart-tablet.webp" alt="Agronomist monitoring real-time soil health sensors on agricultural digital tablet">
+          </div>
+        </div>
+        <div class="about-text-col" data-animate="slide-left">
+          <span class="section-tag">About Stackly Agriculture</span>
+          <h2>Harmonizing Traditional Wisdom with Precision Technology</h2>
+          <p>
+            Founded with a vision to heal farmland and revolutionize food traceability, Stackly Agriculture has grown from a humble organic cluster in Salem, Tamil Nadu, to a state-of-the-art agricultural network spanning thousands of fertile hectares.
+          </p>
+          <p>
+            Our closed-loop farming model combines soil regeneration, pollinator conservation, solar micro-irrigation, and satellite imagery to ensure resilient yields without exhausting earth's vital minerals.
+          </p>
+          <div class="grid grid-2" style="gap: 1rem; margin: 1.5rem 0;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-primary);">
+              <h4 style="margin-bottom: 0.35rem;">🌱 Regenerative Soils</h4>
+              <p style="font-size: 0.88rem; margin: 0;">Microbial bio-fertilizers replenishing natural humic layers.</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-secondary);">
+              <h4 style="margin-bottom: 0.35rem;">💧 Micro-Drip Precision</h4>
+              <p style="font-size: 0.88rem; margin: 0;">Saving 64% water through solar automated valve controllers.</p>
+            </div>
+          </div>
+          <a href="404.html" class="btn btn-primary">Read Our Full Story ➔</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: CORE AGRICULTURAL SERVICES (Comprehensive Solutions)
+       ========================================================================= -->
+  <section class="section-padding" style="background-color: var(--color-bg);" aria-label="Our Agriculture Services">
+    <div class="container">
+      <div class="section-header mx-auto text-center" data-animate="fade-up">
+        <span class="section-tag">End-to-End Farming Solutions</span>
+        <h2>Integrated Agricultural Services For Modern Food Ecosystems</h2>
+        <p>From seed propagation and autonomous field telemetry to temperature-controlled logistics, we support growers and institutional buyers alike.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <!-- Service Card 1 -->
+        <div class="service-card tilt-card" data-animate="fade-up">
+          <div class="card-image-wrap">
+            <img src="assets/images/golden-wheat-harvest-combine.webp" alt="Combine harvester cutting organic golden wheat crop">
+          </div>
+          <div class="card-body">
+            <div class="card-icon-pill">🌾</div>
+            <h3>Organic Crops</h3>
+            <p>Cultivating non-GMO heirloom grains, pulses, and nutrient-dense seasonal staples using 100% natural bio-composts.</p>
+            <a href="404.html" class="card-action-link">Explore Crops ➔</a>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card tilt-card" data-animate="fade-up">
+          <div class="card-image-wrap">
+            <img src="assets/images/drone-precision-agriculture-survey.webp" alt="Precision agriculture drone flying over healthy green farmlands">
+          </div>
+          <div class="card-body">
+            <div class="card-icon-pill">🛰️</div>
+            <h3>Smart Precision Ag</h3>
+            <p>Multispectral drone crop scouting, IoT soil moisture probes, and predictive micro-climate weather forecasting.</p>
+            <a href="404.html" class="card-action-link">View Agtech ➔</a>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card tilt-card" data-animate="fade-up">
+          <div class="card-image-wrap">
+            <img src="assets/images/dairy-cows-pasture-grazing.webp" alt="Free-range dairy cows grazing on lush green clover pasture">
+          </div>
+          <div class="card-body">
+            <div class="card-icon-pill">🐄</div>
+            <h3>Livestock Grazing</h3>
+            <p>Ethical open-pasture rotational grazing producing nutrient-rich A2 certified raw dairy and artisan farm cheese.</p>
+            <a href="404.html" class="card-action-link">Pasture Care ➔</a>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card tilt-card" data-animate="fade-up">
+          <div class="card-image-wrap">
+            <img src="assets/images/tractor-precision-cultivation-field.webp" alt="Modern green tractor performing precision cultivation on organic field">
+          </div>
+          <div class="card-body">
+            <div class="card-icon-pill">🚛</div>
+            <h3>Farm Supply Chain</h3>
+            <p>Direct farm-to-warehouse cold chain transport guaranteeing maximum freshness and zero post-harvest spoilage.</p>
+            <a href="404.html" class="card-action-link">Supply Chain ➔</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: COMPETITIVE DIFFERENTIATORS / FEATURES
+       ========================================================================= -->
+  <section class="section-padding" style="background-color: #FFFFFF;" aria-label="Why Choose Stackly Agriculture">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div data-animate="slide-right">
+          <span class="section-tag">Why Choose Us</span>
+          <h2>Engineered For Maximum Yield, Soil Health & Transparency</h2>
+          <p>
+            We eliminate the opacity and chemical dependency of industrial farming with open telemetry, verifiable quality testing, and direct grower contracts.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: #E8F5E9; color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">🔬</div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">Zero Residue Lab Verification</h4>
+                <p style="font-size: 0.92rem; margin: 0;">Every crop lot undergoes comprehensive multi-residue gas chromatography screening before dispatch.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: #E8F5E9; color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">📊</div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">Role-Aware Cloud Dashboards</h4>
+                <p style="font-size: 0.92rem; margin: 0;">Dedicated standalone portals for Farm Managers managing field labor, and Produce Buyers tracking shipment lots.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: #E8F5E9; color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0;">🐝</div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">Pollinator Apiary Sanctuaries</h4>
+                <p style="font-size: 0.92rem; margin: 0;">Integrated honeybee colonies across all acreage, boosting pollination rates by 38% naturally.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-animate="slide-left">
+          <div class="card-image-wrap" style="height: 480px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
+            <img src="assets/images/agronomist-soil-scientist-testing.webp" alt="Soil scientist and agronomist testing nitrogen and phosphorus levels in field lab">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 6: FRESH PRODUCE & ORGANIC HARVEST SHOWCASE
+       ========================================================================= -->
+  <section class="section-padding" style="background-color: var(--color-bg);" aria-label="Fresh Harvest Showcase">
+    <div class="container">
+      <div class="section-header mx-auto text-center" data-animate="fade-up">
+        <span class="section-tag">Farm-To-Table Excellence</span>
+        <h2>Freshly Harvested Organic Produce Lots Ready For Dispatch</h2>
+        <p>Straight from our regenerative soils to wholesale markets, commercial kitchens, and natural food retailers.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Product Card 1 -->
+        <div class="produce-card tilt-card" data-animate="fade-up">
+          <div class="card-image-wrap">
+            <img src="assets/images/fresh-harvest-organic-vegetables.webp" alt="Crisp colorful organic heirloom vegetables fresh from farm harvest">
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="status-tag active">In Harvest</span>
+              <strong style="color: var(--color-primary); font-size: 1.1rem;">₹45 / kg wholesale</strong>
+            </div>
+            <h3>Organic Heirloom Greens & Root Crops</h3>
+            <p>Freshly picked crisp bell peppers, heritage carrots, broccoli, and spinach grown in mineral-rich compost.</p>
+            <a href="404.html" class="btn btn-secondary btn-sm">Order Wholesale Batch</a>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="produce-card tilt-card" data-animate="fade-up">
+          <div class="card-image-wrap">
+            <img src="assets/images/artisan-farm-cheese-dairy-products.webp" alt="Artisan natural farm cheeses and fresh A2 organic milk dairy">
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="status-tag active">Fresh Batch</span>
+              <strong style="color: var(--color-primary); font-size: 1.1rem;">₹85 / Liter</strong>
+            </div>
+            <h3>Pasture-Raised A2 Raw Milk & Cheese</h3>
+            <p>Pure whole milk from free-roaming indigenous dairy cows grazing on unsprayed clover and mountain grass.</p>
+            <a href="404.html" class="btn btn-secondary btn-sm">Reserve Dairy Lot</a>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="produce-card tilt-card" data-animate="fade-up">
+          <div class="card-image-wrap">
+            <img src="assets/images/organic-honey-harvest-jars.webp" alt="Raw unfiltered organic wildflower honey in glass jars">
+          </div>
+          <div class="card-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span class="status-tag active">Cold Extracted</span>
+              <strong style="color: var(--color-primary); font-size: 1.1rem;">₹520 / kg</strong>
+            </div>
+            <h3>Raw Forest Wildflower Honey</h3>
+            <p>Unpasteurized, pollen-rich raw honey harvested from our organic farm apiary with zero sugar syrup adulteration.</p>
+            <a href="404.html" class="btn btn-secondary btn-sm">Order Honey Batch</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 2.5rem;">
+        <a href="404.html" class="btn btn-primary">View Full Produce Catalog (30+ Varieties) ➔</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 7: REAL TESTIMONIALS (Human Faces & Verified Buyers)
+       ========================================================================= -->
+  <section class="section-padding" style="background-color: #FFFFFF;" aria-label="Customer Testimonials">
+    <div class="container">
+      <div class="section-header mx-auto text-center" data-animate="fade-up">
+        <span class="section-tag">Client Testimonials</span>
+        <h2>Trusted by Organic Retailers, Chefs & Co-operative Buyers</h2>
+        <p>Real feedback from our agricultural partners who rely on Stackly farm harvests week after week.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Review 1 -->
+        <div class="testimonial-card tilt-card" data-animate="fade-up">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-quote">
+            "Switching our farm-to-table restaurant chain to Stackly’s certified heirloom crops was the best culinary decision we made. The flavor density and crispness are unmistakably authentic."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="assets/images/happy-client-sarah-jenkins.webp" alt="Sarah Jenkins, Executive Chef and Farm-to-Table Restaurant Owner">
+            </div>
+            <div class="author-info">
+              <h4>Sarah Jenkins</h4>
+              <span>Founder, Green Sprout Kitchens</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testimonial-card tilt-card" data-animate="fade-up">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-quote">
+            "The Produce Buyer dashboard gives our supermarket co-op exact temperature telemetry and pesticide testing certs before the trucks even arrive at our Salem hub. Absolute gold standard."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="assets/images/happy-client-michael-thornton.webp" alt="Michael Thornton, Regional Grocery Distribution Director">
+            </div>
+            <div class="author-info">
+              <h4>Michael Thornton</h4>
+              <span>Procurement VP, FreshMart Co-op</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card tilt-card" data-animate="fade-up">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-quote">
+            "Stackly’s precision irrigation and bio-fertilizer guidance increased our contract farmer yields by 27% while slashing water consumption. It's the future of Indian agriculture."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="assets/images/happy-client-ananya-sharma.webp" alt="Ananya Sharma, Sustainable Agro Food Retailing Director">
+            </div>
+            <div class="author-info">
+              <h4>Ananya Sharma</h4>
+              <span>Managing Director, BioHarvest Organics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 8: AGRONOMY LEADERSHIP TEAM (Real Human Faces)
+       ========================================================================= -->
+  <section class="section-padding" style="background-color: var(--color-bg);" aria-label="Our Agronomy Leadership">
+    <div class="container">
+      <div class="section-header mx-auto text-center" data-animate="fade-up">
+        <span class="section-tag">Agronomy Leadership</span>
+        <h2>Experienced Agriculturalists Behind Every Golden Harvest</h2>
+        <p>Our team brings over four decades of combined field biology, soil chemistry, and smart farming operations.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Team 1 -->
+        <div class="team-member-card tilt-card" data-animate="fade-up">
+          <div class="team-avatar-wrap">
+            <img src="assets/images/farm-manager-david-chen.webp" alt="David Chen, Chief Farm Operations Officer at Stackly">
+          </div>
+          <div class="team-member-content">
+            <h4>David Chen</h4>
+            <span class="team-role">Chief Farm Operations Officer</span>
+            <p class="team-bio">Spearheading 12,000+ acres of organic crop rotations and automated micro-drip networks across Tamil Nadu.</p>
+          </div>
+        </div>
+
+        <!-- Team 2 -->
+        <div class="team-member-card tilt-card" data-animate="fade-up">
+          <div class="team-avatar-wrap">
+            <img src="assets/images/lead-biologist-elena-rodriguez.webp" alt="Dr. Elena Rodriguez, Principal Soil Biologist">
+          </div>
+          <div class="team-member-content">
+            <h4>Dr. Elena Rodriguez</h4>
+            <span class="team-role">Principal Soil Biologist</span>
+            <p class="team-bio">Ph.D. in Microbial Soil Ecology, developing proprietary non-synthetic compost inoculants and bio-pest controls.</p>
+          </div>
+        </div>
+
+        <!-- Team 3 -->
+        <div class="team-member-card tilt-card" data-animate="fade-up">
+          <div class="team-avatar-wrap">
+            <img src="assets/images/quality-inspector-marcus-vance.webp" alt="Marcus Vance, Head of Food Safety and Quality Assurance">
+          </div>
+          <div class="team-member-content">
+            <h4>Marcus Vance</h4>
+            <span class="team-role">Head of Food Safety & QA</span>
+            <p class="team-bio">Overseeing ISO 22000 and NPOP certified chemical residue testing across all wholesale harvest dispatch lots.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 9: HIGH CONVERSION CTA BANNER
+       ========================================================================= -->
+  <section class="section-padding" style="padding-top: 0;" aria-label="Call to Action">
+    <div class="container">
+      <div class="cta-banner" data-animate="zoom-in">
+        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.3);">Get Started Today</span>
+        <h2>Ready To Modernize Your Farm Operations Or Secure Certified Produce?</h2>
+        <p>Access our role-based dashboards to manage field sensors or contract direct harvest lots without middleman markups.</p>
+        <div class="cta-banner-buttons">
+          <a href="404.html" class="btn btn-accent btn-lg">Create Farm Account ➔</a>
+          <a href="404.html" class="btn btn-outline-light btn-lg">Contact Farm Headquarters</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 10: FULL-WIDTH STANDARDIZED FOOTER
+       ========================================================================= -->
+    <!-- =========================================================================
+       STANDARDIZED FOOTER
+       ========================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" aria-label="Stackly Agriculture Home">
+            <img src="assets/images/logoStackly.webp" alt="Stackly Agriculture Brand Logo">
+          </a>
+          <p>
+            Stackly Agriculture & Farming is an industry leader in regenerative crop production, precision farm analytics, and transparent organic supply chains.
+          </p>
+          <div class="footer-social-row">
+            <a href="404.html" class="footer-social-pill" aria-label="Facebook"><span>📘</span> Facebook</a>
+            <a href="404.html" class="footer-social-pill" aria-label="Twitter / X"><span>𝕏</span> Twitter</a>
+            <a href="404.html" class="footer-social-pill" aria-label="Instagram"><span>📷</span> Instagram</a>
+            <a href="404.html" class="footer-social-pill" aria-label="LinkedIn"><span>💼</span> LinkedIn</a>
+            <a href="404.html" class="footer-social-pill" aria-label="YouTube"><span>▶️</span> YouTube</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links (All Redirect to 404 per Specification) -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">➔ Home</a></li>
+            <li><a href="404.html">➔ About Us</a></li>
+            <li><a href="404.html">➔ Our Services</a></li>
+            <li><a href="404.html">➔ Fresh Produce</a></li>
+            <li><a href="404.html">➔ Pricing & Plans</a></li>
+            <li><a href="404.html">➔ Contact Headquarters</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services (Redirect to 404 per Specification) -->
+        <div>
+          <h4 class="footer-heading">Farming Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="404.html">➔ Soil Microbial Profiling</a></li>
+            <li><a href="404.html">➔ Drone Multispectral Surveys</a></li>
+            <li><a href="404.html">➔ Drip Irrigation Automation</a></li>
+            <li><a href="404.html">➔ Cold-Chain Logistics Hub</a></li>
+            <li><a href="404.html">➔ Organic Certification Audit</a></li>
+            <li><a href="404.html">➔ Contract Farming Alliances</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Details (Address + Phone/Email to 404 per Specification, No sign-in button) -->
+        <div>
+          <h4 class="footer-heading">Farm Headquarters</h4>
+          <div class="footer-contact-item">
+            <span class="contact-icon">📍</span>
+            <span>MMR Complex, Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="404.html">+91 9876543210</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="contact-icon">✉️</span>
+            <a href="404.html">hello@thestackly.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 Stackly Agriculture & Farming Ltd. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms & Conditions</a>
+          <a href="404.html">Agricultural Quality Standards</a>
+          <a href="404.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
