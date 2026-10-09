@@ -4,8 +4,18 @@
  * 3D Tilt Animations, Scroll Reveal, Form Validations & UI Utilities
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  initLoader();
+function onDOMReady(fn) {
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+// Immediately initialize preloader without waiting
+initLoader();
+
+onDOMReady(() => {
   initDynamicGreetings();
   initStickyNavbar();
   initActiveNav();
@@ -23,19 +33,24 @@ function initLoader() {
   if (!loader) return;
 
   const dismissLoader = () => {
+    if (loader.classList.contains('fade-out')) return;
     loader.classList.add('fade-out');
     setTimeout(() => {
-      loader.remove();
-    }, 550);
+      try { loader.remove(); } catch (e) { loader.style.display = 'none'; }
+    }, 450);
   };
 
-  // Immediate dismissal when interactive, with safety fallback
-  if (document.readyState === 'complete') {
+  // Immediate dismissal when interactive or complete
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
     dismissLoader();
   } else {
-    window.addEventListener('load', dismissLoader);
-    setTimeout(dismissLoader, 1200); // safety fallback
+    document.addEventListener('DOMContentLoaded', dismissLoader);
   }
+
+  // Backup listeners
+  window.addEventListener('load', dismissLoader);
+  // Strict safety fallback: never block beyond 500ms
+  setTimeout(dismissLoader, 500);
 }
 
 /* ==========================================================================
@@ -268,6 +283,8 @@ function handleContactFormSubmit(e) {
   // Determine relative path to 404.html
   const isInsidePages = window.location.pathname.toLowerCase().includes('/pages/');
   window.location.href = isInsidePages ? '../404.html' : '404.html';
+}
+
 function showFieldError(input, message) {
   input.classList.add('is-invalid');
   input.classList.remove('is-valid');

@@ -18,7 +18,7 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function routeDashboard() {
       const loginStatus = localStorage.getItem('loginStatus');
       const currentUser = localStorage.getItem('currentUser');
       const role = localStorage.getItem('role');
@@ -35,8 +35,14 @@
           // Default to Farm Manager
           window.location.href = 'dashboard-farm-manager.html';
         }
-      }, 400);
-    });
+      }, 300);
+    }
+
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      routeDashboard();
+    } else {
+      document.addEventListener('DOMContentLoaded', routeDashboard);
+    }
   </script>
 </body>
 </html>
