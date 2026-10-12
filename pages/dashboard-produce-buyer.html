@@ -37,6 +37,7 @@
         <a href="../index.html" aria-label="Return to Stackly Homepage">
           <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
         </a>
+        <button type="button" class="sidebar-collapse-btn" aria-label="Toggle Side Menu" title="Collapse / Expand Menu"><span class="collapse-icon">&#9664;</span></button>
       </div>
 
       <!-- User Profile Box -->
@@ -76,31 +77,18 @@
       <div class="dash-nav-section-title">Commercial & Billing</div>
       <ul class="dash-nav-list">
         <li>
-          <a href="../404.html" class="dash-nav-link">
+          <a href="dashboard-buyer-invoices.html" class="dash-nav-link">
             <span class="dash-nav-icon">💳</span>
             <span>Invoices & Escrow</span>
           </a>
         </li>
         <li>
-          <a href="../404.html" class="dash-nav-link">
+          <a href="dashboard-buyer-prices.html" class="dash-nav-link">
             <span class="dash-nav-icon">🏷️</span>
             <span>Price Index</span>
           </a>
         </li>
-        <li>
-          <a href="../404.html" class="dash-nav-link">
-            <span class="dash-nav-icon">⚙️</span>
-            <span>Buyer Settings</span>
-          </a>
-        </li>
       </ul>
-
-      <!-- Sidebar Footer with Secure Sign Out -->
-      <div class="dash-sidebar-footer">
-        <button class="btn btn-outline-light btn-sm btn-sign-out" style="width: 100%;">
-          <span>🚪</span> Sign Out
-        </button>
-      </div>
     </aside>
 
     <!-- =======================================================================
@@ -418,6 +406,98 @@
             <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); text-align: center;">
               <h3 style="color: var(--color-primary); font-size: 1.85rem; margin-bottom: 0.25rem;">12 Families</h3>
               <span style="font-size: 0.82rem; color: var(--color-text-muted);">Salem Smallholder Incomes Sustained</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 8: AVAILABLE HARVEST LOTS FOR INSTANT ALLOCATION -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Available Harvest Lots for Instant Wholesale Allocation</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Freshly logged certified batches available for spot contract purchase.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Request Custom Lot</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Harvest Lot Ref</th>
+                  <th>Crop Variety</th>
+                  <th>Batch Weight</th>
+                  <th>Harvest Date</th>
+                  <th>Wholesale Price</th>
+                  <th>Certification</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>LOT-2026-AV-01</code></td>
+                  <td>Fresh Crisp Bell Peppers (Tri-Color)</td>
+                  <td>2,400 kg</td>
+                  <td>Harvested Today, 06:00 AM</td>
+                  <td>₹52 / kg wholesale</td>
+                  <td><span class="status-tag active">NPOP Certified</span></td>
+                  <td><button class="btn btn-sm btn-primary dash-action-btn">Instant Book Lot</button></td>
+                </tr>
+                <tr>
+                  <td><code>LOT-2026-AV-02</code></td>
+                  <td>A2 Artisan Aged Farm Cheddar</td>
+                  <td>850 kg</td>
+                  <td>Cave Aged 60 Days</td>
+                  <td>₹680 / kg</td>
+                  <td><span class="status-tag verified">Artisan Batch</span></td>
+                  <td><button class="btn btn-sm btn-primary dash-action-btn">Instant Book Lot</button></td>
+                </tr>
+                <tr>
+                  <td><code>LOT-2026-AV-03</code></td>
+                  <td>Cold-Pressed Wild Mustard Oil</td>
+                  <td>1,500 Liters</td>
+                  <td>Wood-Pressed Lot 4</td>
+                  <td>₹210 / Liter</td>
+                  <td><span class="status-tag active">Zero Adulteration</span></td>
+                  <td><button class="btn btn-sm btn-primary dash-action-btn">Instant Book Lot</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 9: COLD CHAIN REEFER LOGISTICS & FLEET ROUTING MATRIX -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Cold Chain Reefer Logistics & Fleet Routing Matrix</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Real-time IoT temperature sensors transmitting continuously across highway transport corridors.</p>
+            </div>
+            <span class="status-tag active">GPS Telematics Active</span>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Reefer Truck #1 (TN-30-AG-8812)</strong>
+                <span class="status-tag active">3.8 °C (Cold)</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Route: Salem Farm Hub ➔ Bengaluru Central Depot</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">ETA: Today, 16:30 | Cargo: Heirloom Carrots</div>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Reefer Truck #2 (TN-30-AG-4419)</strong>
+                <span class="status-tag active">2.4 °C (Cold)</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Route: Salem Dairy Hub ➔ Chennai Cold Terminal</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">ETA: Tomorrow, 05:00 | Cargo: A2 Raw Dairy</div>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Dry Cargo Freight #3 (KA-01-AG-9021)</strong>
+                <span class="status-tag verified">Ambient Dry</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Route: Salem Silo ➔ Hyderabad Logistics Center</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">ETA: Tomorrow, 11:00 | Cargo: Khapli Wheat (8 MT)</div>
             </div>
           </div>
         </section>

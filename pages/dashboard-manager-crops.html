@@ -29,6 +29,7 @@
         <a href="../index.html">
           <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
         </a>
+        <button type="button" class="sidebar-collapse-btn" aria-label="Toggle Side Menu" title="Collapse / Expand Menu"><span class="collapse-icon">&#9664;</span></button>
       </div>
 
       <div class="dash-user-badge-box">
@@ -65,15 +66,9 @@
 
       <div class="dash-nav-section-title">Actionable Reports</div>
       <ul class="dash-nav-list">
-        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">💧</span><span>Irrigation Logs</span></a></li>
-        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">🧪</span><span>Soil NPK Lab Vault</span></a></li>
+        <li><a href="dashboard-manager-irrigation.html" class="dash-nav-link"><span class="dash-nav-icon">💧</span><span>Irrigation Logs</span></a></li>
+        <li><a href="dashboard-manager-soil.html" class="dash-nav-link"><span class="dash-nav-icon">🧪</span><span>Soil NPK Lab Vault</span></a></li>
       </ul>
-
-      <div class="dash-sidebar-footer">
-        <button class="btn btn-outline-light btn-sm btn-sign-out" style="width: 100%;">
-          <span>🚪</span> Sign Out
-        </button>
-      </div>
     </aside>
 
     <div class="dashboard-main">
@@ -91,7 +86,17 @@
       </header>
 
       <main class="dashboard-content-body">
-        <!-- Section 1: KPI Summary -->
+        <!-- SECTION 1: CROP PHENOLOGY HERO BANNER -->
+        <section style="background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%); color: #FFFFFF; padding: 1.75rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Phenology Cycle: Stage 4</span>
+            <h2 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.5rem;">Heirloom Grains Reaching Peak Ripening Index</h2>
+            <p style="color: #D2E3D6; font-size: 0.92rem; margin: 0;">Khapli Emmer grain hardening at 94% desiccation. High chlorophyll density maintained across all 450 sown acres.</p>
+          </div>
+          <button class="btn btn-accent btn-sm dash-action-btn">Schedule Combine Cutting</button>
+        </section>
+
+        <!-- SECTION 2: 4x PHENOLOGY & BIOMASS KPI CARDS -->
         <section class="dash-kpi-grid">
           <div class="kpi-card tilt-card">
             <div class="kpi-card-info">
@@ -127,11 +132,11 @@
           </div>
         </section>
 
-        <!-- Section 2: Detailed Crop Table -->
+        <!-- SECTION 3: DETAILED CROP PLOTS TABLE -->
         <section class="dash-table-card">
           <div class="dash-table-card-head">
             <div>
-              <h3>Active Crop Plots & Yield Projections</h3>
+              <h3>Active Farmland Crop Plots & Yield Projections</h3>
               <p style="font-size: 0.85rem; color: var(--color-text-muted);">Real-time phenology stages verified by agronomist field observations.</p>
             </div>
             <button class="btn btn-secondary btn-sm dash-action-btn">Download Crop Matrix</button>
@@ -191,11 +196,11 @@
           </div>
         </section>
 
-        <!-- Section 3: Soil Microbiology & Inoculation Schedule -->
+        <!-- SECTION 4: SOIL MICROBIOLOGY & INOCULATION SCHEDULE -->
         <section class="dash-table-card">
           <div class="dash-table-card-head">
             <div>
-              <h3>Rhizosphere Inoculation & Organic Inputs</h3>
+              <h3>Rhizosphere Inoculation & Organic Inputs Log</h3>
               <p style="font-size: 0.85rem; color: var(--color-text-muted);">Bio-compost, mycorrhizae, and neem-oil applications schedule.</p>
             </div>
             <button class="btn btn-secondary btn-sm dash-action-btn">Log Application</button>
@@ -238,18 +243,18 @@
           </div>
         </section>
 
-        <!-- Section 4: Crop Phenology Cards -->
+        <!-- SECTION 5: CROP PHENOLOGY GAUGES -->
         <section class="grid grid-2">
-          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
             <h4>🌾 Khapli Wheat Moisture Curve</h4>
             <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">Targeting 12.5% grain moisture for combine cutting.</p>
             <div style="height: 12px; background: #E0E0E0; border-radius: 6px; overflow: hidden; margin-bottom: 0.5rem;">
               <div style="width: 86%; height: 100%; background: #2E7D32;"></div>
             </div>
-            <span style="font-size: 0.82rem; color: var(--color-text-muted);">Current Grain Moisture: 13.8% (Almost Ready)</span>
+            <span style="font-size: 0.82rem; color: var(--color-text-muted);">Current Grain Moisture: 13.8% (Almost Ready for Harvest)</span>
           </div>
 
-          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
             <h4>🥦 Greenhouse Spinach Harvest Pace</h4>
             <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">Daily dawn harvest quotas fulfilled for wholesale buyers.</p>
             <div style="height: 12px; background: #E0E0E0; border-radius: 6px; overflow: hidden; margin-bottom: 0.5rem;">
@@ -259,9 +264,194 @@
           </div>
         </section>
 
-        <!-- Section 5: Action Link -->
-        <section style="text-align: right;">
-          <a href="../404.html" class="btn btn-secondary dash-action-btn">Generate Comprehensive Seasonal Harvest Report ➔</a>
+        <!-- SECTION 6: CROP PEST SCOUTING & BENEFICIAL INSECT CENSUS -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Crop Pest Scouting & Beneficial Insect Survey</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Biological pest control census (Zero synthetic pesticides applied).</p>
+            </div>
+            <span class="status-tag active">Bio-Balance Index: 98%</span>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Target Sector</th>
+                  <th>Scouted Species</th>
+                  <th>Beneficial Predatory Insects</th>
+                  <th>Pest Pressure</th>
+                  <th>Action Triggered</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sector A (Wheat)</strong></td>
+                  <td>Rhopalosiphum Aphids</td>
+                  <td>Coccinellidae (Ladybirds) & Chrysoperla</td>
+                  <td><span class="status-tag active">Low (1.2%)</span></td>
+                  <td>No Intervention Needed (Natural Control)</td>
+                </tr>
+                <tr>
+                  <td><strong>Sector B (Carrots)</strong></td>
+                  <td>Carrot Rust Fly Larvae</td>
+                  <td>Beneficial Nematodes (Heterorhabditis)</td>
+                  <td><span class="status-tag active">Trace (0.4%)</span></td>
+                  <td>Yellow Sticky Traps Deployed</td>
+                </tr>
+                <tr>
+                  <td><strong>Sector C (Greenhouses)</strong></td>
+                  <td>Trialeurodes Whiteflies</td>
+                  <td>Encarsia Formosa Wasps</td>
+                  <td><span class="status-tag active">Negligible</span></td>
+                  <td>Parasitoid Release Sustained</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 7: SEED GERMINATION NURSERY & PROPAGATOR TELEMETRY -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Seed Germination Nursery & Microgreen Propagator Telemetry</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Climate-controlled propagation benches for certified organic heirloom cultivars.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Log Seed Trays</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Bench Code</th>
+                  <th>Cultivar Variety</th>
+                  <th>Tray Count</th>
+                  <th>Germination Rate</th>
+                  <th>Bench Temp</th>
+                  <th>RH %</th>
+                  <th>Transplant Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>BENCH-NUR-01</code></td>
+                  <td>Heirloom Brandywine Tomato</td>
+                  <td>120 Trays</td>
+                  <td>96.4%</td>
+                  <td>24.5 °C</td>
+                  <td>78%</td>
+                  <td>In 12 Days</td>
+                </tr>
+                <tr>
+                  <td><code>BENCH-NUR-02</code></td>
+                  <td>Romanesco Heritage Cauliflower</td>
+                  <td>95 Trays</td>
+                  <td>94.8%</td>
+                  <td>22.8 °C</td>
+                  <td>80%</td>
+                  <td>In 8 Days</td>
+                </tr>
+                <tr>
+                  <td><code>BENCH-NUR-03</code></td>
+                  <td>Organic Sweet Genovese Basil</td>
+                  <td>140 Trays</td>
+                  <td>98.1%</td>
+                  <td>25.2 °C</td>
+                  <td>75%</td>
+                  <td>In 5 Days</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 8: POST-HARVEST SILO AERATION & GRAIN STORAGE -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Post-Harvest Grain Silo Aeration & Controlled Atmosphere Status</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Temperature and humidity telemetry inside hermetic nitrogen-purged silos.</p>
+            </div>
+            <span class="status-tag verified">Hermetically Sealed</span>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Grain Silo 1 (Emmer Wheat)</strong>
+                <span class="status-tag active">380 MT Sown</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Internal Temp: 18.4°C &bull; Grain Moisture: 11.8%</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">Aeration Fans: Automated Cycle Active</div>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Grain Silo 2 (Millet & Pulses)</strong>
+                <span class="status-tag active">220 MT Stored</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Internal Temp: 17.9°C &bull; Grain Moisture: 10.9%</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">O2 Level: &lt; 1.5% (Nitrogen Purged)</div>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Cold Vault (Organic Seed Reserve)</strong>
+                <span class="status-tag verified">Heritage Vault</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Climate: 8°C &bull; RH: 45% (Cryo-Protected)</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">34 Indigenous Varieties Documented</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 9: 14-DAY FIELD LABOR & HARVEST DEPLOYMENT PLANNER -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>14-Day Agronomy Labor Deployment & Harvest Schedule Matrix</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Field operations assignments across harvest, weeding, and post-harvest transport.</p>
+            </div>
+            <button class="btn btn-primary btn-sm dash-action-btn">Export Labor Schedule</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Operation Date</th>
+                  <th>Field Sector</th>
+                  <th>Crew Size</th>
+                  <th>Primary Operation</th>
+                  <th>Supervisor Lead</th>
+                  <th>Equipment Requisition</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>15 Feb 2026</strong></td>
+                  <td>Sector A-North</td>
+                  <td>14 Specialists</td>
+                  <td>Combine Harvester Swathing</td>
+                  <td>Murugan R.</td>
+                  <td>Claas Combine 320 + 2 Tippers</td>
+                </tr>
+                <tr>
+                  <td><strong>18 Feb 2026</strong></td>
+                  <td>Sector B-East</td>
+                  <td>20 Harvesters</td>
+                  <td>Heirloom Carrot Root Pulling</td>
+                  <td>K. Selvam</td>
+                  <td>Sub-soiler Lifter + Crates</td>
+                </tr>
+                <tr>
+                  <td><strong>22 Feb 2026</strong></td>
+                  <td>Sector C Greenhouses</td>
+                  <td>8 Hand-Pickers</td>
+                  <td>Microgreens Dawn Clipping</td>
+                  <td>P. Lakshmi</td>
+                  <td>Cold Crates & Pre-Cooler</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
       </main>
     </div>

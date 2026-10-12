@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soil NPK Lab Vault & Bio-Assay Diagnostics - Stackly Agriculture</title>
+  <meta name="description" content="Dedicated Soil NPK lab vault and rhizosphere microbiological analytics for Stackly Farm Managers. Monitor regenerative organic soil health, macro-nutrients, and carbon sequestration.">
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background-color: var(--color-bg);">
+
+  <!-- Preloader -->
+  <div id="app-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Loading Soil NPK Lab Vault...</p>
+    </div>
+  </div>
+
+  <div class="dashboard-wrapper">
+    <!-- =======================================================================
+         STANDARD FARM MANAGER SIDEBAR NAVIGATION
+         ======================================================================= -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Farm Manager Navigation">
+      <!-- Clickable Brand Logo redirecting to index.html -->
+      <div class="dash-brand-wrap">
+        <a href="../index.html" class="dash-brand-link" aria-label="Return to Stackly Homepage">
+          <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+        </a>
+        <button type="button" class="sidebar-collapse-btn" aria-label="Toggle Side Menu" title="Collapse / Expand Menu"><span class="collapse-icon">&#9664;</span></button>
+      </div>
+
+      <!-- User Profile Box -->
+      <div class="dash-user-badge-box">
+        <div class="dash-avatar-mini">
+          <img src="../assets/images/farm-manager-david-chen.webp" alt="David Chen" class="dash-user-avatar">
+        </div>
+        <div class="dash-user-info">
+          <h5 class="dash-user-name">David Chen</h5>
+          <span class="dash-role-pill dash-user-role">Farm Manager</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="dash-sidebar-nav">
+        <div class="dash-nav-section-title">Farm Operations</div>
+        <ul class="dash-nav-list">
+          <li>
+            <a href="dashboard-farm-manager.html" class="dash-nav-link">
+              <span class="dash-nav-icon">📊</span>
+              <span>Farm Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-manager-crops.html" class="dash-nav-link">
+              <span class="dash-nav-icon">🌾</span>
+              <span>Crop & Harvest Monitor</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-manager-equipment.html" class="dash-nav-link">
+              <span class="dash-nav-icon">🚜</span>
+              <span>IoT Probes & Fleet</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="dash-nav-section-title">Actionable Reports</div>
+        <ul class="dash-nav-list">
+          <li>
+            <a href="dashboard-manager-irrigation.html" class="dash-nav-link">
+              <span class="dash-nav-icon">💧</span>
+              <span>Irrigation Logs</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-manager-soil.html" class="dash-nav-link active">
+              <span class="dash-nav-icon">🧪</span>
+              <span>Soil NPK Lab Vault</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- =======================================================================
+         MAIN DASHBOARD BODY
+         ======================================================================= -->
+    <div class="dashboard-main">
+      <!-- Top Navigation & Profile Bar -->
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="dash-mobile-sidebar-toggle nav-hamburger" style="display: none; background: var(--color-surface-alt); border-color: var(--color-border);" aria-label="Toggle Dashboard Menu">
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+          </button>
+          <div class="dash-greeting-wrap">
+            <h3 class="dash-greeting-text">Soil NPK Laboratory Vault & Bio-Assay Diagnostics</h3>
+            <span class="dash-greeting-time">Lab Accreditation: ISO/IEC 17025 | Organic Matter: 1.85% Mean</span>
+          </div>
+        </div>
+
+        <div class="dash-topbar-actions">
+          <div class="dash-last-login" style="font-size: 0.82rem; color: var(--color-text-muted); display: none;"></div>
+          <button class="btn btn-secondary btn-sm dash-action-btn">
+            <span>➕</span> Log Lab Core Sample
+          </button>
+          <button class="btn btn-primary btn-sm btn-sign-out">
+            Sign Out
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Content Container (9 Comprehensive Sections) -->
+      <main class="dashboard-content-body">
+        <!-- SECTION 1: SOIL HEALTH INDEX HERO BANNER -->
+        <section style="background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%); color: #FFFFFF; padding: 1.75rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Regenerative Soil Quality Rating: 98 / 100</span>
+            <h2 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.5rem;">Rhizosphere Microbiology & Mineral Equilibrium Verified</h2>
+            <p style="color: #D2E3D6; font-size: 0.92rem; margin: 0;">Multi-residue gas chromatography screening confirms 0.00 PPM synthetic chemicals. High organic carbon mineralization supporting beneficial mycorrhizal hyphae.</p>
+          </div>
+          <button class="btn btn-accent btn-sm dash-action-btn">Download Full Soil Certificate</button>
+        </section>
+
+        <!-- SECTION 2: 4x SOIL VITALITY KPI CARDS -->
+        <section class="dash-kpi-grid">
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Soil Organic Carbon (SOC)</span>
+              <h3>1.85%</h3>
+              <span class="kpi-badge positive">↑ 0.32% in 12 Months</span>
+            </div>
+            <div class="kpi-card-icon">🌱</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Available Bio-Nitrogen</span>
+              <h3>310 kg / ha</h3>
+              <span class="kpi-badge positive">Leguminous Nitrogen Fixed</span>
+            </div>
+            <div class="kpi-card-icon">🧪</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Bio-Active Microorganism CFU</span>
+              <h3>4.8 × 10⁸ / g</h3>
+              <span class="kpi-badge positive">Dense Living Rhizosphere</span>
+            </div>
+            <div class="kpi-card-icon">🔬</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Mean Soil pH Index</span>
+              <h3>6.82 pH</h3>
+              <span class="kpi-badge positive">Perfect Balanced Neutral</span>
+            </div>
+            <div class="kpi-card-icon">⚖️</div>
+          </div>
+        </section>
+
+        <!-- SECTION 3: SECTOR-BY-SECTOR COMPREHENSIVE NPK LAB MATRIX -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Sector-by-Sector Comprehensive NPK Lab Matrix</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Inductively Coupled Plasma Mass Spectrometry (ICP-MS) certified core sample assays.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Export Soil Matrix</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Field Sector</th>
+                  <th>Core Depth</th>
+                  <th>Available N (kg/ha)</th>
+                  <th>Available P (kg/ha)</th>
+                  <th>Available K (kg/ha)</th>
+                  <th>Zinc (Zn PPM)</th>
+                  <th>Boron (B PPM)</th>
+                  <th>CEC (meq/100g)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sector A (Khapli Wheat)</strong></td>
+                  <td>0 - 30 cm</td>
+                  <td>284 (Optimal)</td>
+                  <td>32.4 (Good)</td>
+                  <td>310 (High)</td>
+                  <td>1.85 PPM</td>
+                  <td>0.92 PPM</td>
+                  <td>24.2 (High Loam)</td>
+                </tr>
+                <tr>
+                  <td><strong>Sector B (Heritage Carrots)</strong></td>
+                  <td>0 - 45 cm</td>
+                  <td>310 (Optimal)</td>
+                  <td>38.2 (Rich)</td>
+                  <td>345 (High)</td>
+                  <td>2.10 PPM</td>
+                  <td>1.15 PPM</td>
+                  <td>26.8 (Clay-Loam)</td>
+                </tr>
+                <tr>
+                  <td><strong>Sector C (Greenhouses)</strong></td>
+                  <td>0 - 20 cm</td>
+                  <td>340 (Super)</td>
+                  <td>45.0 (Optimal)</td>
+                  <td>380 (Rich)</td>
+                  <td>2.45 PPM</td>
+                  <td>1.28 PPM</td>
+                  <td>31.0 (Compost Base)</td>
+                </tr>
+                <tr>
+                  <td><strong>Sector D (Wildflowers & Apiary)</strong></td>
+                  <td>0 - 30 cm</td>
+                  <td>295 (Good)</td>
+                  <td>29.8 (Good)</td>
+                  <td>320 (High)</td>
+                  <td>1.72 PPM</td>
+                  <td>0.88 PPM</td>
+                  <td>22.5 (Living Soil)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 4: HEAVY METAL & MULTI-RESIDUE CHEMICAL SCREEN -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Heavy Metal & Synthetic Chemical Residue Screening Vault</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Conducted by NABL & ISO 17025 accredited laboratory (Zero detection limit: &lt; 0.01 PPM).</p>
+            </div>
+            <span class="status-tag verified">100% Zero Chemical Residues</span>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Tested Compound / Element</th>
+                  <th>Allowable Threshold</th>
+                  <th>Lab Tested Result</th>
+                  <th>Testing Method</th>
+                  <th>Regulatory Standard</th>
+                  <th>Verification Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Lead (Pb)</strong></td>
+                  <td>&lt; 50.0 PPM</td>
+                  <td><strong>0.82 PPM</strong></td>
+                  <td>ICP-MS Atomic Absorption</td>
+                  <td>USDA Organic / NPOP</td>
+                  <td><span class="status-tag active">Passed (Pristine)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Cadmium (Cd)</strong></td>
+                  <td>&lt; 3.0 PPM</td>
+                  <td><strong>0.04 PPM</strong></td>
+                  <td>ICP-MS Atomic Absorption</td>
+                  <td>EU Eco-Regulation</td>
+                  <td><span class="status-tag active">Passed (Pristine)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Arsenic (As)</strong></td>
+                  <td>&lt; 20.0 PPM</td>
+                  <td><strong>0.18 PPM</strong></td>
+                  <td>Hydride Generation AAS</td>
+                  <td>FSSAI Organic Criteria</td>
+                  <td><span class="status-tag active">Passed (Pristine)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Organophosphates (320 Active Ingredients)</strong></td>
+                  <td>&lt; 0.01 PPM</td>
+                  <td><strong>0.00 PPM (Not Detected)</strong></td>
+                  <td>GC-MS/MS & LC-MS/MS</td>
+                  <td>Codex Alimentarius</td>
+                  <td><span class="status-tag verified">Zero Detection</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 5: RHIZOSPHERE MYCORRHIZAL COLONIZATION & BIOLOGY CARDS -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Rhizosphere Mycorrhizal Colonization & Biological Activity</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Root-zone biological health indices ensuring nutrient bioavailability.</p>
+            </div>
+            <span class="status-tag active">Bio-Index: Class 1 Pristine</span>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Arbuscular Mycorrhizal Fungi (AMF)</strong>
+                <span class="status-tag active">84% Root Hyphae</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">Glomus intraradices</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Extensive fungal network pulling locked phosphorus directly to root hair tips.</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Earthworm Population Density</strong>
+                <span class="status-tag active">38 Worms / m²</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">Eisenia fetida</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Continuous burrowing creating macro-pores for deep rainwater infiltration.</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Fungal-to-Bacterial Ratio</strong>
+                <span class="status-tag verified">1.25 : 1 Ratio</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">Balanced Soil Food Web</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Optimal biological balance for perennial regenerative cropland.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 6: COVER CROP BIOMASS & GREEN MANURING LOG -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Cover Crop Biomass & Green Manuring Log</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Biological soil regeneration through seasonal leguminous cover crop incorporation.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Log Cover Crop</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Field Zone</th>
+                  <th>Cover Crop Blend</th>
+                  <th>Incorporation Date</th>
+                  <th>Biomass Yield</th>
+                  <th>Estimated N Fixed</th>
+                  <th>Soil Structure Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sector A (North Border)</strong></td>
+                  <td>Sunn Hemp (Crotalaria juncea) + Cowpea</td>
+                  <td>28 Oct 2025</td>
+                  <td>14.8 MT / ha Fresh Biomass</td>
+                  <td>+98 kg N / ha</td>
+                  <td><span class="status-tag active">Sub-soil De-compaction</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Sector B (Inter-Row)</strong></td>
+                  <td>Crimson Clover + Winter Rye</td>
+                  <td>15 Nov 2025</td>
+                  <td>11.2 MT / ha Fresh Biomass</td>
+                  <td>+74 kg N / ha</td>
+                  <td><span class="status-tag active">Erosion Prevention 100%</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Sector D (Apiary Pasture)</strong></td>
+                  <td>Phacelia + White Sweet Clover</td>
+                  <td>Perennial Cover</td>
+                  <td>Continuous Nectar & Mulch</td>
+                  <td>+62 kg N / ha</td>
+                  <td><span class="status-tag verified">Pollinator Habitat</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 7: COMPOSTING WINDROW TEMPERATURES & MATURITY AUDIT -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Aerobic Thermophilic Composting Windrow Telemetry</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Temperature logging ensuring thermal pathogen destruction (&gt; 55°C for 15+ days).</p>
+            </div>
+            <span class="status-tag active">Thermal Sanitization Active</span>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Windrow ID</th>
+                  <th>Organic Feedstock Composition</th>
+                  <th>Core Temp</th>
+                  <th>Internal Moisture</th>
+                  <th>Turn Count</th>
+                  <th>Maturity Stage</th>
+                  <th>Solvita Index</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>WINDROW-01</code></td>
+                  <td>Dairy Cow Manure + Wheat Straw + Biochar</td>
+                  <td>58.4 °C</td>
+                  <td>54% VWC</td>
+                  <td>Turn 4 / 6</td>
+                  <td><span class="status-tag active">Active Thermophilic</span></td>
+                  <td>Index 6 (Active)</td>
+                </tr>
+                <tr>
+                  <td><code>WINDROW-02</code></td>
+                  <td>Crop Residues + Neem Cake + Vermiculture</td>
+                  <td>62.1 °C</td>
+                  <td>52% VWC</td>
+                  <td>Turn 5 / 6</td>
+                  <td><span class="status-tag active">Active Thermophilic</span></td>
+                  <td>Index 6 (Active)</td>
+                </tr>
+                <tr>
+                  <td><code>WINDROW-03</code></td>
+                  <td>Finished Living Humus Compost</td>
+                  <td>32.0 °C</td>
+                  <td>48% VWC</td>
+                  <td>Cured 45 Days</td>
+                  <td><span class="status-tag verified">Mature Black Gold</span></td>
+                  <td>Index 8 (Finished)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 8: CATION EXCHANGE CAPACITY & WATER RETENTION GAUGES -->
+        <section class="grid grid-2">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <h4>🧪 Cation Exchange Capacity (CEC) Saturation</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">Measures soil colloidal ability to hold calcium, magnesium, and potassium ions.</p>
+            <div style="height: 12px; background: #E0E0E0; border-radius: 6px; overflow: hidden; margin-bottom: 0.5rem;">
+              <div style="width: 88%; height: 100%; background: #2E7D32;"></div>
+            </div>
+            <span style="font-size: 0.82rem; color: var(--color-text-muted);">Current Base Saturation: 88.5% (Calcium: 68%, Magnesium: 16%, Potassium: 4.5%)</span>
+          </div>
+
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <h4>💧 Available Root-Zone Water Holding Capacity</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">High organic matter sponge effect holding 160,000 liters extra water per hectare.</p>
+            <div style="height: 12px; background: #E0E0E0; border-radius: 6px; overflow: hidden; margin-bottom: 0.5rem;">
+              <div style="width: 92%; height: 100%; background: #40916C;"></div>
+            </div>
+            <span style="font-size: 0.82rem; color: var(--color-text-muted);">Sponge Capacity Rating: 92% (Drought-Resilient Living Soil)</span>
+          </div>
+        </section>
+
+        <!-- SECTION 9: REGENERATIVE SOIL CARBON SEQUESTRATION AUDITS -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Regenerative Soil Carbon Sequestration & Carbon Credit Ledger</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Audited atmospheric carbon sequestration verified under Verra & Gold Standard methodologies.</p>
+            </div>
+            <button class="btn btn-primary btn-sm dash-action-btn">Download Carbon Audit Ledger</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Audit Period</th>
+                  <th>Monitored Acreage</th>
+                  <th>Soil Baseline Carbon</th>
+                  <th>Current Carbon Content</th>
+                  <th>Net CO2e Sequestered</th>
+                  <th>Verification Body</th>
+                  <th>Credit Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>2025 Annual Audit</strong></td>
+                  <td>1,420 Acres (100% Farm)</td>
+                  <td>1.53% SOC</td>
+                  <td>1.85% SOC (+0.32%)</td>
+                  <td><strong>3,840 Metric Tons CO2e</strong></td>
+                  <td>SoilCarbon Labs ISO 14064</td>
+                  <td><span class="status-tag verified">Verified Credits Issued</span></td>
+                </tr>
+                <tr>
+                  <td><strong>2024 Annual Audit</strong></td>
+                  <td>1,420 Acres (100% Farm)</td>
+                  <td>1.31% SOC</td>
+                  <td>1.53% SOC (+0.22%)</td>
+                  <td><strong>2,680 Metric Tons CO2e</strong></td>
+                  <td>SoilCarbon Labs ISO 14064</td>
+                  <td><span class="status-tag verified">Verified Credits Issued</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Cumulative Farm Total</strong></td>
+                  <td>Salem Agro Cluster</td>
+                  <td>Historical Baseline</td>
+                  <td>Continuous Increase</td>
+                  <td><strong>6,520 Metric Tons CO2e</strong></td>
+                  <td>Verra Registered Project #892</td>
+                  <td><span class="status-tag active">Net Carbon Negative Farm</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

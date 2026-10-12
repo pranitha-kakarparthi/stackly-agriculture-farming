@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wholesale Price Index & Market Telemetry - Stackly Agriculture</title>
+  <meta name="description" content="Dedicated agricultural wholesale commodity price index and market intelligence for Stackly Produce Buyers. Track spot prices, futures spreads, and seasonal forecasts.">
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background-color: var(--color-bg);">
+
+  <!-- Preloader -->
+  <div id="app-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Loading Wholesale Price Index...</p>
+    </div>
+  </div>
+
+  <div class="dashboard-wrapper">
+    <!-- =======================================================================
+         STANDARD PRODUCE BUYER SIDEBAR NAVIGATION
+         ======================================================================= -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Produce Buyer Navigation">
+      <!-- Clickable Brand Logo redirecting to index.html -->
+      <div class="dash-brand-wrap">
+        <a href="../index.html" class="dash-brand-link" aria-label="Return to Stackly Homepage">
+          <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+        </a>
+        <button type="button" class="sidebar-collapse-btn" aria-label="Toggle Side Menu" title="Collapse / Expand Menu"><span class="collapse-icon">&#9664;</span></button>
+      </div>
+
+      <!-- User Profile Box -->
+      <div class="dash-user-badge-box">
+        <div class="dash-avatar-mini">
+          <img src="../assets/images/produce-buyer-dashboard-avatar.webp" alt="Sarah Jenkins" class="dash-user-avatar">
+        </div>
+        <div class="dash-user-info">
+          <h5 class="dash-user-name">Sarah Jenkins</h5>
+          <span class="dash-role-pill dash-user-role" style="background: rgba(212, 163, 115, 0.25); color: var(--color-accent-dark);">Produce Buyer</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="dash-sidebar-nav">
+        <div class="dash-nav-section-title">Procurement Hub</div>
+        <ul class="dash-nav-list">
+          <li>
+            <a href="dashboard-produce-buyer.html" class="dash-nav-link">
+              <span class="dash-nav-icon">📦</span>
+              <span>Procurement Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-buyer-orders.html" class="dash-nav-link">
+              <span class="dash-nav-icon">🚛</span>
+              <span>Wholesale Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-buyer-quality.html" class="dash-nav-link">
+              <span class="dash-nav-icon">📜</span>
+              <span>Quality Lab Certs</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="dash-nav-section-title">Commercial & Billing</div>
+        <ul class="dash-nav-list">
+          <li>
+            <a href="dashboard-buyer-invoices.html" class="dash-nav-link">
+              <span class="dash-nav-icon">💳</span>
+              <span>Invoices & Escrow</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-buyer-prices.html" class="dash-nav-link active">
+              <span class="dash-nav-icon">🏷️</span>
+              <span>Price Index</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- =======================================================================
+         MAIN DASHBOARD BODY
+         ======================================================================= -->
+    <div class="dashboard-main">
+      <!-- Top Navigation Bar -->
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="dash-mobile-sidebar-toggle nav-hamburger" style="display: none; background: var(--color-surface-alt); border-color: var(--color-border);" aria-label="Toggle Dashboard Menu">
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+          </button>
+          <div class="dash-greeting-wrap">
+            <h3 class="dash-greeting-text">Wholesale Farm Gate Price Index & Commodity Market</h3>
+            <span class="dash-greeting-time">Index Update: Daily 06:00 AM | Benchmark: Salem APMC + South India Ag</span>
+          </div>
+        </div>
+
+        <div class="dash-topbar-actions">
+          <div class="dash-last-login" style="font-size: 0.82rem; color: var(--color-text-muted); display: none;"></div>
+          <button class="btn btn-secondary btn-sm dash-action-btn">
+            <span>📈</span> Price Alert Settings
+          </button>
+          <button class="btn btn-primary btn-sm btn-sign-out">
+            Sign Out
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Content Body (9 Comprehensive Sections) -->
+      <main class="dashboard-content-body">
+        <!-- SECTION 1: PRICE INDEX HERO BANNER -->
+        <section style="background: linear-gradient(135deg, #132E24 0%, #1B4332 60%, #40916C 100%); color: #FFFFFF; padding: 1.75rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Direct Farm Gate Pricing: Zero Middlemen</span>
+            <h2 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.5rem;">Transparent Regenerative Organic Pricing Engine</h2>
+            <p style="color: #D2E3D6; font-size: 0.92rem; margin: 0;">Salem Farm Cluster direct contracts deliver 18-24% average cost savings compared to traditional spot mandi brokers, with guaranteed non-GMO chemical-free certification.</p>
+          </div>
+          <button class="btn btn-accent btn-sm dash-action-btn">Lock Forward Seasonal Rate</button>
+        </section>
+
+        <!-- SECTION 2: 4x COMMODITY INDEX KPI CARDS -->
+        <section class="dash-kpi-grid">
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Khapli Emmer Wheat</span>
+              <h3>₹65 / kg</h3>
+              <span class="kpi-badge positive">Stable &bull; Fixed Contract Rate</span>
+            </div>
+            <div class="kpi-card-icon">🌾</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Organic Heirloom Greens</span>
+              <h3>₹45 / kg</h3>
+              <span class="kpi-badge positive">↓ 4% vs Regional APMC</span>
+            </div>
+            <div class="kpi-card-icon">🥦</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Pasture A2 Raw Milk</span>
+              <h3>₹85 / Liter</h3>
+              <span class="kpi-badge positive">Cold Chilled Gate Rate</span>
+            </div>
+            <div class="kpi-card-icon">🥛</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Raw Forest Honey</span>
+              <h3>₹520 / kg</h3>
+              <span class="kpi-badge neutral">100% Raw Bio-Enzyme</span>
+            </div>
+            <div class="kpi-card-icon">🍯</div>
+          </div>
+        </section>
+
+        <!-- SECTION 3: REAL-TIME ORGANIC FARM GATE PRICE MATRIX -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Real-Time Organic Farm Gate Price Matrix</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Updated daily based on live harvest yields and wholesale auction benchmarks.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Download Price Matrix</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Commodity Crop</th>
+                  <th>Quality Grade</th>
+                  <th>Stackly Farm Gate Rate</th>
+                  <th>Regional Mandi Benchmark</th>
+                  <th>7-Day Price Movement</th>
+                  <th>30-Day Forward Spread</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Khapli Emmer Wheat</strong></td>
+                  <td>Grade A+ Heirloom Grain</td>
+                  <td><strong>₹65 / kg</strong></td>
+                  <td>₹78 / kg (Conventional Mandi)</td>
+                  <td><span class="status-tag active">↔ Stable (0.0%)</span></td>
+                  <td>Locked Thru March</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Book Lot</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Heritage Rainbow Carrots</strong></td>
+                  <td>Grade A Root Crop</td>
+                  <td><strong>₹42 / kg</strong></td>
+                  <td>₹48 / kg</td>
+                  <td><span class="status-tag active">↓ 2.5% (High Harvest)</span></td>
+                  <td>Mild Softening</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Book Lot</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Protected Baby Spinach</strong></td>
+                  <td>Grade A Crisp Leaf</td>
+                  <td><strong>₹45 / kg</strong></td>
+                  <td>₹55 / kg</td>
+                  <td><span class="status-tag active">↔ Stable (0.0%)</span></td>
+                  <td>Daily Allocation</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Book Lot</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Cold-Pressed Mustard Oil</strong></td>
+                  <td>Wood-Pressed Virgin</td>
+                  <td><strong>₹210 / Liter</strong></td>
+                  <td>₹245 / Liter</td>
+                  <td><span class="status-tag verified">↑ 1.2% (Steady)</span></td>
+                  <td>High Export Demand</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Book Lot</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 4: FORWARD CONTRACT VS SPOT MARKET DELTA -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Forward Contract vs Spot Market Price Delta</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Quantified cost savings achieved through direct harvest pre-booking.</p>
+            </div>
+            <span class="status-tag verified">Cumulative Savings: ₹1,84,000</span>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Contract Ref</th>
+                  <th>Commodity Variety</th>
+                  <th>Your Locked Contract Rate</th>
+                  <th>Current Open Spot Rate</th>
+                  <th>Cost Delta (Per Unit)</th>
+                  <th>Total Contract Savings</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>CNT-2026-WHT-01</code></td>
+                  <td>Khapli Emmer (40 MT)</td>
+                  <td>₹65 / kg</td>
+                  <td>₹76 / kg (Spot)</td>
+                  <td>-₹11 / kg (-14.5%)</td>
+                  <td><strong>+₹4,40,000 Saved</strong></td>
+                </tr>
+                <tr>
+                  <td><code>CNT-2026-GRN-02</code></td>
+                  <td>Daily Greens (15 MT)</td>
+                  <td>₹45 / kg</td>
+                  <td>₹52 / kg (Spot)</td>
+                  <td>-₹7 / kg (-13.4%)</td>
+                  <td><strong>+₹1,05,000 Saved</strong></td>
+                </tr>
+                <tr>
+                  <td><code>CNT-2026-MLK-03</code></td>
+                  <td>A2 Raw Milk (15,000 L)</td>
+                  <td>₹85 / Liter</td>
+                  <td>₹94 / Liter (Spot)</td>
+                  <td>-₹9 / Liter (-9.6%)</td>
+                  <td><strong>+₹1,35,000 Saved</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 5: SEASONAL PRICE FORECAST & FORWARD PROJECTIONS CARDS -->
+        <section class="grid grid-3" style="gap: 1.25rem;">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <h4>🌾 Grains & Millets (Q1-Q2)</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Major harvest season begins mid-February.</p>
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.35rem;">Expected Trend: Bearish Spot Softening (-5%)</div>
+            <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">High yield across 450 acres ensures abundant supply through summer storage.</p>
+          </div>
+
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <h4>🥦 Greenhouse Organics (All-Season)</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Climate-shielded hydroponic production.</p>
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.35rem;">Expected Trend: Ultra-Stable Flat (±1%)</div>
+            <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Controlled environment ensures constant daily harvest immune to weather spikes.</p>
+          </div>
+
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <h4>🍯 Apiary & Raw Honey (Spring Peak)</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Neem & wildflower blooming in Foothills.</p>
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.35rem;">Expected Trend: Bullish Premium (+4%)</div>
+            <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Export wholesale demand tightening raw unheated honey inventory.</p>
+          </div>
+        </section>
+
+        <!-- SECTION 6: ORGANIC PREMIUM VS CONVENTIONAL BENCHMARK -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Organic Value Proposition vs Conventional Produce Benchmark</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Nutritional density and chemical-free premium index justification.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Export Benchmark PDF</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Produce Line</th>
+                  <th>Conventional Market Average</th>
+                  <th>Certified Organic Farm Rate</th>
+                  <th>Net Premium %</th>
+                  <th>Added Value Justification</th>
+                  <th>Consumer Retail Margin</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Heirloom Khapli Emmer</td>
+                  <td>₹45 / kg (Hybrid Wheat)</td>
+                  <td>₹65 / kg</td>
+                  <td>+44% Premium</td>
+                  <td>Low Gluten Index, Ancient Non-Hybrid, Zero Glyphosate</td>
+                  <td><span class="status-tag active">+85% Retail Markup</span></td>
+                </tr>
+                <tr>
+                  <td>Organic Heritage Carrots</td>
+                  <td>₹32 / kg (Chem-Grown)</td>
+                  <td>₹42 / kg</td>
+                  <td>+31% Premium</td>
+                  <td>Zero Chlorpyrifos, Richer Beta-Carotene, Clean Soil</td>
+                  <td><span class="status-tag active">+65% Retail Markup</span></td>
+                </tr>
+                <tr>
+                  <td>A2 Pasture-Raised Raw Milk</td>
+                  <td>₹55 / L (A1 Mixed Milk)</td>
+                  <td>₹85 / L</td>
+                  <td>+54% Premium</td>
+                  <td>100% Indigenous Cow DNA, Untreated Cold Stored</td>
+                  <td><span class="status-tag verified">+110% Retail Markup</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 7: BULK VOLUME TIER DISCOUNT STRUCTURE -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Wholesale Bulk Volume Discount Tiers</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Standardized volume pricing brackets automatically applied to purchase orders.</p>
+            </div>
+            <span class="status-tag verified">Applied Automatically</span>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Order Tonnage Bracket</th>
+                  <th>Standard Discount %</th>
+                  <th>Packaging & Palletizing Fee</th>
+                  <th>Pre-Cooling Charge</th>
+                  <th>Payment Settlement Window</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>500 kg to 2,000 kg (Tier A)</strong></td>
+                  <td>Base Contract Rate</td>
+                  <td>Included in Price</td>
+                  <td>Zero Fee</td>
+                  <td>Net 15 Days</td>
+                </tr>
+                <tr>
+                  <td><strong>2,001 kg to 10,000 kg (Tier B)</strong></td>
+                  <td><strong>3.5% Off Invoice</strong></td>
+                  <td>Included in Price + Free Crates</td>
+                  <td>Zero Fee</td>
+                  <td>Net 30 Days</td>
+                </tr>
+                <tr>
+                  <td><strong>10,001 kg to 50,000 kg (Tier C)</strong></td>
+                  <td><strong>7.0% Off Invoice</strong></td>
+                  <td>Consolidated Master Pallets</td>
+                  <td>Zero Fee + Priority Hangar Bay</td>
+                  <td>Net 45 Days</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 8: LOGISTICS FREIGHT RATES MATRIX -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Dedicated Reefer Logistics Rates by Transport Corridor</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Transparent per-metric-ton transport charges from Salem agro cluster to destination hubs.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Calculate Route Cost</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Destination Terminal</th>
+                  <th>Corridor Distance</th>
+                  <th>Refrigerated Reefer Rate / MT</th>
+                  <th>Ambient Freight Rate / MT</th>
+                  <th>Transit Insurance / MT</th>
+                  <th>Typical Departure Times</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Bengaluru Wholesale Terminal</td>
+                  <td>218 km</td>
+                  <td>₹1,450 / MT</td>
+                  <td>₹980 / MT</td>
+                  <td>Included</td>
+                  <td>Daily 05:00 AM & 19:00 PM</td>
+                </tr>
+                <tr>
+                  <td>Chennai Koyambedu Depot</td>
+                  <td>345 km</td>
+                  <td>₹2,100 / MT</td>
+                  <td>₹1,400 / MT</td>
+                  <td>Included</td>
+                  <td>Daily 18:30 PM</td>
+                </tr>
+                <tr>
+                  <td>Hyderabad Agro Hub</td>
+                  <td>720 km</td>
+                  <td>₹3,600 / MT</td>
+                  <td>₹2,450 / MT</td>
+                  <td>Included</td>
+                  <td>Tue, Thu, Sat 14:00 PM</td>
+                </tr>
+                <tr>
+                  <td>Coimbatore Cold Storage</td>
+                  <td>165 km</td>
+                  <td>₹1,150 / MT</td>
+                  <td>₹750 / MT</td>
+                  <td>Included</td>
+                  <td>Daily 06:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 9: HISTORICAL PRICE TREND VAULT & CSV EXPORT CENTER -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Historical Price Telemetry & Market Intelligence Vault</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">12-month trailing commodity price indices with econometric variance models.</p>
+            </div>
+            <button class="btn btn-primary btn-sm dash-action-btn">Export Historical Time-Series CSV</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Quarterly Dataset</th>
+                  <th>Monitored Commodities</th>
+                  <th>Mean Organic Inflation</th>
+                  <th>Mandi Volatility Index</th>
+                  <th>Dataset Size</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Q4 2025 (Oct – Dec)</strong></td>
+                  <td>Wheat, Pulses, Dairy, Greens</td>
+                  <td>+1.8% (Below General Inflation)</td>
+                  <td>Low (±3.2%)</td>
+                  <td>1,840 Daily Records</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Download CSV (2.4 MB)</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Q3 2025 (Jul – Sep)</strong></td>
+                  <td>Monsoon Crops & Millets</td>
+                  <td>+2.1%</td>
+                  <td>Moderate (±4.5%)</td>
+                  <td>1,790 Daily Records</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Download CSV (2.2 MB)</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Q2 2025 (Apr – Jun)</strong></td>
+                  <td>Summer Harvests & Honey</td>
+                  <td>+1.4%</td>
+                  <td>Low (±2.8%)</td>
+                  <td>1,820 Daily Records</td>
+                  <td><button class="btn btn-sm btn-secondary dash-action-btn">Download CSV (2.3 MB)</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

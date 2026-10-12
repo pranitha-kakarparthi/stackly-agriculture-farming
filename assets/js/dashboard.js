@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSignOut();
   initDashboardActions();
   initDashboardMobileMenu();
+  initDashboardSidebarCollapse();
 });
 
 /* ==========================================================================
@@ -103,18 +104,53 @@ function initDashboardActions() {
 }
 
 /* ==========================================================================
-   5. MOBILE DASHBOARD SIDEBAR TOGGLE
+   6. SIDEBAR COLLAPSE TOGGLE
+   ========================================================================== */
+function initDashboardSidebarCollapse() {
+  const sidebar = document.querySelector('.dashboard-sidebar');
+  if (!sidebar) return;
+
+  // Restore saved state from localStorage
+  const savedState = localStorage.getItem('sidebar_collapsed');
+  if (savedState === 'true') {
+    sidebar.classList.add('collapsed');
+  }
+
+  const collapseBtns = document.querySelectorAll('.sidebar-collapse-btn');
+  collapseBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      sidebar.classList.toggle('collapsed');
+      const isCollapsed = sidebar.classList.contains('collapsed');
+      localStorage.setItem('sidebar_collapsed', isCollapsed ? 'true' : 'false');
+    });
+  });
+}
+
+/* ==========================================================================
+   7. MOBILE DASHBOARD SIDEBAR TOGGLE
    ========================================================================== */
 function initDashboardMobileMenu() {
   const toggleBtn = document.querySelector('.dash-mobile-sidebar-toggle');
   const sidebar = document.querySelector('.dashboard-sidebar');
-  if (!toggleBtn || !sidebar) return;
+  if (!sidebar) return;
 
-  toggleBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('mobile-open');
-    if (sidebar.classList.contains('mobile-open')) {
-      document.body.classList.add('scroll-locked');
-    } else {
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sidebar.classList.toggle('mobile-open');
+      if (sidebar.classList.contains('mobile-open')) {
+        document.body.classList.add('scroll-locked');
+      } else {
+        document.body.classList.remove('scroll-locked');
+      }
+    });
+  }
+
+  // Close when clicking outside on mobile
+  document.addEventListener('click', (e) => {
+    if (sidebar.classList.contains('mobile-open') && !sidebar.contains(e.target) && (!toggleBtn || !toggleBtn.contains(e.target))) {
+      sidebar.classList.remove('mobile-open');
       document.body.classList.remove('scroll-locked');
     }
   });

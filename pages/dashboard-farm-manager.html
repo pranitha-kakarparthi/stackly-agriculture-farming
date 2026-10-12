@@ -37,6 +37,7 @@
         <a href="../index.html" aria-label="Return to Stackly Homepage">
           <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
         </a>
+        <button type="button" class="sidebar-collapse-btn" aria-label="Toggle Side Menu" title="Collapse / Expand Menu"><span class="collapse-icon">&#9664;</span></button>
       </div>
 
       <!-- User Profile Box -->
@@ -76,31 +77,18 @@
       <div class="dash-nav-section-title">Actionable Reports</div>
       <ul class="dash-nav-list">
         <li>
-          <a href="../404.html" class="dash-nav-link">
+          <a href="dashboard-manager-irrigation.html" class="dash-nav-link">
             <span class="dash-nav-icon">💧</span>
             <span>Irrigation Logs</span>
           </a>
         </li>
         <li>
-          <a href="../404.html" class="dash-nav-link">
+          <a href="dashboard-manager-soil.html" class="dash-nav-link">
             <span class="dash-nav-icon">🧪</span>
             <span>Soil NPK Lab Vault</span>
           </a>
         </li>
-        <li>
-          <a href="../404.html" class="dash-nav-link">
-            <span class="dash-nav-icon">⚙️</span>
-            <span>Farm Settings</span>
-          </a>
-        </li>
       </ul>
-
-      <!-- Sidebar Footer with Secure Sign Out -->
-      <div class="dash-sidebar-footer">
-        <button class="btn btn-outline-light btn-sm btn-sign-out" style="width: 100%;">
-          <span>🚪</span> Sign Out
-        </button>
-      </div>
     </aside>
 
     <!-- =======================================================================
@@ -449,6 +437,142 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        <!-- SECTION 8: SMART IRRIGATION TELEMETRY & WATER ACCOUNTING -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Smart Irrigation Telemetry & Water Accounting</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Real-time reservoir catchment levels, solenoid cycles, and micro-drip flow rates.</p>
+            </div>
+            <a href="dashboard-manager-irrigation.html" class="btn btn-secondary btn-sm">Open Full Irrigation Log Vault ➔</a>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.85rem; color: var(--color-text-muted);">Pond Catchment 1 (Main)</span>
+                <span class="status-tag active">88% Capacity</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">4.2M Liters</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Rainwater reserve with solar aeration bubble array active.</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.85rem; color: var(--color-text-muted);">Daily Water Consumption</span>
+                <span class="status-tag positive">32% Saved</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">48,500 L / day</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Delivered via low-evaporation subsurface drip emitters.</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.85rem; color: var(--color-text-muted);">Active Automated Solenoids</span>
+                <span class="status-tag active">18 / 24 On</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">Zone B & C Flowing</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Next automated shut-off timer: 22 mins remaining.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 9: SOIL NPK LABORATORY BIO-ASSAY VAULT -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Soil Microbiology & NPK Laboratory Bio-Assay Vault</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Multi-point mass spectrometry and organic matter mineralization metrics.</p>
+            </div>
+            <a href="dashboard-manager-soil.html" class="btn btn-secondary btn-sm">Open Full Soil Lab Vault ➔</a>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Field Sector</th>
+                  <th>Organic Carbon (OC %)</th>
+                  <th>Available N (kg/ha)</th>
+                  <th>Available P (kg/ha)</th>
+                  <th>Available K (kg/ha)</th>
+                  <th>Soil pH</th>
+                  <th>Microbial Health</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sector A (Wheat Field)</strong></td>
+                  <td>1.42% (High Organic)</td>
+                  <td>284 kg/ha</td>
+                  <td>32.4 kg/ha</td>
+                  <td>310 kg/ha</td>
+                  <td>6.85 (Neutral)</td>
+                  <td><span class="status-tag active">Excellent Bio-Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Sector B (Heirloom Carrots)</strong></td>
+                  <td>1.68% (Rich Loam)</td>
+                  <td>310 kg/ha</td>
+                  <td>38.2 kg/ha</td>
+                  <td>345 kg/ha</td>
+                  <td>6.70 (Optimal)</td>
+                  <td><span class="status-tag active">Rhizosphere Dense</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Sector C (Greenhouse Greens)</strong></td>
+                  <td>2.10% (Living Soil)</td>
+                  <td>340 kg/ha</td>
+                  <td>45.0 kg/ha</td>
+                  <td>380 kg/ha</td>
+                  <td>6.90 (Balanced)</td>
+                  <td><span class="status-tag verified">Super Charged</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Sector D (Apiary & Pasture)</strong></td>
+                  <td>1.85% (Clover Cover)</td>
+                  <td>295 kg/ha</td>
+                  <td>29.8 kg/ha</td>
+                  <td>320 kg/ha</td>
+                  <td>7.10 (Mild Alkaline)</td>
+                  <td><span class="status-tag active">Mycorrhizal Fungi</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 10: 7-DAY AGRONOMY WEATHER RISK & MICROCLIMATE FORECAST -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>7-Day Agronomy Weather Advisory & Microclimate Matrix</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Calibrated with on-site ultrasonic anemometer and barometric telemetry.</p>
+            </div>
+            <span class="status-tag active">Zero Frost Risk</span>
+          </div>
+          <div class="grid grid-4" style="gap: 1rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); text-align: center;">
+              <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.25rem;">Monday (Today)</strong>
+              <div style="font-size: 1.75rem; margin: 0.35rem 0;">☀️ 29°C</div>
+              <p style="font-size: 0.78rem; margin: 0; color: var(--color-text-muted);">Humidity: 62% | Wind: 8 km/h</p>
+              <span class="status-tag active" style="margin-top: 0.5rem; font-size: 0.72rem;">Optimal Harvest</span>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); text-align: center;">
+              <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.25rem;">Tuesday</strong>
+              <div style="font-size: 1.75rem; margin: 0.35rem 0;">⛅ 28°C</div>
+              <p style="font-size: 0.78rem; margin: 0; color: var(--color-text-muted);">Humidity: 66% | Wind: 10 km/h</p>
+              <span class="status-tag active" style="margin-top: 0.5rem; font-size: 0.72rem;">Safe Drone Flight</span>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); text-align: center;">
+              <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.25rem;">Wednesday</strong>
+              <div style="font-size: 1.75rem; margin: 0.35rem 0;">🌤️ 30°C</div>
+              <p style="font-size: 0.78rem; margin: 0; color: var(--color-text-muted);">Humidity: 58% | Wind: 12 km/h</p>
+              <span class="status-tag active" style="margin-top: 0.5rem; font-size: 0.72rem;">Standard Drip Run</span>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); text-align: center;">
+              <strong style="display: block; font-size: 0.95rem; margin-bottom: 0.25rem;">Thursday</strong>
+              <div style="font-size: 1.75rem; margin: 0.35rem 0;">🌧️ 26°C</div>
+              <p style="font-size: 0.78rem; margin: 0; color: var(--color-text-muted);">Rain: 4mm | Wind: 15 km/h</p>
+              <span class="status-tag pending" style="margin-top: 0.5rem; font-size: 0.72rem;">Skip Irrigation</span>
+            </div>
           </div>
         </section>
       </main>

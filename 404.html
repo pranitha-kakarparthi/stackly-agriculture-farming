@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body style="min-height: 100vh; display: flex; flex-direction: column; background: radial-gradient(circle at center, #F0F4EE 0%, #E8EFE5 100%);">
+<body class="page-fixed-404">
 
   <!-- Preloader -->
   <div id="app-loader" aria-live="polite" aria-label="Loading Stackly Agriculture">
@@ -27,25 +27,52 @@
     </div>
   </div>
 
-  <!-- 404 Hero Card (No Navbar, No Footer) -->
-  <main class="error-page-wrapper" style="flex: 1; min-height: 100vh; padding: 2rem 1.5rem;">
-    <div class="error-card" data-animate="zoom-in" style="width: 100%; max-width: 620px;">
-      <!-- Brand Logo linking to index.html -->
-      <div style="margin-bottom: 1.5rem;">
-        <a href="index.html" aria-label="Stackly Agriculture Homepage" style="display: inline-block;">
-          <img src="assets/images/logoStackly.webp" alt="Stackly Agriculture Logo" style="height: 44px; margin: 0 auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));">
+  <!-- 404 Fixed Atmosphere Background Layer (High Opacity Agricultural Image + Glowing Gradients) -->
+  <div class="error-fixed-bg" aria-hidden="true">
+    <img src="assets/images/lush-green-organic-field-landscape.webp" alt="Organic Farmland Background" class="error-bg-img">
+    <div class="error-bg-scrim"></div>
+    <div class="error-ambient-orb error-orb-emerald"></div>
+    <div class="error-ambient-orb error-orb-gold"></div>
+    <div class="error-pattern-grid"></div>
+  </div>
+
+  <!-- 404 Fixed Viewport Wrapper (No Scroll, Centered) -->
+  <main class="error-fixed-container" role="main">
+    <div class="error-card-glass" data-tilt data-animate="zoom-in">
+      <!-- Stackly Brand Logo linking directly to index.html -->
+      <div class="error-brand-wrap">
+        <a href="index.html" class="error-logo-link" aria-label="Return to Stackly Agriculture Homepage">
+          <img src="assets/images/logoStackly.webp" alt="Stackly Agriculture Logo" class="error-logo-img">
         </a>
       </div>
 
-      <div class="error-badge-404">404</div>
-      <span class="section-tag">Crop Field Unavailable</span>
-      <h2>Oops! This Harvest Path Leads To An Uncultivated Field</h2>
-      <p>
-        The page, agronomy module, or action you requested is currently out of seasonal rotation or undergoing maintenance. Our agricultural sensors are actively tending the grounds.
+      <!-- Glowing 404 Badge -->
+      <div class="error-badge-glow">
+        <span class="badge-num">404</span>
+        <span class="badge-sub">SECTOR OFFLINE</span>
+      </div>
+
+      <span class="section-tag" style="background: rgba(46, 184, 114, 0.16); color: #4ADE80; border-color: rgba(74, 222, 128, 0.35); margin-bottom: 0.75rem;">
+        🌱 Crop Field Unavailable
+      </span>
+
+      <h1 class="error-title">Uncultivated Field Detected</h1>
+      <p class="error-desc">
+        The agronomy module, produce lot, or telemetry sector you requested is currently out of seasonal rotation or undergoing soil regeneration. Return to the main farm gateway below.
       </p>
-      <div class="error-btn-row">
-        <a href="index.html" class="btn btn-primary btn-lg">Return To Home Page ➔</a>
-        <a href="javascript:history.back()" class="btn btn-secondary btn-lg">Go Back</a>
+
+      <div class="error-actions-group">
+        <a href="index.html" class="btn btn-accent btn-lg btn-glow">
+          Return To Home Page ➔
+        </a>
+        <a href="javascript:history.back()" class="btn btn-outline-light btn-lg">
+          ← Go Back
+        </a>
+      </div>
+
+      <div class="error-status-pill">
+        <span class="status-indicator-dot"></span>
+        <span>GPS Coordinates: Field Zone 04 &bull; Soil Moisture: Stable &bull; System Online</span>
       </div>
     </div>
   </main>

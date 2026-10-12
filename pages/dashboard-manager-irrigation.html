@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Irrigation Logs & Hydraulic Telemetry - Stackly Agriculture</title>
+  <meta name="description" content="Dedicated irrigation operations and hydraulic telemetry vault for Stackly Farm Managers. Monitor micro-drip emitters, rainwater reservoirs, and solar pump stations.">
+  <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="background-color: var(--color-bg);">
+
+  <!-- Preloader -->
+  <div id="app-loader" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </div>
+      <div class="loader-spinner" role="status"></div>
+      <p class="loader-text">Loading Smart Irrigation Vault...</p>
+    </div>
+  </div>
+
+  <div class="dashboard-wrapper">
+    <!-- =======================================================================
+         STANDARD FARM MANAGER SIDEBAR NAVIGATION
+         ======================================================================= -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Farm Manager Navigation">
+      <!-- Clickable Brand Logo redirecting to index.html -->
+      <div class="dash-brand-wrap">
+        <a href="../index.html" class="dash-brand-link" aria-label="Return to Stackly Homepage">
+          <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+        </a>
+        <button type="button" class="sidebar-collapse-btn" aria-label="Toggle Side Menu" title="Collapse / Expand Menu"><span class="collapse-icon">&#9664;</span></button>
+      </div>
+
+      <!-- User Profile Box -->
+      <div class="dash-user-badge-box">
+        <div class="dash-avatar-mini">
+          <img src="../assets/images/farm-manager-david-chen.webp" alt="David Chen" class="dash-user-avatar">
+        </div>
+        <div class="dash-user-info">
+          <h5 class="dash-user-name">David Chen</h5>
+          <span class="dash-role-pill dash-user-role">Farm Manager</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="dash-sidebar-nav">
+        <div class="dash-nav-section-title">Farm Operations</div>
+        <ul class="dash-nav-list">
+          <li>
+            <a href="dashboard-farm-manager.html" class="dash-nav-link">
+              <span class="dash-nav-icon">📊</span>
+              <span>Farm Overview</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-manager-crops.html" class="dash-nav-link">
+              <span class="dash-nav-icon">🌾</span>
+              <span>Crop & Harvest Monitor</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-manager-equipment.html" class="dash-nav-link">
+              <span class="dash-nav-icon">🚜</span>
+              <span>IoT Probes & Fleet</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="dash-nav-section-title">Actionable Reports</div>
+        <ul class="dash-nav-list">
+          <li>
+            <a href="dashboard-manager-irrigation.html" class="dash-nav-link active">
+              <span class="dash-nav-icon">💧</span>
+              <span>Irrigation Logs</span>
+            </a>
+          </li>
+          <li>
+            <a href="dashboard-manager-soil.html" class="dash-nav-link">
+              <span class="dash-nav-icon">🧪</span>
+              <span>Soil NPK Lab Vault</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- =======================================================================
+         MAIN DASHBOARD BODY
+         ======================================================================= -->
+    <div class="dashboard-main">
+      <!-- Top Navigation & Profile Bar -->
+      <header class="dashboard-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="dash-mobile-sidebar-toggle nav-hamburger" style="display: none; background: var(--color-surface-alt); border-color: var(--color-border);" aria-label="Toggle Dashboard Menu">
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+            <span class="hamburger-line" style="background-color: var(--color-primary);"></span>
+          </button>
+          <div class="dash-greeting-wrap">
+            <h3 class="dash-greeting-text">Smart Irrigation & Hydraulic Telemetry Vault</h3>
+            <span class="dash-greeting-time">System Pressure: 2.6 Bar | Catchment: 88% Full</span>
+          </div>
+        </div>
+
+        <div class="dash-topbar-actions">
+          <div class="dash-last-login" style="font-size: 0.82rem; color: var(--color-text-muted); display: none;"></div>
+          <button class="btn btn-secondary btn-sm dash-action-btn">
+            <span>🔄</span> Sync Solenoids
+          </button>
+          <button class="btn btn-primary btn-sm btn-sign-out">
+            Sign Out
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Content Container (9 Comprehensive Sections) -->
+      <main class="dashboard-content-body">
+        <!-- SECTION 1: IRRIGATION HERO CONTROL BANNER -->
+        <section style="background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%); color: #FFFFFF; padding: 1.75rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Hydraulic Zone Status: Automatic Sub-surface Drip</span>
+            <h2 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.5rem;">Central Drip Solenoids Operating Under ET Algorithm</h2>
+            <p style="color: #D2E3D6; font-size: 0.92rem; margin: 0;">Weather forecast indicates 0mm precipitation in next 48 hrs. Automated 45-minute micro-drip cycles running across Sector B and C root zones.</p>
+          </div>
+          <button class="btn btn-accent btn-sm dash-action-btn">Emergency Valve Shut-off</button>
+        </section>
+
+        <!-- SECTION 2: 4x WATER & HYDRATION KPI CARDS -->
+        <section class="dash-kpi-grid">
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Water Conserved (YTD)</span>
+              <h3>1.84M Liters</h3>
+              <span class="kpi-badge positive">↑ 34% vs Flood Irrigation</span>
+            </div>
+            <div class="kpi-card-icon">💧</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Active Solenoids</span>
+              <h3>18 / 24</h3>
+              <span class="kpi-badge positive">Zone B & C Flowing</span>
+            </div>
+            <div class="kpi-card-icon">🚰</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Daily Evapotranspiration</span>
+              <h3>3.8 mm / day</h3>
+              <span class="kpi-badge neutral">Calculated via FAO-56 Penman</span>
+            </div>
+            <div class="kpi-card-icon">☀️</div>
+          </div>
+          <div class="kpi-card tilt-card">
+            <div class="kpi-card-info">
+              <span>Groundwater Static Depth</span>
+              <h3>42.6 Meters</h3>
+              <span class="kpi-badge positive">Recharge Pond Active</span>
+            </div>
+            <div class="kpi-card-icon">🏞️</div>
+          </div>
+        </section>
+
+        <!-- SECTION 3: SECTOR-WISE SOLENOID VALVE OPERATION LOGS -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Sector-Wise Solenoid Valve Operation Logs</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Real-time wireless valve controller logs transmitted via LoRaWAN.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Download Valve Logs</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Valve ID</th>
+                  <th>Field Sector</th>
+                  <th>Emitter Type</th>
+                  <th>Operating Pressure</th>
+                  <th>Flow Rate</th>
+                  <th>Cycle Runtime</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>VLV-SLM-01A</code></td>
+                  <td>Sector A - Wheat Plot 1-3</td>
+                  <td>Subsurface Tape (1.2 L/h)</td>
+                  <td>2.2 Bar</td>
+                  <td>180 L/min</td>
+                  <td>45 mins (Completed)</td>
+                  <td><span class="status-tag active">Cycle Finished</span></td>
+                </tr>
+                <tr>
+                  <td><code>VLV-SLM-02B</code></td>
+                  <td>Sector B - Heirloom Carrots</td>
+                  <td>Pressure Compensating Drip</td>
+                  <td>2.5 Bar</td>
+                  <td>240 L/min</td>
+                  <td>35 mins (Running)</td>
+                  <td><span class="status-tag active">Active Flow</span></td>
+                </tr>
+                <tr>
+                  <td><code>VLV-SLM-03C</code></td>
+                  <td>Sector C - Greenhouses 1-4</td>
+                  <td>Micro-Misters & Drip Pegs</td>
+                  <td>2.0 Bar</td>
+                  <td>95 L/min</td>
+                  <td>20 mins (Running)</td>
+                  <td><span class="status-tag active">Active Flow</span></td>
+                </tr>
+                <tr>
+                  <td><code>VLV-SLM-04D</code></td>
+                  <td>Sector D - Apiary Ridge Buffer</td>
+                  <td>Root Zone Infiltrators</td>
+                  <td>1.8 Bar</td>
+                  <td>120 L/min</td>
+                  <td>Scheduled 18:00</td>
+                  <td><span class="status-tag pending">Standby</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 4: RAINWATER CATCHMENT RESERVOIRS & AQUICULTURE -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Rainwater Catchment Reservoirs & Aquifer Recharge Status</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Decentralized retention basins harvesting 100% of seasonal monsoonal runoff.</p>
+            </div>
+            <span class="status-tag verified">Zero Municipal Water Drawn</span>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Central Retention Basin 1</strong>
+                <span class="status-tag active">88% Capacity</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">4.2M Liters Stored</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Clay lined &bull; Floating solar cover prevents evaporation.</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>East Settling Pond 2</strong>
+                <span class="status-tag active">92% Capacity</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">2.1M Liters Stored</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Reed-bed biological bio-filtration for turbidity removal.</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Aquifer Injection Well 3</strong>
+                <span class="status-tag verified">Recharging</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">680 L/hr Inflow</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Gravity sand-gravel filter recharging deep groundwater.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 5: DRIP LINE PRESSURE & EMITTER UNIFORMITY AUDIT -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Drip Lateral Pressure & Emitter Uniformity Audit (EU %)</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Field Christiansen Uniformity Coefficient testing to eliminate dry spots.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Log Flow Test</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Lateral Sub-Main</th>
+                  <th>Tested Section</th>
+                  <th>Inlet Pressure</th>
+                  <th>Distal End Pressure</th>
+                  <th>Pressure Drop</th>
+                  <th>Uniformity Coeff.</th>
+                  <th>Audit Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>LAT-SEC-A-01</code></td>
+                  <td>Sector A, Row 1-40</td>
+                  <td>2.45 Bar</td>
+                  <td>2.30 Bar</td>
+                  <td>0.15 Bar (Optimal)</td>
+                  <td>96.8%</td>
+                  <td><span class="status-tag active">Passed (Grade A)</span></td>
+                </tr>
+                <tr>
+                  <td><code>LAT-SEC-B-04</code></td>
+                  <td>Sector B, Row 41-80</td>
+                  <td>2.50 Bar</td>
+                  <td>2.32 Bar</td>
+                  <td>0.18 Bar (Optimal)</td>
+                  <td>95.2%</td>
+                  <td><span class="status-tag active">Passed (Grade A)</span></td>
+                </tr>
+                <tr>
+                  <td><code>LAT-SEC-C-02</code></td>
+                  <td>Greenhouse Hydro Block 2</td>
+                  <td>2.10 Bar</td>
+                  <td>1.98 Bar</td>
+                  <td>0.12 Bar (Optimal)</td>
+                  <td>98.4%</td>
+                  <td><span class="status-tag verified">Certified Uniform</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 6: SOIL WATER DEFICIT (SWD) DEPLETION MATRIX -->
+        <section class="grid grid-2">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <h4>💧 Sector A Wheat Moisture Depletion</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">Managed Allowable Depletion (MAD) set at 40% for grain hardening.</p>
+            <div style="height: 12px; background: #E0E0E0; border-radius: 6px; overflow: hidden; margin-bottom: 0.5rem;">
+              <div style="width: 74%; height: 100%; background: #2E7D32;"></div>
+            </div>
+            <span style="font-size: 0.82rem; color: var(--color-text-muted);">Current Available Water Capacity: 74% (Optimal Moisture Envelope)</span>
+          </div>
+
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+            <h4>🥕 Sector B Carrot Rhizosphere Tension</h4>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 1rem;">Maintaining constant 20-30 kPa soil matric suction for crisp taproot development.</p>
+            <div style="height: 12px; background: #E0E0E0; border-radius: 6px; overflow: hidden; margin-bottom: 0.5rem;">
+              <div style="width: 82%; height: 100%; background: #40916C;"></div>
+            </div>
+            <span style="font-size: 0.82rem; color: var(--color-text-muted);">Tensiometer Reading: 24.8 kPa (Zero Root Water Stress)</span>
+          </div>
+        </section>
+
+        <!-- SECTION 7: FERTIGATION & LIQUID BIO-ENZYME INJECTION LOGS -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Organic Fertigation & Liquid Bio-Enzyme Injection Dosing</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Venturi injector dosing log for fermented Jeevamrutha and microbial teas.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Log Bio-Dosing</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Injection Batch</th>
+                  <th>Organic Solution</th>
+                  <th>Target Acreage</th>
+                  <th>Injection Ratio</th>
+                  <th>Dosed Volume</th>
+                  <th>EC Check</th>
+                  <th>Sign-Off</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>FERT-2026-081</code></td>
+                  <td>Fermented Jeevamrutha Tea</td>
+                  <td>Sector B (280 Acres)</td>
+                  <td>1:100 via Venturi</td>
+                  <td>2,800 Liters</td>
+                  <td>1.45 dS/m</td>
+                  <td><span class="status-tag active">Dr. Elena Rodriguez</span></td>
+                </tr>
+                <tr>
+                  <td><code>FERT-2026-080</code></td>
+                  <td>Liquid Humic & Fulvic Acid</td>
+                  <td>Sector C Greenhouses</td>
+                  <td>1:250 Micro-Dosing</td>
+                  <td>450 Liters</td>
+                  <td>1.20 dS/m</td>
+                  <td><span class="status-tag active">Marcus Vance</span></td>
+                </tr>
+                <tr>
+                  <td><code>FERT-2026-079</code></td>
+                  <td>Seaweed Kelp Extract (Ascophyllum)</td>
+                  <td>Sector A (450 Acres)</td>
+                  <td>1:200 Folio Injection</td>
+                  <td>1,600 Liters</td>
+                  <td>1.15 dS/m</td>
+                  <td><span class="status-tag active">David Chen</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 8: SOLAR PUMPING ARRAY GRID PERFORMANCE -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Solar Pump Inverter Array & Hydraulic Flow Metrics</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Variable Frequency Drive (VFD) telemetry tracking solar horsepower.</p>
+            </div>
+            <span class="status-tag verified">Zero Grid Dependence</span>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>VFD Controller 1 (Bore 1)</strong>
+                <span class="status-tag active">48.2 Hz (Nominal)</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">7.5 HP Solar Pump</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Voltage: 580V DC &bull; Flow: 380 L/min</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>VFD Controller 2 (Basin 1)</strong>
+                <span class="status-tag active">50.0 Hz (Peak)</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">10.0 HP Booster Pump</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Voltage: 640V DC &bull; Flow: 620 L/min</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Total Daily Water Pumped</strong>
+                <span class="status-tag active">Cumulative</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">148,200 Liters</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Power consumed: 28.4 kWh (100% Solar)</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 9: 14-DAY WATER BUDGET VS EVAPOTRANSPIRATION BENCHMARK -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>14-Day Cumulative Water Budget & Conservation Ledger</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Hydrological water balance accounting verified for Regenerative Organic Alliance standards.</p>
+            </div>
+            <button class="btn btn-primary btn-sm dash-action-btn">Export Hydrology Ledger</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Accounting Period</th>
+                  <th>Allocated Water Budget</th>
+                  <th>Actual Delivered Volume</th>
+                  <th>Water Saved</th>
+                  <th>Rainfall Recaptured</th>
+                  <th>Net Farm Water Index</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Current Week (W06)</strong></td>
+                  <td>420,000 Liters</td>
+                  <td>284,500 Liters</td>
+                  <td>+135,500 L (32.2%)</td>
+                  <td>42,000 Liters</td>
+                  <td><span class="status-tag active">Net Water Positive (+1.14)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Previous Week (W05)</strong></td>
+                  <td>420,000 Liters</td>
+                  <td>296,200 Liters</td>
+                  <td>+123,800 L (29.5%)</td>
+                  <td>18,000 Liters</td>
+                  <td><span class="status-tag active">Net Water Positive (+1.08)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Two Weeks Ago (W04)</strong></td>
+                  <td>450,000 Liters</td>
+                  <td>312,000 Liters</td>
+                  <td>+138,000 L (30.7%)</td>
+                  <td>65,000 Liters</td>
+                  <td><span class="status-tag verified">Net Water Positive (+1.22)</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

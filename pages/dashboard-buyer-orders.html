@@ -29,6 +29,7 @@
         <a href="../index.html">
           <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
         </a>
+        <button type="button" class="sidebar-collapse-btn" aria-label="Toggle Side Menu" title="Collapse / Expand Menu"><span class="collapse-icon">&#9664;</span></button>
       </div>
 
       <div class="dash-user-badge-box">
@@ -65,15 +66,9 @@
 
       <div class="dash-nav-section-title">Commercial & Billing</div>
       <ul class="dash-nav-list">
-        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">💳</span><span>Invoices & Escrow</span></a></li>
-        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">🏷️</span><span>Price Index</span></a></li>
+        <li><a href="dashboard-buyer-invoices.html" class="dash-nav-link"><span class="dash-nav-icon">💳</span><span>Invoices & Escrow</span></a></li>
+        <li><a href="dashboard-buyer-prices.html" class="dash-nav-link"><span class="dash-nav-icon">🏷️</span><span>Price Index</span></a></li>
       </ul>
-
-      <div class="dash-sidebar-footer">
-        <button class="btn btn-outline-light btn-sm btn-sign-out" style="width: 100%;">
-          <span>🚪</span> Sign Out
-        </button>
-      </div>
     </aside>
 
     <div class="dashboard-main">
@@ -91,7 +86,17 @@
       </header>
 
       <main class="dashboard-content-body">
-        <!-- Section 1: KPI Grid -->
+        <!-- SECTION 1: WHOLESALE LOGISTICS HERO BANNER -->
+        <section style="background: linear-gradient(135deg, #132E24 0%, #1B4332 60%, #40916C 100%); color: #FFFFFF; padding: 1.75rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Active Cold Transit Telematics</span>
+            <h2 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.5rem;">3 Reefer Shipments Cruising Under HACCP Compliance</h2>
+            <p style="color: #D2E3D6; font-size: 0.92rem; margin: 0;">Mean cargo temperature held steady at 4.1°C across all active highway routes. Zero door-opening violations or temp excursions recorded.</p>
+          </div>
+          <button class="btn btn-accent btn-sm dash-action-btn">Open Live Fleet Map</button>
+        </section>
+
+        <!-- SECTION 2: 4x ORDER LOGISTICS KPI CARDS -->
         <section class="dash-kpi-grid">
           <div class="kpi-card tilt-card">
             <div class="kpi-card-info">
@@ -119,15 +124,15 @@
           </div>
           <div class="kpi-card tilt-card">
             <div class="kpi-card-info">
-              <span>Pending Delivery</span>
-              <h3>1 Lot</h3>
-              <span class="kpi-badge neutral">Scheduled Tomorrow</span>
+              <span>Returns & Claims</span>
+              <h3>0.00%</h3>
+              <span class="kpi-badge positive">Zero Disputes Logged</span>
             </div>
-            <div class="kpi-card-icon">📦</div>
+            <div class="kpi-card-icon">✅</div>
           </div>
         </section>
 
-        <!-- Section 2: Active Reefer Vehicles Live Status -->
+        <!-- SECTION 3: REEFER TRANSPORT VEHICLES IN TRANSIT -->
         <section class="dash-table-card">
           <div class="dash-table-card-head">
             <div>
@@ -182,7 +187,7 @@
           </div>
         </section>
 
-        <!-- Section 3: Delivery Confirmation & Gate Passes -->
+        <!-- SECTION 4: HISTORICAL DELIVERIES & DIGITAL RECEIPTS -->
         <section class="dash-table-card">
           <div class="dash-table-card-head">
             <div>
@@ -233,23 +238,204 @@
           </div>
         </section>
 
-        <!-- Section 4: Upcoming Harvest Allocations -->
+        <!-- SECTION 5: UPCOMING HARVEST ALLOCATIONS CARDS -->
         <section class="grid grid-2">
-          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
             <h4>🌾 Wheat Silo Allocation Next Week</h4>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Sector A harvest commences in 6 days.</p>
             <p style="font-size: 0.9rem; margin: 0;">Your allocated volume: <strong>40 Metric Tons</strong> at contract rate ₹65/kg. Pre-cooling silos reserved at Central Salem Terminal.</p>
           </div>
-          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
             <h4>🥦 Daily Dawn Greens Subscription</h4>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Guaranteed morning dispatch schedule.</p>
             <p style="font-size: 0.9rem; margin: 0;">2,500 kg dispatched daily Monday through Saturday before 07:00 AM directly from Salem green-cluster.</p>
           </div>
         </section>
 
-        <!-- Section 5: Action Link -->
-        <section style="text-align: right;">
-          <a href="../404.html" class="btn btn-secondary dash-action-btn">Export Delivery Logistics Ledger ➔</a>
+        <!-- SECTION 6: RECEIVING DOCK INSPECTION & QC GRADING -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Delivery Hub Receiving Dock Inspection & Quality Grading</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Inbound lot physical inspections upon cold truck seal breaking.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Log Dock Receipt</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Dock Gate</th>
+                  <th>Order Ref</th>
+                  <th>Lot Grade</th>
+                  <th>Sugar Brix %</th>
+                  <th>Surface Defect Rate</th>
+                  <th>Seal Intact</th>
+                  <th>QC Acceptance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dock Bay 01</td>
+                  <td>PO-2026-9041</td>
+                  <td>Grade A+ Super</td>
+                  <td>8.4° Brix (Sweet Crisp)</td>
+                  <td>0.1% (Exceeds Standard)</td>
+                  <td><span class="status-tag active">Tamper Seal Intact</span></td>
+                  <td><span class="status-tag verified">Accepted 100%</span></td>
+                </tr>
+                <tr>
+                  <td>Dock Bay 03</td>
+                  <td>PO-2026-9042</td>
+                  <td>Grade A Premium</td>
+                  <td>N/A (Emmer Grain)</td>
+                  <td>0.0% Broken Grain</td>
+                  <td><span class="status-tag active">Tamper Seal Intact</span></td>
+                  <td><span class="status-tag verified">Accepted 100%</span></td>
+                </tr>
+                <tr>
+                  <td>Cold Dock 02</td>
+                  <td>PO-2026-9044</td>
+                  <td>Certified A2 Raw</td>
+                  <td>Fat: 4.8% | SNF: 8.9%</td>
+                  <td>0.00 Antibiotic / Adulterant</td>
+                  <td><span class="status-tag active">Digital Barcode Seal</span></td>
+                  <td><span class="status-tag verified">Accepted 100%</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 7: COLD CHAIN CONTINUOUS TEMPERATURE HISTOGRAM -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>In-Transit Temperature & Humidity Telemetry Logs</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Cellular LoRaWAN gateway pinging internal pallet sensors every 5 minutes.</p>
+            </div>
+            <span class="status-tag active">Zero Excursions</span>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Sensor Pod SLM-REEFER-01</strong>
+                <span class="status-tag active">3.9 °C Avg</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Relative Humidity: 92% &bull; Battery: 98%</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">Trip Min: 3.2°C | Trip Max: 4.4°C</div>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Sensor Pod SLM-REEFER-02</strong>
+                <span class="status-tag active">2.4 °C Avg</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Relative Humidity: 86% &bull; Battery: 96%</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">Trip Min: 2.1°C | Trip Max: 2.8°C</div>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Compressor Health Telemetry</strong>
+                <span class="status-tag verified">Optimal Duty</span>
+              </div>
+              <p style="font-size: 0.82rem; margin: 0 0 0.5rem 0;">Refrigerant R404A &bull; Pressure: 18.2 Bar</p>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted);">Duty Cycle: 48% (Eco Inverter)</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 8: FREIGHT ROUTING & COST EFFICIENCY MATRIX -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Freight Logistics Corridor & Transport Cost Accounting</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Consolidated agricultural logistics minimizing ton-kilometer carbon footprint.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Download Route Ledger</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Corridor Route</th>
+                  <th>Distance (km)</th>
+                  <th>Transit Duration</th>
+                  <th>Total Freight Tonnes</th>
+                  <th>Freight Rate / Ton</th>
+                  <th>Fuel Efficiency</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Salem Hub ➔ Bengaluru Central Hub</td>
+                  <td>218 km</td>
+                  <td>4 hrs 15 mins</td>
+                  <td>4.5 MT</td>
+                  <td>₹1,450 / MT</td>
+                  <td><span class="status-tag active">Bio-Diesel Fleet (Grade A)</span></td>
+                </tr>
+                <tr>
+                  <td>Salem Hub ➔ Chennai Koyambedu</td>
+                  <td>345 km</td>
+                  <td>6 hrs 30 mins</td>
+                  <td>8.0 MT</td>
+                  <td>₹2,100 / MT</td>
+                  <td><span class="status-tag active">Bio-Diesel Fleet (Grade A)</span></td>
+                </tr>
+                <tr>
+                  <td>Salem Hub ➔ Hyderabad Agro Terminal</td>
+                  <td>720 km</td>
+                  <td>13 hrs 45 mins</td>
+                  <td>12.0 MT</td>
+                  <td>₹3,600 / MT</td>
+                  <td><span class="status-tag verified">Multi-Drop Optimized</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 9: PURCHASE ORDER AMENDMENT & RE-ROUTING VAULT -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Order Amendment & Destination Re-Routing Vault</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Real-time dispatch re-routing and quantity modification requests.</p>
+            </div>
+            <button class="btn btn-primary btn-sm dash-action-btn">Request Route Amendment</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Amendment ID</th>
+                  <th>Target Order</th>
+                  <th>Requested Change</th>
+                  <th>Date Logged</th>
+                  <th>Hub Approval</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>AMD-2026-014</code></td>
+                  <td>PO-2026-9041</td>
+                  <td>Re-route 1,500 kg to Whitefield Dark Store</td>
+                  <td>Today, 08:15 AM</td>
+                  <td>Dispatcher Murugan R.</td>
+                  <td><span class="status-tag active">Confirmed & Diverted</span></td>
+                </tr>
+                <tr>
+                  <td><code>AMD-2026-012</code></td>
+                  <td>PO-2026-9038</td>
+                  <td>Split Delivery into 2 Dock Gates</td>
+                  <td>01 Feb 2026</td>
+                  <td>Hub Manager Sarah J.</td>
+                  <td><span class="status-tag verified">Successfully Executed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
       </main>
     </div>

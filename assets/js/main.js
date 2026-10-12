@@ -1,7 +1,7 @@
 /**
  * STACKLY AGRICULTURE & FARMING - CORE JAVASCRIPT
  * Handles Loader, Sticky Nav, Mobile Menu & Scroll Lock, Dynamic Greetings,
- * 3D Tilt Animations, Scroll Reveal, Form Validations & UI Utilities
+ * Interactive 3D Tilt, Scroll Progress, Scroll Reveal, Form Validations & Universal Logo Router
  */
 
 function onDOMReady(fn) {
@@ -16,12 +16,14 @@ function onDOMReady(fn) {
 initLoader();
 
 onDOMReady(() => {
+  initScrollProgressBar();
   initDynamicGreetings();
   initStickyNavbar();
   initActiveNav();
   initMobileNav();
   initScrollAnimations();
   initCardTilt();
+  initUniversalLogoRedirect();
   initFormValidations();
 });
 
@@ -37,24 +39,70 @@ function initLoader() {
     loader.classList.add('fade-out');
     setTimeout(() => {
       try { loader.remove(); } catch (e) { loader.style.display = 'none'; }
-    }, 450);
+    }, 400);
   };
 
-  // Immediate dismissal when interactive or complete
   if (document.readyState === 'interactive' || document.readyState === 'complete') {
     dismissLoader();
   } else {
     document.addEventListener('DOMContentLoaded', dismissLoader);
   }
 
-  // Backup listeners
   window.addEventListener('load', dismissLoader);
-  // Strict safety fallback: never block beyond 500ms
-  setTimeout(dismissLoader, 500);
+  setTimeout(dismissLoader, 450); // Strict safety timeout
 }
 
 /* ==========================================================================
-   2. DYNAMIC GREETING (Timezone & Duration of Day)
+   2. TOP SCROLL PROGRESS BAR
+   ========================================================================== */
+function initScrollProgressBar() {
+  let bar = document.getElementById('scroll-progress-bar');
+  if (!bar && !document.body.classList.contains('page-fixed-404') && !document.body.classList.contains('page-auth-fixed')) {
+    bar = document.createElement('div');
+    bar.id = 'scroll-progress-bar';
+    document.body.appendChild(bar);
+  }
+
+  if (!bar) return;
+
+  const updateProgress = () => {
+    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollTotal > 0) {
+      const progress = (window.scrollY / scrollTotal) * 100;
+      bar.style.width = `${progress}%`;
+    }
+  };
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+}
+
+/* ==========================================================================
+   3. UNIVERSAL LOGO REDIRECT (ANY LOGO CLICK ALWAYS LEADS TO INDEX PAGE)
+   ========================================================================== */
+function initUniversalLogoRedirect() {
+  document.addEventListener('click', (e) => {
+    // Check if clicked element or its closest ancestor is a logo or logo container
+    const isLogo = e.target.matches('img[src*="logoStackly"]') ||
+                   e.target.closest('a.nav-brand, a.auth-brand-logo, .error-logo-link, .dash-brand-link, .loader-logo-wrap, a[aria-label*="Homepage"], a[aria-label*="Home"]');
+    
+    if (isLogo) {
+      const isInsidePages = window.location.pathname.toLowerCase().includes('/pages/');
+      const targetUrl = isInsidePages ? '../index.html' : 'index.html';
+      
+      const parentAnchor = e.target.closest('a');
+      if (parentAnchor) {
+        parentAnchor.setAttribute('href', targetUrl);
+      } else {
+        e.preventDefault();
+        window.location.href = targetUrl;
+      }
+    }
+  });
+}
+
+/* ==========================================================================
+   4. DYNAMIC GREETING (Timezone & Duration of Day)
    ========================================================================== */
 function initDynamicGreetings() {
   const now = new Date();
@@ -76,17 +124,9 @@ function initDynamicGreetings() {
     greeting = 'Good Night';
   }
 
-  // Format local time
   const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   const dateString = now.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
 
-  // Update top bar ticker if present
-  const ticker = document.querySelector('.greeting-ticker');
-  if (ticker) {
-    ticker.innerHTML = `<span class="ticker-dot"></span> ${greeting} &bull; Farm Operations Active (${timeString} &bull; ${dateString})`;
-  }
-
-  // Update dashboard greetings if present
   const dashGreeting = document.querySelector('.dash-greeting-text');
   if (dashGreeting) {
     const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
@@ -101,19 +141,21 @@ function initDynamicGreetings() {
 }
 
 /* ==========================================================================
-   3. STICKY NAVBAR & ACTIVE NAV ITEM HIGHLIGHTING
+   5. STICKY NAVBAR & ACTIVE NAV ITEM HIGHLIGHTING
    ========================================================================== */
 function initStickyNavbar() {
-  const header = document.querySelector('.site-header');
+  const header = document.querySelector('.site-header, .main-header');
   if (!header) return;
 
   const handleScroll = () => {
-    if (window.scrollY > 30) {
-      header.classList.add('is-sticky');
-      header.style.boxShadow = '0 6px 24px rgba(0,0,0,0.25)';
+    if (window.scrollY > 25) {
+      header.classList.add('is-scrolled');
+      header.style.backgroundColor = 'rgba(9, 30, 19, 0.96)';
+      header.style.boxShadow = '0 8px 24px -4px rgba(9, 30, 19, 0.45)';
     } else {
-      header.classList.remove('is-sticky');
-      header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+      header.classList.remove('is-scrolled');
+      header.style.backgroundColor = 'rgba(9, 30, 19, 0.92)';
+      header.style.boxShadow = '0 4px 20px -2px rgba(9, 30, 19, 0.35)';
     }
   };
 
@@ -132,7 +174,6 @@ function initActiveNav() {
 
     if (linkFile === currentFile || (currentFile === '' && linkFile === 'index.html')) {
       link.classList.add('active');
-      // If inside a dropdown, highlight parent nav-link too
       const parentDropdown = link.closest('.dropdown-menu');
       if (parentDropdown) {
         const parentLink = parentDropdown.previousElementSibling;
@@ -145,7 +186,7 @@ function initActiveNav() {
 }
 
 /* ==========================================================================
-   4. MOBILE NAVIGATION & BODY SCROLL LOCK
+   6. MOBILE NAVIGATION
    ========================================================================== */
 function initMobileNav() {
   const hamburger = document.querySelector('.nav-hamburger');
@@ -153,23 +194,22 @@ function initMobileNav() {
   if (!hamburger || !overlay) return;
 
   const toggleMenu = () => {
-    const isOpen = overlay.classList.contains('open');
+    const isOpen = overlay.classList.contains('is-active');
     if (isOpen) {
-      overlay.classList.remove('open');
-      hamburger.classList.remove('active');
+      overlay.classList.remove('is-active');
+      hamburger.classList.remove('is-active');
       hamburger.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('scroll-locked');
+      document.body.style.overflow = '';
     } else {
-      overlay.classList.add('open');
-      hamburger.classList.add('active');
+      overlay.classList.add('is-active');
+      hamburger.classList.add('is-active');
       hamburger.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('scroll-locked');
+      document.body.style.overflow = 'hidden';
     }
   };
 
   hamburger.addEventListener('click', toggleMenu);
 
-  // Close when clicking mobile dropdown triggers or links
   const mobileDropdownTriggers = document.querySelectorAll('.mobile-dropdown-toggle');
   mobileDropdownTriggers.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -183,7 +223,7 @@ function initMobileNav() {
 }
 
 /* ==========================================================================
-   5. SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
+   7. SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
    ========================================================================== */
 function initScrollAnimations() {
   const animatedElements = document.querySelectorAll('[data-animate]');
@@ -196,20 +236,25 @@ function initScrollAnimations() {
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
   animatedElements.forEach(el => observer.observe(el));
 }
 
 /* ==========================================================================
-   6. 3D TILT EFFECT FOR CARDS
+   8. INTERACTIVE 3D TILT EFFECT FOR CARDS
    ========================================================================== */
 function initCardTilt() {
-  // If user prefers reduced motion, disable tilt
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const cards = document.querySelectorAll('.tilt-card, .feature-card, .service-card, .kpi-card');
-  cards.forEach(card => {
+  const tiltCards = document.querySelectorAll(
+    '[data-tilt], [data-tilt-subtle], .feature-card, .service-card, .produce-card, .team-member-card, .testimonial-card, .pricing-card, .error-card-glass, .auth-card-testimonial, .dash-metric-card'
+  );
+
+  tiltCards.forEach(card => {
+    const isSubtle = card.hasAttribute('data-tilt-subtle');
+    const maxDegree = isSubtle ? 3.5 : 7.0;
+
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -219,23 +264,23 @@ function initCardTilt() {
       const deltaX = (x - centerX) / centerX;
       const deltaY = (y - centerY) / centerY;
 
-      const rotateX = -deltaY * 6; // max 6 deg
-      const rotateY = deltaX * 6;
+      const rotateX = -deltaY * maxDegree;
+      const rotateY = deltaX * maxDegree;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px) scale3d(1.015, 1.015, 1.015)`;
     });
 
     card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale3d(1, 1, 1)';
     });
   });
 }
 
 /* ==========================================================================
-   7. FORM VALIDATION UTILITIES & CONTACT FORM
+   9. FORM VALIDATION UTILITIES & CONTACT FORM
    ========================================================================== */
 function initFormValidations() {
-  // Real-time digit blocking on name fields
+  // Real-time digit blocking on name fields (Names must not contain any digits)
   const nameInputs = document.querySelectorAll('#contactName, #signupFirstName, #signupLastName');
   nameInputs.forEach(input => {
     input.addEventListener('input', (e) => {
@@ -243,7 +288,7 @@ function initFormValidations() {
     });
   });
 
-  // Real-time digit restriction and length clamp on phone fields
+  // Real-time digit restriction and length clamp to exact 10 digits on phone fields
   const phoneInputs = document.querySelectorAll('#contactPhone, #signupPhone');
   phoneInputs.forEach(input => {
     input.addEventListener('input', (e) => {
@@ -294,7 +339,7 @@ function showFieldError(input, message) {
   }
   if (errBox) {
     errBox.textContent = message;
-    errBox.classList.add('show');
+    errBox.style.display = 'block';
   }
 }
 
@@ -306,12 +351,13 @@ function clearFieldError(input) {
     errBox = input.closest('.form-group')?.querySelector('.invalid-feedback');
   }
   if (errBox) {
-    errBox.classList.remove('show');
+    errBox.textContent = '';
+    errBox.style.display = 'none';
   }
 }
 
 /* ==========================================================================
-   8. TOAST NOTIFICATION UTILITY
+   10. TOAST NOTIFICATION UTILITY
    ========================================================================== */
 function showToast(message, type = 'success') {
   let container = document.querySelector('.toast-container');
@@ -343,4 +389,3 @@ function showToast(message, type = 'success') {
 window.showToast = showToast;
 window.showFieldError = showFieldError;
 window.clearFieldError = clearFieldError;
-

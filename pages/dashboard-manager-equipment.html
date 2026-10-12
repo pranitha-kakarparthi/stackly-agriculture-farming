@@ -29,6 +29,7 @@
         <a href="../index.html">
           <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
         </a>
+        <button type="button" class="sidebar-collapse-btn" aria-label="Toggle Side Menu" title="Collapse / Expand Menu"><span class="collapse-icon">&#9664;</span></button>
       </div>
 
       <div class="dash-user-badge-box">
@@ -65,15 +66,9 @@
 
       <div class="dash-nav-section-title">Actionable Reports</div>
       <ul class="dash-nav-list">
-        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">💧</span><span>Irrigation Logs</span></a></li>
-        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">🧪</span><span>Soil NPK Lab Vault</span></a></li>
+        <li><a href="dashboard-manager-irrigation.html" class="dash-nav-link"><span class="dash-nav-icon">💧</span><span>Irrigation Logs</span></a></li>
+        <li><a href="dashboard-manager-soil.html" class="dash-nav-link"><span class="dash-nav-icon">🧪</span><span>Soil NPK Lab Vault</span></a></li>
       </ul>
-
-      <div class="dash-sidebar-footer">
-        <button class="btn btn-outline-light btn-sm btn-sign-out" style="width: 100%;">
-          <span>🚪</span> Sign Out
-        </button>
-      </div>
     </aside>
 
     <div class="dashboard-main">
@@ -91,7 +86,17 @@
       </header>
 
       <main class="dashboard-content-body">
-        <!-- Section 1: KPI Grid -->
+        <!-- SECTION 1: EQUIPMENT STATUS HERO BANNER -->
+        <section style="background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%); color: #FFFFFF; padding: 1.75rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">LoRaWAN Telemetry: 100% Online</span>
+            <h2 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.5rem;">Autonomous Fleet & IoT Sensor Grid Operational</h2>
+            <p style="color: #D2E3D6; font-size: 0.92rem; margin: 0;">All 48 field telemetry probes pinging within latency thresholds. Solar micro-drip pumps operating under nominal solar radiation.</p>
+          </div>
+          <button class="btn btn-accent btn-sm dash-action-btn">Scan Sensor Network</button>
+        </section>
+
+        <!-- SECTION 2: 4x TELEMETRY & FLEET KPI CARDS -->
         <section class="dash-kpi-grid">
           <div class="kpi-card tilt-card">
             <div class="kpi-card-info">
@@ -127,7 +132,7 @@
           </div>
         </section>
 
-        <!-- Section 2: Sensor Telemetry Details -->
+        <!-- SECTION 3: WIRELESS LORAWAN SOIL PROBE CLUSTERS -->
         <section class="dash-table-card">
           <div class="dash-table-card-head">
             <div>
@@ -191,7 +196,7 @@
           </div>
         </section>
 
-        <!-- Section 3: Solar Irrigation Automation Pump Stations -->
+        <!-- SECTION 4: SOLAR MICRO-DRIP PUMP STATIONS -->
         <section class="dash-table-card">
           <div class="dash-table-card-head">
             <div>
@@ -242,9 +247,9 @@
           </div>
         </section>
 
-        <!-- Section 4: Drone Telemetry Specs -->
+        <!-- SECTION 5: DRONE TELEMETRY & MACHINERY MAINTENANCE CARDS -->
         <section class="grid grid-2">
-          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
             <h4>🛰️ Autonomous Drone Flight Log</h4>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Last mission: NDVI multispectral scan completed over Sector A & B.</p>
             <ul style="font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
@@ -254,7 +259,7 @@
               <li><strong>Storage:</strong> 18.4 GB raw imagery processed</li>
             </ul>
           </div>
-          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
             <h4>🚜 Heavy Machinery Maintenance Clock</h4>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Next scheduled maintenance intervals.</p>
             <ul style="font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.5rem;">
@@ -265,9 +270,198 @@
           </div>
         </section>
 
-        <!-- Section 5: Action Link -->
-        <section style="text-align: right;">
-          <a href="../404.html" class="btn btn-secondary dash-action-btn">Download Full Equipment Diagnostic Log ➔</a>
+        <!-- SECTION 6: AGRICULTURAL TRACTOR & HARVESTER TELEMATICS -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Tractor Fleet Telematics & Engine Diagnostics</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Real-time CAN-bus engine monitoring, fuel consumption, and GPS tracking.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Export Telematics</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Vehicle ID</th>
+                  <th>Machine Model</th>
+                  <th>Operator</th>
+                  <th>Fuel Level</th>
+                  <th>Engine Hours</th>
+                  <th>Operating Status</th>
+                  <th>Current Field Assignment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>TRC-01</code></td>
+                  <td>John Deere 5050D (Bio-Diesel)</td>
+                  <td>Murugan R.</td>
+                  <td>84%</td>
+                  <td>1,420 hrs</td>
+                  <td><span class="status-tag active">Active In Field</span></td>
+                  <td>Sector A Disc Harrowing</td>
+                </tr>
+                <tr>
+                  <td><code>TRC-02</code></td>
+                  <td>Mahindra Yuvo 575 DI</td>
+                  <td>K. Selvam</td>
+                  <td>92%</td>
+                  <td>860 hrs</td>
+                  <td><span class="status-tag active">Active In Field</span></td>
+                  <td>Sector B Ridge Preparation</td>
+                </tr>
+                <tr>
+                  <td><code>CMB-01</code></td>
+                  <td>Claas Crop Combine 320</td>
+                  <td>V. Ramesh</td>
+                  <td>100%</td>
+                  <td>340 hrs</td>
+                  <td><span class="status-tag verified">Pre-Flight Check</span></td>
+                  <td>Harvester Hangar Pad 1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 7: COLD STORAGE REFRIGERATION & HVAC TELEMETRY -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Cold Storage Refrigeration & Pre-Cooling Chambers</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Microclimate monitoring inside farm pre-cooling bays and long-term refrigeration vaults.</p>
+            </div>
+            <span class="status-tag active">HACCP Cold Chain Nominal</span>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Chamber ID</th>
+                  <th>Stored Produce</th>
+                  <th>Internal Temp</th>
+                  <th>Relative Humidity</th>
+                  <th>Defrost Cycle</th>
+                  <th>Compressor Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>COLD-CHAMBER-01</code></td>
+                  <td>Harvested Leafy Greens</td>
+                  <td>3.4 °C (Target: 3-4°C)</td>
+                  <td>94% RH</td>
+                  <td>Auto-defrost at 02:00</td>
+                  <td><span class="status-tag active">Compressor Active (68%)</span></td>
+                </tr>
+                <tr>
+                  <td><code>COLD-CHAMBER-02</code></td>
+                  <td>A2 Raw Milk Chilling Vat</td>
+                  <td>2.8 °C (Target: 2-3°C)</td>
+                  <td>80% RH</td>
+                  <td>Continuous Chill</td>
+                  <td><span class="status-tag active">Vat Agitator Online</span></td>
+                </tr>
+                <tr>
+                  <td><code>COLD-CHAMBER-03</code></td>
+                  <td>Root Vegetables (Carrots)</td>
+                  <td>5.2 °C (Target: 4-6°C)</td>
+                  <td>90% RH</td>
+                  <td>Standby</td>
+                  <td><span class="status-tag verified">Temp Stable</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 8: SOLAR GRID & ENERGY STORAGE -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Renewable Solar Grid & LiFePO4 Energy Storage Bank</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Farm microgrid generating clean zero-emission energy for irrigation and processing.</p>
+            </div>
+            <span class="status-tag verified">100% Solar Self-Sufficiency</span>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Rooftop & Ground Solar PV</strong>
+                <span class="status-tag active">Active Inverter</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">48.6 kW Realtime</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Daily Cumulative: 264 kWh Generated</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Battery Storage Bank</strong>
+                <span class="status-tag active">97.4% Charged</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">120 kWh Capacity</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Backup Runtime: 18.5 hrs at current load</p>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong>Carbon Offset Today</strong>
+                <span class="status-tag verified">Certified Clean</span>
+              </div>
+              <h4 style="margin: 0.25rem 0; font-size: 1.25rem; color: var(--color-primary);">218 kg CO2e</h4>
+              <p style="font-size: 0.8rem; margin: 0; color: var(--color-text-muted);">Zero diesel generator run time</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 9: PREVENTIVE MAINTENANCE & SPARE PARTS INVENTORY -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Preventive Maintenance Log & Spare Parts Vault</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Critical spare parts on hand in Salem central workshop hangar.</p>
+            </div>
+            <button class="btn btn-primary btn-sm dash-action-btn">Reorder Parts</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Component Name</th>
+                  <th>Part Number</th>
+                  <th>Target Machine / Station</th>
+                  <th>In-Stock Quantity</th>
+                  <th>Stock Health</th>
+                  <th>Next Planned Replacement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sub-micron Drip Sand Media Filter</td>
+                  <td><code>FLT-DRIP-900</code></td>
+                  <td>Pump Station 01 & 02</td>
+                  <td>12 Units</td>
+                  <td><span class="status-tag active">Optimal Stock</span></td>
+                  <td>Routine Flush Tomorrow</td>
+                </tr>
+                <tr>
+                  <td>Tractor Bio-Diesel Fuel Filter</td>
+                  <td><code>JD-FF-5050D</code></td>
+                  <td>John Deere 5050D</td>
+                  <td>4 Units</td>
+                  <td><span class="status-tag active">In Stock</span></td>
+                  <td>Scheduled in 65 hrs</td>
+                </tr>
+                <tr>
+                  <td>Drone Carbon Composite Propellers</td>
+                  <td><code>DJI-PROP-T40</code></td>
+                  <td>DJI Agras T40 Drone</td>
+                  <td>8 Pairs</td>
+                  <td><span class="status-tag active">In Stock</span></td>
+                  <td>Inspected Every 50 Flights</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
       </main>
     </div>

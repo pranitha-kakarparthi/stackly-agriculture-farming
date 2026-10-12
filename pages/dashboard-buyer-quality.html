@@ -29,6 +29,7 @@
         <a href="../index.html">
           <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
         </a>
+        <button type="button" class="sidebar-collapse-btn" aria-label="Toggle Side Menu" title="Collapse / Expand Menu"><span class="collapse-icon">&#9664;</span></button>
       </div>
 
       <div class="dash-user-badge-box">
@@ -65,15 +66,9 @@
 
       <div class="dash-nav-section-title">Commercial & Billing</div>
       <ul class="dash-nav-list">
-        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">💳</span><span>Invoices & Escrow</span></a></li>
-        <li><a href="../404.html" class="dash-nav-link"><span class="dash-nav-icon">🏷️</span><span>Price Index</span></a></li>
+        <li><a href="dashboard-buyer-invoices.html" class="dash-nav-link"><span class="dash-nav-icon">💳</span><span>Invoices & Escrow</span></a></li>
+        <li><a href="dashboard-buyer-prices.html" class="dash-nav-link"><span class="dash-nav-icon">🏷️</span><span>Price Index</span></a></li>
       </ul>
-
-      <div class="dash-sidebar-footer">
-        <button class="btn btn-outline-light btn-sm btn-sign-out" style="width: 100%;">
-          <span>🚪</span> Sign Out
-        </button>
-      </div>
     </aside>
 
     <div class="dashboard-main">
@@ -91,7 +86,17 @@
       </header>
 
       <main class="dashboard-content-body">
-        <!-- Section 1: KPI Grid -->
+        <!-- SECTION 1: ORGANIC PURITY HERO BANNER -->
+        <section style="background: linear-gradient(135deg, #132E24 0%, #1B4332 60%, #40916C 100%); color: #FFFFFF; padding: 1.75rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Certified Purity Standard: 100% Zero-Residue</span>
+            <h2 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.5rem;">Independent ISO/IEC 17025 Quality Certificates Vault</h2>
+            <p style="color: #D2E3D6; font-size: 0.92rem; margin: 0;">Multi-residue gas chromatography screening confirms 0.00 PPM synthetic pesticides, heavy metals below limits of detection, and pure indigenous genetics.</p>
+          </div>
+          <button class="btn btn-accent btn-sm dash-action-btn">Request Third-Party Re-Test</button>
+        </section>
+
+        <!-- SECTION 2: 4x QUALITY & COMPLIANCE KPI CARDS -->
         <section class="dash-kpi-grid">
           <div class="kpi-card tilt-card">
             <div class="kpi-card-info">
@@ -127,7 +132,7 @@
           </div>
         </section>
 
-        <!-- Section 2: Laboratory Certificate Master Table -->
+        <!-- SECTION 3: BATCH-LEVEL TEST CERTIFICATES MASTER TABLE -->
         <section class="dash-table-card">
           <div class="dash-table-card-head">
             <div>
@@ -191,16 +196,16 @@
           </div>
         </section>
 
-        <!-- Section 3: Traceability QR & Cluster Map Info -->
+        <!-- SECTION 4: FIELD ORIGIN TRACEABILITY METADATA CARDS -->
         <section class="dash-table-card">
           <div class="dash-table-card-head">
             <div>
-              <h3>Field Origin Traceability Metadata</h3>
+              <h3>Field Origin Traceability Metadata & GIS Mapping</h3>
               <p style="font-size: 0.85rem; color: var(--color-text-muted);">Exact geo-coordinates and farmer cluster profiles for your shipments.</p>
             </div>
             <button class="btn btn-secondary btn-sm dash-action-btn">Print QR Pallet Labels</button>
           </div>
-          <div class="grid grid-3" style="gap: 1.25rem;">
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
             <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
               <strong>Sector B - Heirloom Greens</strong>
               <p style="font-size: 0.85rem; color: var(--color-text-muted); margin: 0.35rem 0;">Salem Agro Basin, GPS: 11.6845° N, 78.1634° E</p>
@@ -221,23 +226,210 @@
           </div>
         </section>
 
-        <!-- Section 4: Accreditations Vault -->
+        <!-- SECTION 5: ACCREDITATIONS & CERTIFICATION VAULT CARDS -->
         <section class="grid grid-2">
-          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
             <h4>📜 NPOP Certified Organic Scope Certificate</h4>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Certificate No: ORG-IND-2026-788192</p>
             <p style="font-size: 0.88rem; margin: 0;">Issued by Aditi Organic Certifications under APEDA regulations. Covers 1,420 cultivated acres across Salem district.</p>
           </div>
-          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+          <div style="background: #FFFFFF; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
             <h4>🛡️ ISO 22000:2018 Food Safety Management</h4>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.75rem;">Certificate No: FSMS-IN-99410</p>
             <p style="font-size: 0.88rem; margin: 0;">Covers decentralized solar cold rooms, washing/grading facilities, and refrigerated logistics fleet.</p>
           </div>
         </section>
 
-        <!-- Section 5: Action Link -->
-        <section style="text-align: right;">
-          <a href="../404.html" class="btn btn-secondary dash-action-btn">Request Custom Multi-Residue Testing For Next Batch ➔</a>
+        <!-- SECTION 6: NUTRITIONAL PROFILING & BRIX SUGAR CONTENT MATRIX -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Nutritional Profiling & Phytochemical Bio-Assays</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Antioxidants, minerals, and natural sugar brix scores vs conventional standards.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm dash-action-btn">Export Nutrition Sheet</button>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Commodity Lot</th>
+                  <th>Sugar Brix (°Bx)</th>
+                  <th>Vitamin C (mg/100g)</th>
+                  <th>Polyphenols (mg GAE)</th>
+                  <th>Iron (mg/kg)</th>
+                  <th>Nutritional Advantage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Heritage Carrots (Lot 02)</strong></td>
+                  <td>11.4° Bx (High Sweet)</td>
+                  <td>14.8 mg</td>
+                  <td>42.5 mg</td>
+                  <td>12.4 mg/kg</td>
+                  <td><span class="status-tag active">+38% Higher Antioxidants</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Khapli Emmer Grain (Lot 01)</strong></td>
+                  <td>N/A (Complex Starch)</td>
+                  <td>N/A</td>
+                  <td>185.0 mg</td>
+                  <td>46.2 mg/kg</td>
+                  <td><span class="status-tag active">+42% Dietary Fiber & Low GI</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Raw Wildflower Honey (Lot 03)</strong></td>
+                  <td>81.2° Bx (Rich Pollen)</td>
+                  <td>6.2 mg</td>
+                  <td>120.0 mg</td>
+                  <td>8.5 mg/kg</td>
+                  <td><span class="status-tag verified">Unheated Active Enzymes</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 7: HEAVY METAL MULTI-ELEMENT PURITY ASSAY -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Heavy Metal Multi-Element Purity Assay Matrix</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Inductively Coupled Plasma Mass Spectrometry (ICP-MS) multi-element scan.</p>
+            </div>
+            <span class="status-tag verified">Purity Pass Rate: 100%</span>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Trace Element</th>
+                  <th>Detection Limit (LOD)</th>
+                  <th>FSSAI Permissible Limit</th>
+                  <th>Actual Tested Level</th>
+                  <th>Safety Margin</th>
+                  <th>Compliance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Lead (Pb)</strong></td>
+                  <td>0.01 mg/kg</td>
+                  <td>0.20 mg/kg</td>
+                  <td><strong>&lt; 0.01 mg/kg (ND)</strong></td>
+                  <td>&gt; 20x Below Limit</td>
+                  <td><span class="status-tag active">Passed Clean</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Cadmium (Cd)</strong></td>
+                  <td>0.005 mg/kg</td>
+                  <td>0.10 mg/kg</td>
+                  <td><strong>&lt; 0.005 mg/kg (ND)</strong></td>
+                  <td>&gt; 20x Below Limit</td>
+                  <td><span class="status-tag active">Passed Clean</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Arsenic (As)</strong></td>
+                  <td>0.01 mg/kg</td>
+                  <td>0.20 mg/kg</td>
+                  <td><strong>&lt; 0.01 mg/kg (ND)</strong></td>
+                  <td>&gt; 20x Below Limit</td>
+                  <td><span class="status-tag active">Passed Clean</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Mercury (Hg)</strong></td>
+                  <td>0.001 mg/kg</td>
+                  <td>0.05 mg/kg</td>
+                  <td><strong>&lt; 0.001 mg/kg (ND)</strong></td>
+                  <td>&gt; 50x Below Limit</td>
+                  <td><span class="status-tag verified">Passed Pristine</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 8: HACCP COLD CHAIN TEMPERATURE COMPLIANCE CERTIFICATES -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>HACCP Cold Chain Temperature Integrity Certificates</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Continuous cold chain custody logs compliant with international Codex standards.</p>
+            </div>
+            <span class="status-tag active">Zero Excursions Certified</span>
+          </div>
+          <div class="dash-table-responsive">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Cold Chain Shipment</th>
+                  <th>Pre-Cooling Temp</th>
+                  <th>Transit Mean Temp</th>
+                  <th>Excursion Events</th>
+                  <th>Auditor Certificate Ref</th>
+                  <th>Verification</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Shipment #SLM-TR-8812</td>
+                  <td>3.2 °C (Salem Cold Bay 1)</td>
+                  <td>3.9 °C (In-Transit)</td>
+                  <td>0 Events</td>
+                  <td><code>HACCP-CC-2026-091</code></td>
+                  <td><span class="status-tag verified">Certified Unbroken</span></td>
+                </tr>
+                <tr>
+                  <td>Shipment #SLM-TR-8815</td>
+                  <td>Ambient Dry (17.5°C)</td>
+                  <td>18.2 °C (In-Transit)</td>
+                  <td>0 Events</td>
+                  <td><code>HACCP-CC-2026-092</code></td>
+                  <td><span class="status-tag verified">Certified Ambient</span></td>
+                </tr>
+                <tr>
+                  <td>Shipment #SLM-TR-8819</td>
+                  <td>2.8 °C (Dairy Vat 2)</td>
+                  <td>3.4 °C (In-Transit)</td>
+                  <td>0 Events</td>
+                  <td><code>HACCP-CC-2026-093</code></td>
+                  <td><span class="status-tag verified">Certified Raw Milk</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 9: CERTIFICATE DOWNLOAD & QR TRACEABILITY GENERATOR -->
+        <section class="dash-table-card">
+          <div class="dash-table-card-head">
+            <div>
+              <h3>Consumer-Facing QR Traceability Generator Portal</h3>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Embed verified organic lab test reports into your retail package QR codes.</p>
+            </div>
+            <button class="btn btn-primary btn-sm dash-action-btn">Generate Retail QR Codes</button>
+          </div>
+          <div class="grid grid-3" style="gap: 1.25rem; padding: 1.25rem 1.5rem;">
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); text-align: center;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
+              <strong style="display: block; margin-bottom: 0.25rem;">Retail Pack QR Link</strong>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted); margin: 0 0 0.75rem 0;">Direct customer scan routes to lot verification page.</p>
+              <button class="btn btn-secondary btn-sm dash-action-btn">Copy Shortlink</button>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); text-align: center;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏷️</div>
+              <strong style="display: block; margin-bottom: 0.25rem;">Pallet Barcode Stickers</strong>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted); margin: 0 0 0.75rem 0;">GS1-128 standard barcode labels for wholesale crates.</p>
+              <button class="btn btn-secondary btn-sm dash-action-btn">Print 50 Stickers</button>
+            </div>
+            <div style="background: var(--color-surface-alt); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border); text-align: center;">
+              <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔒</div>
+              <strong style="display: block; margin-bottom: 0.25rem;">Blockchain Cryptographic Hash</strong>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted); margin: 0 0 0.75rem 0;">SHA-256 tamper-proof ledger stamp for each harvest.</p>
+              <button class="btn btn-secondary btn-sm dash-action-btn">Verify Hash</button>
+            </div>
+          </div>
         </section>
       </main>
     </div>
