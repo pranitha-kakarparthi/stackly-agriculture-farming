@@ -87,9 +87,9 @@
 
       <main class="dashboard-content-body">
         <!-- SECTION 1: EQUIPMENT STATUS HERO BANNER -->
-        <section style="background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%); color: #FFFFFF; padding: 1.75rem 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <section class="dash-hero-banner" style="background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);">
           <div>
-            <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">LoRaWAN Telemetry: 100% Online</span>
+            <span class="section-tag section-tag-hero">LoRaWAN Telemetry: 100% Online</span>
             <h2 style="color: #FFFFFF; margin-bottom: 0.35rem; font-size: 1.5rem;">Autonomous Fleet & IoT Sensor Grid Operational</h2>
             <p style="color: #D2E3D6; font-size: 0.92rem; margin: 0;">All 48 field telemetry probes pinging within latency thresholds. Solar micro-drip pumps operating under nominal solar radiation.</p>
           </div>
@@ -466,6 +466,14 @@
       </main>
     </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button type="button" id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5"/>
+      <path d="m5 12 7-7 7 7"/>
+    </svg>
+  </button>
 
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/dashboard.js"></script>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fresh Organic Produce & Harvest Catalog - Stackly Farming</title>
-  <meta name="description" content="Browse Stackly's certified organic farm produce catalog: heirloom grains, fresh vegetables, crisp orchard fruits, raw forest honey, and pasture A2 dairy.">
+  <title>Fresh Organic Produce & Wholesale Harvest Catalog - Stackly Farming</title>
+  <meta name="description" content="Browse Stackly's certified organic farm produce catalog: heirloom grains, fresh vegetables, crisp orchard fruits, raw honeycomb, pasture eggs, and cold-pressed oils.">
   <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
 
   <!-- Google Fonts -->
@@ -32,7 +32,6 @@
     <div class="navbar-container">
       <a href="../index.html" class="nav-brand">
         <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
-        <span class="brand-badge">Agriculture</span>
       </a>
       <nav class="nav-menu" role="navigation">
         <div class="nav-item"><a href="../index.html" class="nav-link">Home</a></div>
@@ -81,235 +80,433 @@
       <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
     </ul>
     <div class="mobile-nav-actions">
-      <a href="../404.html" class="btn btn-outline-light">Sign In to Dashboard</a>
-      <a href="../404.html" class="btn btn-accent">Create New Account</a>
+      <a href="sign-in.html" class="btn btn-outline-light">Sign In to Dashboard</a>
+      <a href="sign-up.html" class="btn btn-accent">Create New Account</a>
     </div>
   </div>
 
   <main>
     <!-- SECTION 1: HERO -->
-    <section class="hero-section" style="padding: 4.5rem 0 3.5rem 0;">
+    <section class="hero-section" style="padding: 5rem 0 4rem 0;">
       <div class="hero-bg-media" aria-hidden="true">
-        <img src="../assets/images/fresh-harvest-organic-vegetables.webp" alt="Fresh Harvest Organic Vegetables" class="hero-bg-img">
+        <img src="../assets/images/farmer-market-produce-display.webp" alt="Vibrant Organic Farmers Market Harvest Display" class="hero-bg-img">
         <div class="hero-overlay-scrim"></div>
       </div>
       <div class="hero-overlay-pattern"></div>
       <div class="container text-center" data-animate="fade-up">
-        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Farm To Table Purity</span>
+        <span class="section-tag section-tag-hero">Certified Regenerative Harvest</span>
         <h1 style="color: #FFFFFF; margin-bottom: 1rem;">Direct From Soil: Certified Harvest Lots</h1>
-        <p style="color: #D2E3D6; max-width: 680px; margin: 0 auto;">
-          Picked at optimum ripeness from our regenerative Salem acreage. Available for wholesale lot booking, institutional contracts, and cooperative distribution.
+        <p style="color: #D2E3D6; max-width: 720px; margin: 0 auto 2rem auto; font-size: 1.1rem; line-height: 1.6;">
+          Harvested at peak physiological ripeness from our pesticide-free Salem acreage. Available for commercial wholesale lot booking, institutional contracts, and cooperative retail distribution.
         </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#catalog" class="btn btn-accent btn-lg">Browse Available Batches ➔</a>
+          <a href="sign-in.html" class="btn btn-outline-light btn-lg">Produce Buyer Login</a>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 2: HARVEST CATALOG GRID (Diverse Products) -->
-    <section class="section-padding" style="background-color: #FFFFFF;">
+    <!-- SECTION 2: HARVEST CATALOG GRID (8 DIVERSE PRODUCE ITEMS WITH UNIQUE IMAGES) -->
+    <section id="catalog" class="section-padding" style="background-color: #FFFFFF;">
       <div class="container">
         <div class="section-header mx-auto text-center" data-animate="fade-up">
           <span class="section-tag">Seasonal Selections</span>
           <h2>Current Harvest Batches Ready For Cold Dispatch</h2>
-          <p>Every lot includes full laboratory pesticide residue test sheets and temperature tracking.</p>
+          <p>Every harvest lot includes gas-chromatography residue sheets, Brix sweetness metrics, and refrigerated truck traceability.</p>
         </div>
 
-        <div class="grid grid-3">
-          <!-- Item 1 -->
+        <div class="grid grid-4" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem;">
+          <!-- Item 1: Heirloom Carrots -->
           <div class="produce-card tilt-card" data-animate="fade-up">
-            <div class="card-image-wrap">
-              <img src="../assets/images/fresh-harvest-organic-vegetables.webp" alt="Fresh crisp organic heirloom vegetables and leafy greens">
+            <div class="card-image-wrap" style="height: 220px;">
+              <img src="../assets/images/organic-heirloom-carrots-bunch.webp" alt="Freshly harvested organic heirloom rainbow carrots bunch with green tops">
             </div>
             <div class="card-body">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                 <span class="status-tag active">In Harvest</span>
-                <strong style="color: var(--color-primary);">₹45 / kg (Bulk)</strong>
+                <strong style="color: var(--color-primary); font-size: 1.1rem;">₹48 / kg</strong>
               </div>
-              <h3>Organic Heritage Greens & Carrots</h3>
-              <p>Hand-pulled baby spinach, rainbow carrots, and crisp broccoli grown in mineral vermicompost without synthetic sprays.</p>
-              <a href="../404.html" class="btn btn-secondary btn-sm">Order Wholesale Lot</a>
+              <h3 style="font-size: 1.25rem;">Organic Heritage Rainbow Carrots</h3>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">
+                Sweet, crunchy rainbow varieties hand-pulled at daybreak. Grown in deep composted loam without synthetic fungicides.
+              </p>
+              <div style="margin-top: 1rem;">
+                <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Order Wholesale Lot</a>
+              </div>
             </div>
           </div>
 
-          <!-- Item 2 -->
+          <!-- Item 2: Vine-Ripened Tomatoes -->
           <div class="produce-card tilt-card" data-animate="fade-up">
-            <div class="card-image-wrap">
-              <img src="../assets/images/organic-orchard-fruit-apples.webp" alt="Crisp fresh organic red apples harvested from mountain orchard">
+            <div class="card-image-wrap" style="height: 220px;">
+              <img src="../assets/images/vine-ripened-organic-tomatoes.webp" alt="Lush red vine-ripened organic greenhouse cluster tomatoes">
             </div>
             <div class="card-body">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                 <span class="status-tag active">Peak Season</span>
-                <strong style="color: var(--color-primary);">₹110 / kg</strong>
+                <strong style="color: var(--color-primary); font-size: 1.1rem;">₹55 / kg</strong>
               </div>
-              <h3>Crisp Organic Mountain Apples</h3>
-              <p>Sun-ripened orchard apples cultivated without wax coatings, fungicides, or synthetic ripening gas.</p>
-              <a href="../404.html" class="btn btn-secondary btn-sm">Order Wholesale Lot</a>
+              <h3 style="font-size: 1.25rem;">Vine-Ripened Cluster Tomatoes</h3>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">
+                High lycopene Roma and truss varieties naturally ripened on the vine without ethylene gassing. Exceptional umami flavor.
+              </p>
+              <div style="margin-top: 1rem;">
+                <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Order Wholesale Lot</a>
+              </div>
             </div>
           </div>
 
-          <!-- Item 3 -->
+          <!-- Item 3: Orchard Apples -->
           <div class="produce-card tilt-card" data-animate="fade-up">
-            <div class="card-image-wrap">
-              <img src="../assets/images/golden-wheat-harvest-combine.webp" alt="Organic heirloom golden wheat grain freshly harvested">
+            <div class="card-image-wrap" style="height: 220px;">
+              <img src="../assets/images/fresh-orchard-apples-harvest.webp" alt="Crisp fresh organic red apples harvested from mountain orchard in wooden crates">
             </div>
             <div class="card-body">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <span class="status-tag active">Grain Silo</span>
-                <strong style="color: var(--color-primary);">₹65 / kg</strong>
+                <span class="status-tag active">Cold Storage</span>
+                <strong style="color: var(--color-primary); font-size: 1.1rem;">₹120 / kg</strong>
               </div>
-              <h3>Heirloom Khapli Emmer Wheat</h3>
-              <p>Ancient grain rich in soluble fiber and resistant starch, stonemilled or supplied as whole raw berries.</p>
-              <a href="../404.html" class="btn btn-secondary btn-sm">Order Grain Silo Lot</a>
+              <h3 style="font-size: 1.25rem;">Crisp Mountain Orchard Apples</h3>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">
+                Hand-picked high-altitude apples completely free from chemical paraffin wax coatings or chemical preservation dips.
+              </p>
+              <div style="margin-top: 1rem;">
+                <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Order Wholesale Lot</a>
+              </div>
             </div>
           </div>
 
-          <!-- Item 4 -->
+          <!-- Item 4: Khapli Wheat -->
           <div class="produce-card tilt-card" data-animate="fade-up">
-            <div class="card-image-wrap">
-              <img src="../assets/images/organic-honey-harvest-jars.webp" alt="Raw unpasteurized wildflower honey jars">
+            <div class="card-image-wrap" style="height: 220px;">
+              <img src="../assets/images/organic-khapli-wheat-sheaves.webp" alt="Organic heirloom golden Khapli Emmer wheat sheaves and whole grains">
             </div>
             <div class="card-body">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <span class="status-tag active">Cold Extracted</span>
-                <strong style="color: var(--color-primary);">₹520 / kg</strong>
+                <span class="status-tag active">Silo Stored</span>
+                <strong style="color: var(--color-primary); font-size: 1.1rem;">₹68 / kg</strong>
               </div>
-              <h3>Raw Wildflower Forest Honey</h3>
-              <p>Unheated, unfiltered raw honey straight from our pollinator apiary with natural enzymes intact.</p>
-              <a href="../404.html" class="btn btn-secondary btn-sm">Order Honey Crate</a>
+              <h3 style="font-size: 1.25rem;">Heirloom Khapli Emmer Wheat</h3>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">
+                Low glycemic index ancient wheat rich in dietary beta-glucans. Aeration-cooled silos preserve natural moisture.
+              </p>
+              <div style="margin-top: 1rem;">
+                <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Order Grain Silo Lot</a>
+              </div>
             </div>
           </div>
 
-          <!-- Item 5 -->
+          <!-- Item 5: Cold Pressed Oils -->
           <div class="produce-card tilt-card" data-animate="fade-up">
-            <div class="card-image-wrap">
-              <img src="../assets/images/artisan-farm-cheese-dairy-products.webp" alt="Artisan natural aged cheddar and gouda cheese wheels">
+            <div class="card-image-wrap" style="height: 220px;">
+              <img src="../assets/images/cold-pressed-organic-farm-oil.webp" alt="Amber glass bottles of unrefined cold pressed extra virgin sesame and mustard farm oil">
             </div>
             <div class="card-body">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <span class="status-tag active">Cellar Aged</span>
-                <strong style="color: var(--color-primary);">₹750 / kg</strong>
+                <span class="status-tag active">Cold Pressed</span>
+                <strong style="color: var(--color-primary); font-size: 1.1rem;">₹340 / L</strong>
               </div>
-              <h3>Handcrafted Farmstead Cheeses</h3>
-              <p>Aged 60 to 180 days in solar humidity cellars, prepared exclusively from raw pasture-fed A2 milk.</p>
-              <a href="../404.html" class="btn btn-secondary btn-sm">Order Cheese Batch</a>
+              <h3 style="font-size: 1.25rem;">Virgin Cold-Pressed Farm Oils</h3>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">
+                Single-origin sesame, groundnut, and mustard oils extracted in traditional wood presses below 40°C to preserve antioxidants.
+              </p>
+              <div style="margin-top: 1rem;">
+                <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Order Oil Drums / Casks</a>
+              </div>
             </div>
           </div>
 
-          <!-- Item 6 -->
+          <!-- Item 6: Pasture Eggs -->
           <div class="produce-card tilt-card" data-animate="fade-up">
-            <div class="card-image-wrap">
-              <img src="../assets/images/farmer-market-produce-display.webp" alt="Assorted organic farmer market harvest produce display">
+            <div class="card-image-wrap" style="height: 220px;">
+              <img src="../assets/images/free-range-pasture-farm-eggs.webp" alt="Fresh organic free-range pasture farm eggs in rustic nest basket with rich golden yolks">
             </div>
             <div class="card-body">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                <span class="status-tag active">Weekly Subscription</span>
-                <strong style="color: var(--color-primary);">Custom Contracts</strong>
+                <span class="status-tag active">Daily Harvest</span>
+                <strong style="color: var(--color-primary); font-size: 1.1rem;">₹12 / egg</strong>
               </div>
-              <h3>Wholesale Cooperative Mixed Crates</h3>
-              <p>Custom tailored pallets of seasonal vegetables and herbs packed to supermarket specifications.</p>
-              <a href="../404.html" class="btn btn-secondary btn-sm">Request Pallet Quote</a>
+              <h3 style="font-size: 1.25rem;">Pasture-Raised Organic Eggs</h3>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">
+                Deep golden yolks from hens foraging freely on clover and herbal pastures. Antibiotic-free and hormone-free certified.
+              </p>
+              <div style="margin-top: 1rem;">
+                <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Order Wholesale Crates</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: Wildflower Honeycomb -->
+          <div class="produce-card tilt-card" data-animate="fade-up">
+            <div class="card-image-wrap" style="height: 220px;">
+              <img src="../assets/images/raw-wildflower-honeycomb.webp" alt="Golden raw wildflower honeycomb frame straight from Stackly apiary beehives">
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="status-tag active">Raw & Raw Comb</span>
+                <strong style="color: var(--color-primary); font-size: 1.1rem;">₹580 / kg</strong>
+              </div>
+              <h3 style="font-size: 1.25rem;">Raw Honeycomb & Forest Honey</h3>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">
+                Unpasteurized wildflower honey and virgin wax comb harvested from apiaries foraging on organic neem and clover blossoms.
+              </p>
+              <div style="margin-top: 1rem;">
+                <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Order Honey Crate</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8: Botanical Herbs -->
+          <div class="produce-card tilt-card" data-animate="fade-up">
+            <div class="card-image-wrap" style="height: 220px;">
+              <img src="../assets/images/medicinal-herbal-botanical-crops.webp" alt="Fresh culinary and medicinal herbs field including basil rosemary mint and ashwagandha">
+            </div>
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span class="status-tag active">Hydroponic / Field</span>
+                <strong style="color: var(--color-primary); font-size: 1.1rem;">₹95 / bunch</strong>
+              </div>
+              <h3 style="font-size: 1.25rem;">Medicinal & Botanical Herbs</h3>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.5;">
+                Aromatic Genovese basil, rosemary, holy basil (Tulsi), and medicinal roots. High essential oil concentration.
+              </p>
+              <div style="margin-top: 1rem;">
+                <a href="contact.html" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center;">Order Herb Pallet</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: ORGANIC QUALITY TESTING RIGOR -->
+    <!-- SECTION 3: 12-MONTH SEASONAL HARVEST CALENDAR MATRIX -->
     <section class="section-padding" style="background-color: var(--color-bg);">
       <div class="container">
-        <div class="grid grid-2" style="align-items: center;">
-          <div data-animate="slide-right">
-            <span class="section-tag">Quality Assurance</span>
-            <h2>Multi-Residue Testing on Every Harvest Lot</h2>
-            <p>
-              Before any crate leaves our farm cold facility, sample batches are analyzed using Gas Chromatography-Mass Spectrometry (GC-MS). We test for 240+ synthetic insecticides, organophosphates, and heavy metals.
-            </p>
-            <p>
-              All test certificates are uploaded to the Produce Buyer portal and stamped with cryptographic batch IDs for complete consumer trust.
-            </p>
-            <div style="margin-top: 1.5rem;">
-              <a href="../404.html" class="btn btn-primary">Sign In To Download Batch Certs ➔</a>
-            </div>
-          </div>
-          <div data-animate="slide-left">
-            <div class="card-image-wrap" style="height: 400px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-              <img src="../assets/images/agronomist-soil-scientist-testing.webp" alt="Food scientist verifying chemical purity and testing harvest lots in lab">
-            </div>
-          </div>
+        <div class="section-header mx-auto text-center" data-animate="fade-up">
+          <span class="section-tag">Harvest Schedule</span>
+          <h2>Annual Crop Availability & Pre-Booking Calendar</h2>
+          <p>Plan procurement cycles with guaranteed volume allocations locked at fair-trade minimum prices.</p>
+        </div>
+
+        <div style="overflow-x: auto; background: #FFFFFF; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 1.5rem;" data-animate="fade-up">
+          <table style="width: 100%; border-collapse: collapse; min-width: 650px; text-align: left;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--color-border); color: var(--color-primary);">
+                <th style="padding: 1rem; font-family: var(--font-heading); font-size: 1.05rem;">Produce Line</th>
+                <th style="padding: 1rem; font-family: var(--font-heading); font-size: 1.05rem;">Q1 (Jan - Mar)</th>
+                <th style="padding: 1rem; font-family: var(--font-heading); font-size: 1.05rem;">Q2 (Apr - Jun)</th>
+                <th style="padding: 1rem; font-family: var(--font-heading); font-size: 1.05rem;">Q3 (Jul - Sep)</th>
+                <th style="padding: 1rem; font-family: var(--font-heading); font-size: 1.05rem;">Q4 (Oct - Dec)</th>
+                <th style="padding: 1rem; font-family: var(--font-heading); font-size: 1.05rem;">Booking Window</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 1rem; font-weight: 600;">🥕 Heirloom Root Vegetables</td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Peak Harvest</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #FFF8E1; color: #F57F17; padding: 4px 8px; border-radius: 4px;">Controlled Cold</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #F5F5F5; color: #757575; padding: 4px 8px; border-radius: 4px;">Inter-crop Sowing</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Early Harvest</span></td>
+                <td style="padding: 1rem; color: var(--color-text-muted);">45 Days in Advance</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 1rem; font-weight: 600;">🍅 Greenhouse Cluster Tomatoes</td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Peak Harvest</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Peak Harvest</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #FFF8E1; color: #F57F17; padding: 4px 8px; border-radius: 4px;">Protected Flora</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Peak Harvest</span></td>
+                <td style="padding: 1rem; color: var(--color-text-muted);">Year-Round Standing SLA</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 1rem; font-weight: 600;">🌾 Khapli Emmer Wheat</td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #FFF8E1; color: #F57F17; padding: 4px 8px; border-radius: 4px;">Maturation</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Combine Harvest</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E3F2FD; color: #1565C0; padding: 4px 8px; border-radius: 4px;">Silo Aeration</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E3F2FD; color: #1565C0; padding: 4px 8px; border-radius: 4px;">Silo Aeration</span></td>
+                <td style="padding: 1rem; color: var(--color-text-muted);">Annual Contract (May)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: 1rem; font-weight: 600;">🍯 Raw Wildflower Honey</td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #FFF8E1; color: #F57F17; padding: 4px 8px; border-radius: 4px;">Brood Build</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Spring Extraction</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #FFF8E1; color: #F57F17; padding: 4px 8px; border-radius: 4px;">Forest Bloom</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Autumn Extraction</span></td>
+                <td style="padding: 1rem; color: var(--color-text-muted);">Batch Reservation</td>
+              </tr>
+              <tr>
+                <td style="padding: 1rem; font-weight: 600;">🌿 Fresh Botanical Herbs</td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Daily Cut</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Daily Cut</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Daily Cut</span></td>
+                <td style="padding: 1rem;"><span class="badge" style="background: #E8F5E9; color: #2E7D32; padding: 4px 8px; border-radius: 4px; font-weight: 600;">Daily Cut</span></td>
+                <td style="padding: 1rem; color: var(--color-text-muted);">Weekly Recurring Slots</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: PACKAGING & COLD STORAGE SPECS -->
+    <!-- SECTION 4: LAB CERTIFICATION & BRIX QUALITY RIGOR -->
     <section class="section-padding" style="background-color: #FFFFFF;">
       <div class="container">
         <div class="section-header mx-auto text-center" data-animate="fade-up">
+          <span class="section-tag">Chemical-Free Verification</span>
+          <h2>Analytical Quality Standards For Every Batch</h2>
+          <p>We test for 240+ synthetic pesticides, organophosphates, and heavy metals before any crate is dispatched.</p>
+        </div>
+
+        <div class="grid grid-4" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+          <div class="feature-card tilt-card" style="text-align: center; padding: 2rem 1.5rem;" data-animate="fade-up">
+            <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); margin-bottom: 0.5rem;">0.00 <span style="font-size: 1.2rem;">ppm</span></div>
+            <h4 style="margin-bottom: 0.5rem;">Synthetic Residues</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">GC-MS laboratory tested for zero synthetic chemical trace across all harvest lots.</p>
+          </div>
+
+          <div class="feature-card tilt-card" style="text-align: center; padding: 2rem 1.5rem;" data-animate="fade-up">
+            <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); margin-bottom: 0.5rem;">14.5° <span style="font-size: 1.2rem;">Brix</span></div>
+            <h4 style="margin-bottom: 0.5rem;">Optimum Natural Sweetness</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">Refractometer calibrated sugar index indicating superior nutrient density and flavor.</p>
+          </div>
+
+          <div class="feature-card tilt-card" style="text-align: center; padding: 2rem 1.5rem;" data-animate="fade-up">
+            <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); margin-bottom: 0.5rem;">100%</div>
+            <h4 style="margin-bottom: 0.5rem;">Non-GMO Heirloom Seed</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">Proprietary open-pollinated seed lineage preserved by traditional farmer cooperatives.</p>
+          </div>
+
+          <div class="feature-card tilt-card" style="text-align: center; padding: 2rem 1.5rem;" data-animate="fade-up">
+            <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-primary); font-family: var(--font-heading); margin-bottom: 0.5rem;">4 hrs</div>
+            <h4 style="margin-bottom: 0.5rem;">Pre-Cooling Dispatch</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;">From harvest basket to solar hydro-cooler within 240 minutes to preserve crispness.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: BULK PACKAGING & STORAGE SPECIFICATIONS -->
+    <section class="section-padding" style="background-color: var(--color-bg);">
+      <div class="container">
+        <div class="section-header mx-auto text-center" data-animate="fade-up">
           <span class="section-tag">Sustainable Packaging</span>
-          <h2>Eco-Conscious Packaging Designed For Zero Spoilage</h2>
-          <p>We eliminate single-use plastics from farm gates to retail distribution.</p>
+          <h2>Eco-Conscious Packaging Engineered For Zero Food Spoilage</h2>
+          <p>We eliminate single-use plastics from farm gates to retail distribution with closed-loop returnable crates.</p>
         </div>
 
         <div class="grid grid-3">
           <div class="feature-card tilt-card" data-animate="fade-up">
             <div class="card-body">
               <div class="card-icon-pill">♻️</div>
-              <h4>Reusable Returnable Crates</h4>
-              <p>Sanitized food-grade polypropylene returnable collapsible containers circulating in closed supply loops.</p>
+              <h4>Reusable Returnable Crates (RPC)</h4>
+              <p>Sanitized food-grade collapsible polypropylene containers. Vented walls allow cross-flow reefer chilling while stacking up to 8 tiers high without bruising.</p>
             </div>
           </div>
 
           <div class="feature-card tilt-card" data-animate="fade-up">
             <div class="card-body">
               <div class="card-icon-pill">🌿</div>
-              <h4>Biodegradable Cornstarch Liners</h4>
-              <p>Breathable plant-based bio-films maintaining optimal humidity and slowing ethylene ripening gas buildup.</p>
+              <h4>Biodegradable Cornstarch Bio-Liners</h4>
+              <p>Breathable plant-based bio-films maintaining 88% microclimate humidity and actively absorbing ethylene gas to retard premature senescence.</p>
             </div>
           </div>
 
           <div class="feature-card tilt-card" data-animate="fade-up">
             <div class="card-body">
               <div class="card-icon-pill">❄️</div>
-              <h4>Phase-Change Ice Gel Packs</h4>
-              <p>Non-toxic plant-gel chilling inserts keeping microgreens crisp without creating soggy melting water puddles.</p>
+              <h4>Phase-Change Ice Gel Inserts</h4>
+              <p>Non-toxic plant-cellulose chilling packs maintaining steady 3°C core temperature during multi-stop distribution runs without wet slush puddle buildup.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: BUYER REVIEWS & CHEF ENDORSEMENTS -->
+    <!-- SECTION 6: COLD CHAIN LOGISTICS & REEFER TRUCKING SLA -->
+    <section class="section-padding" style="background-color: #FFFFFF;">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: center; gap: 3rem;">
+          <div data-animate="slide-right">
+            <span class="section-tag">Cold-Chain Guarantee</span>
+            <h2>Unbroken Refrigeration From Farm Gate To Kitchen Dock</h2>
+            <p style="margin-bottom: 1.25rem; font-size: 1.05rem; line-height: 1.6; color: var(--color-text);">
+              Fresh vegetables respire rapidly after cutting. Our post-harvest cold chain halts metabolic degradation immediately through pressurized forced-air tunnels and insulated reefer fleets.
+            </p>
+            <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+                <span><strong>2°C to 4°C Monitored Routing:</strong> Real-time telematics log temperatures every 60 seconds with instant threshold SMS alerts.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+                <span><strong>100% Traceability QR Codes:</strong> Every master carton features a scannable batch code showing farm plot location, harvest hour, and agronomist signature.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+                <span><strong>Guaranteed 24-Hour Regional Delivery:</strong> Daily scheduled routes serving hotels, cloud kitchens, and organic stores across southern India.</span>
+              </li>
+            </ul>
+            <a href="service-supply-chain.html" class="btn btn-primary">Explore Supply Chain Network ➔</a>
+          </div>
+          <div data-animate="slide-left">
+            <div style="background: var(--color-bg); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-md);">
+              <h3 style="margin-bottom: 1rem; color: var(--color-primary);">Cold Chain Quality SLA Guarantee</h3>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="border-left: 3px solid var(--color-accent); padding-left: 1rem;">
+                  <strong style="display: block; font-size: 1rem; color: var(--color-text);">Arrival Temperature Guarantee</strong>
+                  <span style="font-size: 0.88rem; color: var(--color-text-muted);">Leaves farm at 3°C, arrives at dock under 5°C or replacement lot dispatched free of charge.</span>
+                </div>
+                <div style="border-left: 3px solid var(--color-primary); padding-left: 1rem;">
+                  <strong style="display: block; font-size: 1rem; color: var(--color-text);">Shrinkage Loss Cap</strong>
+                  <span style="font-size: 0.88rem; color: var(--color-text-muted);">Commercial partners experience &lt;1.8% average transit weight loss versus 12% industry baseline.</span>
+                </div>
+                <div style="border-left: 3px solid var(--color-secondary); padding-left: 1rem;">
+                  <strong style="display: block; font-size: 1rem; color: var(--color-text);">Direct Agronomist Support</strong>
+                  <span style="font-size: 0.88rem; color: var(--color-text-muted);">Dedicated quality manager assigned to every corporate account for customized grade sorting.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: VERIFIED BUYER TESTIMONIALS (WITH UNIQUE AVATARS) -->
     <section class="section-padding" style="background-color: var(--color-bg);">
       <div class="container">
         <div class="section-header mx-auto text-center" data-animate="fade-up">
-          <span class="section-tag">Buyer Testimonials</span>
-          <h2>What Leading Procurement Directors Say About Stackly Produce</h2>
+          <span class="section-tag">Procurement Endorsements</span>
+          <h2>What Commercial Buyers Say About Stackly Harvest Quality</h2>
         </div>
 
         <div class="grid grid-2">
+          <!-- Review 1: Chef Arjun Mehta -->
           <div class="testimonial-card tilt-card" data-animate="fade-up">
             <p class="testimonial-quote">
-              "The shelf-life of Stackly organic greens is almost double that of conventional market produce because of their rapid solar pre-cooling. Our waste shrink dropped from 14% to under 2%."
+              "The crisp sweetness and Brix rating of Stackly vine tomatoes and heritage carrots are unmatched. As an executive chef, having farm-fresh produce delivered at 3°C within 18 hours of harvest transformed our seasonal menu consistency."
             </p>
             <div class="testimonial-author">
-              <div class="author-avatar">
-                <img src="../assets/images/organic-produce-buyer-customer.webp" alt="Wholesale produce customer review">
+              <div class="author-avatar" style="width: 56px; height: 56px; border-radius: 50%; overflow: hidden;">
+                <img src="../assets/images/executive-chef-produce-partner.webp" alt="Executive Chef Arjun Mehta reviewing Stackly organic farm produce" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
               <div class="author-info">
-                <h4>Pooja Raman</h4>
-                <span>Procurement Lead, Salem Organic Grocers</span>
+                <h4>Chef Arjun Mehta</h4>
+                <span>Executive Culinary Director, Le Botanique Bistro</span>
               </div>
             </div>
           </div>
 
+          <!-- Review 2: Priya Sundaram -->
           <div class="testimonial-card tilt-card" data-animate="fade-up">
             <p class="testimonial-quote">
-              "Their Khapli wheat flour makes sourdough bread with exceptional aroma and crust color. Our artisan bakery orders 4 tons every single month without fail."
+              "We supply 12 organic retail supermarkets. Switching to Stackly's returnable vented crates cut our vegetable shrinkage from 14% to under 2%. The GC-MS chemical residue lab sheets attached to every pallet give our shoppers absolute peace of mind."
             </p>
             <div class="testimonial-author">
-              <div class="author-avatar">
-                <img src="../assets/images/commercial-produce-distributor-face.webp" alt="Artisan baker and wholesale partner">
+              <div class="author-avatar" style="width: 56px; height: 56px; border-radius: 50%; overflow: hidden;">
+                <img src="../assets/images/farm-customer-relations-specialist.webp" alt="Priya Sundaram, Organic Supermarkets Procurement Director" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
               <div class="author-info">
-                <h4>Arun Prakash</h4>
-                <span>Master Baker, Crust & Hearth Co.</span>
+                <h4>Priya Sundaram</h4>
+                <span>Procurement Director, Farmgate Organic Supermarkets</span>
               </div>
             </div>
           </div>
@@ -317,25 +514,65 @@
       </div>
     </section>
 
-    <!-- SECTION 6: CTA BANNER -->
+    <!-- SECTION 8: COMMERCIAL PROCUREMENT FAQ -->
+    <section class="section-padding" style="background-color: #FFFFFF;">
+      <div class="container">
+        <div class="section-header mx-auto text-center" data-animate="fade-up">
+          <span class="section-tag">Wholesale Procurement</span>
+          <h2>Frequently Asked Questions For Commercial Buyers</h2>
+          <p>Key information on lot minimums, recurring delivery contracts, and custom farm cultivation programs.</p>
+        </div>
+
+        <div style="max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;" data-animate="fade-up">
+          <details style="background: var(--color-bg); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; border: 1px solid var(--color-border); cursor: pointer;">
+            <summary style="font-weight: 700; color: var(--color-primary); font-size: 1.05rem;">What is the minimum order quantity for wholesale lot pricing?</summary>
+            <p style="margin-top: 0.75rem; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;">
+              Our minimum order quantity (MOQ) for wholesale delivery is 50 kg for mixed greens, tomatoes, and culinary herbs, and 250 kg for grain staples like Khapli wheat. Smaller test crates (15 kg sample boxes) can be ordered by registered culinary buyers.
+            </p>
+          </details>
+
+          <details style="background: var(--color-bg); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; border: 1px solid var(--color-border); cursor: pointer;">
+            <summary style="font-weight: 700; color: var(--color-primary); font-size: 1.05rem;">Can restaurants and food brands pre-book dedicated acreage?</summary>
+            <p style="margin-top: 0.75rem; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;">
+              Yes! Under our Contract Farming Alliances program, institutional partners can reserve from 2 to 50 acres for custom heirloom varieties, microgreens, or specialty herbs with guaranteed price stability across 12-month farming cycles.
+            </p>
+          </details>
+
+          <details style="background: var(--color-bg); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; border: 1px solid var(--color-border); cursor: pointer;">
+            <summary style="font-weight: 700; color: var(--color-primary); font-size: 1.05rem;">How do we access the GC-MS pesticide residue test sheets?</summary>
+            <p style="margin-top: 0.75rem; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;">
+              Every pallet label includes a cryptographically verifiable QR code. Scanning it opens the certified laboratory certificate containing spectrometer readings, date of harvest, soil block ID, and moisture parameters.
+            </p>
+          </details>
+
+          <details style="background: var(--color-bg); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; border: 1px solid var(--color-border); cursor: pointer;">
+            <summary style="font-weight: 700; color: var(--color-primary); font-size: 1.05rem;">What credit terms are available for commercial supermarket chains?</summary>
+            <p style="margin-top: 0.75rem; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;">
+              First-time orders are dispatched against advance payment or bank guarantee. Once established with a 60-day purchase track record, commercial buyers can qualify for net-15 or net-30 revolving invoicing directly via the Produce Buyer dashboard.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: WHOLESALE LOT BOOKING CTA BANNER -->
     <section class="section-padding" style="padding-top: 0;">
       <div class="container">
         <div class="cta-banner" data-animate="zoom-in">
           <h2>Order Certified Harvest Batches Directly Online</h2>
           <p>Login to your Produce Buyer dashboard to browse daily stock levels, track reefer trucks, and download lab sheets.</p>
           <div class="cta-banner-buttons">
-            <a href="../404.html" class="btn btn-accent btn-lg">Produce Buyer Sign In ➔</a>
-            <a href="../404.html" class="btn btn-outline-light btn-lg">Request Custom Harvest Lot</a>
+            <a href="sign-in.html" class="btn btn-accent btn-lg">Produce Buyer Sign In ➔</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg">Request Custom Harvest Lot</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Standard Footer -->
-    <!-- =========================================================================
-       STANDARDIZED FOOTER
-       ========================================================================= -->
+  <!-- =========================================================================
+     STANDARDIZED FOOTER
+     ========================================================================= -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-top-grid">
@@ -348,28 +585,43 @@
             Stackly Agriculture & Farming is an industry leader in regenerative crop production, precision farm analytics, and transparent organic supply chains.
           </p>
           <div class="footer-social-row">
-            <a href="../404.html" class="footer-social-pill" aria-label="Facebook"><span>📘</span> Facebook</a>
-            <a href="../404.html" class="footer-social-pill" aria-label="Twitter / X"><span>𝕏</span> Twitter</a>
-            <a href="../404.html" class="footer-social-pill" aria-label="Instagram"><span>📷</span> Instagram</a>
-            <a href="../404.html" class="footer-social-pill" aria-label="LinkedIn"><span>💼</span> LinkedIn</a>
-            <a href="../404.html" class="footer-social-pill" aria-label="YouTube"><span>▶️</span> YouTube</a>
+            <a href="../404.html" class="footer-social-pill" aria-label="Facebook">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href="../404.html" class="footer-social-pill" aria-label="Twitter / X">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Twitter
+            </a>
+            <a href="../404.html" class="footer-social-pill" aria-label="Instagram">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </a>
+            <a href="../404.html" class="footer-social-pill" aria-label="LinkedIn">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn
+            </a>
+            <a href="../404.html" class="footer-social-pill" aria-label="YouTube">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              YouTube
+            </a>
           </div>
         </div>
 
-        <!-- Col 2: Quick Links (All Redirect to 404 per Specification) -->
+        <!-- Col 2: Quick Links -->
         <div>
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-links-list">
-            <li><a href="../404.html">➔ Home</a></li>
-            <li><a href="../404.html">➔ About Us</a></li>
-            <li><a href="../404.html">➔ Our Services</a></li>
-            <li><a href="../404.html">➔ Fresh Produce</a></li>
-            <li><a href="../404.html">➔ Pricing & Plans</a></li>
-            <li><a href="../404.html">➔ Contact Headquarters</a></li>
+            <li><a href="../index.html">➔ Home</a></li>
+            <li><a href="about.html">➔ About Us</a></li>
+            <li><a href="services.html">➔ Our Services</a></li>
+            <li><a href="products.html">➔ Fresh Produce</a></li>
+            <li><a href="pricing.html">➔ Pricing & Plans</a></li>
+            <li><a href="contact.html">➔ Contact Headquarters</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Services (Redirect to 404 per Specification) -->
+        <!-- Col 3: Farming Services -->
         <div>
           <h4 class="footer-heading">Farming Services</h4>
           <ul class="footer-links-list">
@@ -382,7 +634,7 @@
           </ul>
         </div>
 
-        <!-- Col 4: Contact Details (Address + Phone/Email to 404 per Specification, No sign-in button) -->
+        <!-- Col 4: Contact Details -->
         <div>
           <h4 class="footer-heading">Farm Headquarters</h4>
           <div class="footer-contact-item">
@@ -415,7 +667,14 @@
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <button type="button" id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5"/>
+      <path d="m5 12 7-7 7 7"/>
+    </svg>
+  </button>
+
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
-

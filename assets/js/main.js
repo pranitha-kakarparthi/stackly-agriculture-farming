@@ -25,6 +25,7 @@ onDOMReady(() => {
   initCardTilt();
   initUniversalLogoRedirect();
   initFormValidations();
+  initBackToTop();
 });
 
 /* ==========================================================================
@@ -385,7 +386,54 @@ function showToast(message, type = 'success') {
   }, 4000);
 }
 
+/* ==========================================================================
+   11. BACK TO TOP BUTTON
+   ========================================================================== */
+function initBackToTop() {
+  let btn = document.getElementById('back-to-top');
+
+  // Fallback: If button does not already exist in DOM, create and mount it
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.type = 'button';
+    btn.id = 'back-to-top';
+    btn.className = 'back-to-top-btn';
+    btn.setAttribute('aria-label', 'Scroll back to top');
+    btn.title = 'Back to top';
+    btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>`;
+    document.body.appendChild(btn);
+  }
+
+  const toggleVisibility = () => {
+    const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if (scrollPos > 240) {
+      btn.classList.add('is-visible');
+    } else {
+      btn.classList.remove('is-visible');
+    }
+  };
+
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  document.addEventListener('scroll', toggleVisibility, { passive: true });
+  toggleVisibility();
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    if (document.documentElement.scrollTop > 0) {
+      document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    if (document.body.scrollTop > 0) {
+      document.body.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+}
+
 // Global expose
 window.showToast = showToast;
 window.showFieldError = showFieldError;
 window.clearFieldError = clearFieldError;
+window.initBackToTop = initBackToTop;

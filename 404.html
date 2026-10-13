@@ -29,14 +29,14 @@
 
   <!-- 404 Fixed Atmosphere Background Layer (High Opacity Agricultural Image + Glowing Gradients) -->
   <div class="error-fixed-bg" aria-hidden="true">
-    <img src="assets/images/lush-green-organic-field-landscape.webp" alt="Organic Farmland Background" class="error-bg-img">
+    <img src="assets/images/misty-morning-farmland-landscape.webp" alt="Misty Morning Organic Farmland Background" class="error-bg-img">
     <div class="error-bg-scrim"></div>
     <div class="error-ambient-orb error-orb-emerald"></div>
     <div class="error-ambient-orb error-orb-gold"></div>
     <div class="error-pattern-grid"></div>
   </div>
 
-  <!-- 404 Fixed Viewport Wrapper (No Scroll, Centered) -->
+  <!-- 404 Fixed Viewport Wrapper (Strictly Non-Scrollable & Centered) -->
   <main class="error-fixed-container" role="main">
     <div class="error-card-glass" data-tilt data-animate="zoom-in">
       <!-- Stackly Brand Logo linking directly to index.html -->
@@ -46,36 +46,45 @@
         </a>
       </div>
 
-      <!-- Glowing 404 Badge -->
+      <!-- Prominent 404 Visual Number & Sector Badge -->
       <div class="error-badge-glow">
         <span class="badge-num">404</span>
-        <span class="badge-sub">SECTOR OFFLINE</span>
+        <span class="badge-sub">Field Not Found</span>
       </div>
 
-      <span class="section-tag" style="background: rgba(46, 184, 114, 0.16); color: #4ADE80; border-color: rgba(74, 222, 128, 0.35); margin-bottom: 0.75rem;">
-        🌱 Crop Field Unavailable
-      </span>
+      <!-- Clear, Scannable Heading -->
+      <h1 class="error-title">Harvest Sector Unavailable</h1>
 
-      <h1 class="error-title">Uncultivated Field Detected</h1>
+      <!-- Clean, High-Contrast Readable Explanation -->
       <p class="error-desc">
-        The agronomy module, produce lot, or telemetry sector you requested is currently out of seasonal rotation or undergoing soil regeneration. Return to the main farm gateway below.
+        The page, produce batch, or agronomy report you requested is currently out of seasonal crop rotation or has been moved to another field sector. Return to the main gateway to continue exploring.
       </p>
 
+      <!-- Primary & Secondary Navigation Actions -->
       <div class="error-actions-group">
-        <a href="index.html" class="btn btn-accent btn-lg btn-glow">
-          Return To Home Page ➔
+        <a href="index.html" class="btn btn-primary btn-md btn-glow">
+          Return to Homepage ➔
         </a>
-        <a href="javascript:history.back()" class="btn btn-outline-light btn-lg">
+        <button type="button" onclick="history.back()" class="btn btn-outline-light btn-md">
           ← Go Back
-        </a>
+        </button>
       </div>
 
+      <!-- Subtle Live Status Indicator -->
       <div class="error-status-pill">
         <span class="status-indicator-dot"></span>
-        <span>GPS Coordinates: Field Zone 04 &bull; Soil Moisture: Stable &bull; System Online</span>
+        <span>Central Telemetry Online &bull; Farm Server Operational</span>
       </div>
     </div>
   </main>
+
+  <!-- Back to Top Button -->
+  <button type="button" id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5"/>
+      <path d="m5 12 7-7 7 7"/>
+    </svg>
+  </button>
 
   <script src="assets/js/main.js"></script>
 </body>

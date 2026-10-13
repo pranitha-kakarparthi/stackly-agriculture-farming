@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Precision Smart Farming & IoT Agtech - Stackly Agriculture</title>
-  <meta name="description" content="AI-driven precision agriculture, multispectral drone crop surveys, LoRaWAN soil moisture probes, and satellite NDVI vegetative indices.">
+  <title>Precision Smart Farming & Agronomy Telemetry - Stackly Farming</title>
+  <meta name="description" content="Discover Stackly's precision smart farming: autonomous field robots, LoRaWAN soil moisture probes, smart greenhouses, drone multispectral NDVI scouting.">
   <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
 
   <!-- Google Fonts -->
@@ -23,7 +23,7 @@
         <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
       </div>
       <div class="loader-spinner" role="status"></div>
-      <p class="loader-text">Calibrating IoT Sensor Mesh...</p>
+      <p class="loader-text">Connecting Field Telemetry Mesh...</p>
     </div>
   </div>
 
@@ -32,7 +32,6 @@
     <div class="navbar-container">
       <a href="../index.html" class="nav-brand">
         <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
-        <span class="brand-badge">Agriculture</span>
       </a>
       <nav class="nav-menu" role="navigation">
         <div class="nav-item"><a href="../index.html" class="nav-link">Home</a></div>
@@ -68,7 +67,7 @@
       <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
       <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
       <li>
-        <a href="services.html" class="mobile-nav-link mobile-dropdown-toggle">Services <span>+</span></a>
+        <a href="services.html" class="mobile-nav-link active mobile-dropdown-toggle">Services <span>+</span></a>
         <div class="mobile-dropdown-list">
           <a href="service-organic-crops.html" class="mobile-dropdown-sublink">Organic Crop Production</a>
           <a href="service-smart-farming.html" class="mobile-dropdown-sublink active">Precision Smart Farming</a>
@@ -81,88 +80,91 @@
       <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
     </ul>
     <div class="mobile-nav-actions">
-      <a href="../404.html" class="btn btn-outline-light">Sign In to Dashboard</a>
-      <a href="../404.html" class="btn btn-accent">Create New Account</a>
+      <a href="sign-in.html" class="btn btn-outline-light">Sign In to Dashboard</a>
+      <a href="sign-up.html" class="btn btn-accent">Create New Account</a>
     </div>
   </div>
 
   <main>
     <!-- SECTION 1: HERO -->
-    <section class="hero-section" style="padding: 4.5rem 0 3.5rem 0;">
+    <section class="hero-section" style="padding: 5rem 0 4rem 0;">
       <div class="hero-bg-media" aria-hidden="true">
-        <img src="../assets/images/smart-greenhouse-iot-sensors.webp" alt="Smart Greenhouse IoT Sensors" class="hero-bg-img">
+        <img src="../assets/images/autonomous-field-robot-sensors.webp" alt="Autonomous precision agtech robot navigating crop rows with multi-angle sensors" class="hero-bg-img">
         <div class="hero-overlay-scrim"></div>
       </div>
       <div class="hero-overlay-pattern"></div>
       <div class="container text-center" data-animate="fade-up">
-        <span class="section-tag" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">Intelligent Telemetry</span>
+        <span class="section-tag section-tag-hero">Intelligent Telemetry</span>
         <h1 style="color: #FFFFFF; margin-bottom: 1rem;">Precision Agtech & Data-Driven Farming</h1>
-        <p style="color: #D2E3D6; max-width: 680px; margin: 0 auto;">
-          Transforming unpredictable field variables into actionable real-time insights with LoRaWAN wireless ground sensors, aerial drone imaging, and predictive plant biology.
+        <p style="color: #D2E3D6; max-width: 720px; margin: 0 auto 2rem auto; font-size: 1.1rem; line-height: 1.6;">
+          Transforming unpredictable field variables into actionable real-time insights with LoRaWAN wireless ground sensors, autonomous field robots, and predictive crop models.
         </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#iot-sensing" class="btn btn-accent btn-lg">Explore Telemetry Mesh ➔</a>
+          <a href="dashboard-farm-manager.html" class="btn btn-outline-light btn-lg">Launch Farm Dashboard</a>
+        </div>
       </div>
     </section>
 
     <!-- SECTION 2: IOT FIELD SENSING & MESH NETWORKING -->
-    <section class="section-padding" style="background-color: #FFFFFF;">
+    <section id="iot-sensing" class="section-padding" style="background-color: #FFFFFF;">
       <div class="container">
-        <div class="grid grid-2" style="align-items: center;">
+        <div class="grid grid-2" style="align-items: center; gap: 3rem;">
           <div data-animate="slide-right">
             <span class="section-tag">Ground Intelligence</span>
-            <h2>Real-Time Subsoil Telemetry Down To 60cm Depths</h2>
-            <p>
+            <h2>Subsoil Wireless Telemetry Across Three Root Strata</h2>
+            <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.25rem;">
               Stackly deploys solar-charged wireless probe clusters across agricultural parcels. Every 15 minutes, probes measure volumetric water content, electrical conductivity (salinity), and nitrogen-phosphorus-potassium ionic mobility across three root depth strata (15cm, 30cm, 60cm).
             </p>
-            <p>
+            <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem; color: var(--color-text-muted);">
               Data syncs seamlessly to the Farm Manager cloud dashboard, eliminating over-watering and allowing targeted biological fertigation right when plants demand it most.
             </p>
-            <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
-              <div style="background: var(--color-surface-alt); padding: 1rem 1.25rem; border-radius: var(--radius-sm); border-left: 3px solid var(--color-primary);">
-                <strong>99.8% Uptime</strong>
-                <p style="font-size: 0.82rem; margin: 0;">LoRaWAN solar mesh network.</p>
+            <div style="display: flex; gap: 1.5rem;">
+              <div style="background: var(--color-bg); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-primary); flex: 1;">
+                <strong style="color: var(--color-primary); display: block; margin-bottom: 0.25rem;">99.8% Uptime</strong>
+                <p style="font-size: 0.88rem; margin: 0; color: var(--color-text-muted);">LoRaWAN solar mesh network functioning through monsoons.</p>
               </div>
-              <div style="background: var(--color-surface-alt); padding: 1rem 1.25rem; border-radius: var(--radius-sm); border-left: 3px solid var(--color-secondary);">
-                <strong>38% Input Savings</strong>
-                <p style="font-size: 0.82rem; margin: 0;">Targeted water & bio-inputs.</p>
+              <div style="background: var(--color-bg); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-secondary); flex: 1;">
+                <strong style="color: var(--color-secondary); display: block; margin-bottom: 0.25rem;">38% Water Savings</strong>
+                <p style="font-size: 0.88rem; margin: 0; color: var(--color-text-muted);">Tensiometer automation delivering precise root drops.</p>
               </div>
             </div>
           </div>
           <div data-animate="slide-left">
             <div class="card-image-wrap" style="height: 420px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-              <img src="../assets/images/smart-greenhouse-iot-sensors.webp" alt="Wireless IoT sensor probe collecting soil health telemetry in agricultural greenhouse">
+              <img src="../assets/images/iot-soil-moisture-weather-station.webp" alt="Wireless IoT solar weather station and subsoil moisture sensor probe on farm plot">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: MULTISPECTRAL DRONE AERIAL SURVEYS -->
+    <!-- SECTION 3: CONTROLLED ENVIRONMENT SMART GREENHOUSES -->
     <section class="section-padding" style="background-color: var(--color-bg);">
       <div class="container">
-        <div class="grid grid-2" style="align-items: center;">
+        <div class="grid grid-2" style="align-items: center; gap: 3rem;">
           <div data-animate="slide-right">
             <div class="card-image-wrap" style="height: 420px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-              <img src="../assets/images/drone-precision-agriculture-survey.webp" alt="High resolution multispectral drone flying over green crop canopy">
+              <img src="../assets/images/smart-greenhouse-iot-sensors.webp" alt="Smart agricultural greenhouse equipped with automated climate sensors and vertical hanging monitors">
             </div>
           </div>
           <div data-animate="slide-left">
-            <span class="section-tag">Aerial Analytics</span>
-            <h2>Autonomous Multispectral Drone Crop Scouting</h2>
-            <p>
-              Walking thousands of acres to spot pest infestations or fungal blight manually is impossible. Stackly’s autonomous drone fleet maps 500 acres per hour in high-resolution RedEdge and Near-Infrared (NIR) spectrums.
+            <span class="section-tag">Protected Agriculture</span>
+            <h2>Microclimate Automation In Smart Greenhouses</h2>
+            <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.25rem;">
+              For high-value horticultural varieties and heirloom seed nurseries, Stackly operates climate-controlled polycarbonate smart greenhouses powered by embedded sensor arrays.
             </p>
-            <ul style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
-              <li style="display: flex; gap: 0.75rem; align-items: center;">
-                <span style="color: var(--color-secondary); font-size: 1.25rem;">✔</span>
-                <span><strong>Normalized Difference Vegetation Index (NDVI):</strong> Detects chlorophyll degradation 7-10 days before visible leaf yellowing.</span>
+            <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem; color: var(--color-text-muted);">
+              Automated roof vents, fogging nozzles, and shade screens dynamically modulate solar radiation and vapor pressure deficit (VPD) to create idyllic photosynthetic conditions 365 days a year.
+            </p>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+              <li style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+                <span><strong>Closed-Loop VPD Control:</strong> Prevents calcium deficiency blossom-end rot in heirloom tomatoes.</span>
               </li>
-              <li style="display: flex; gap: 0.75rem; align-items: center;">
-                <span style="color: var(--color-secondary); font-size: 1.25rem;">✔</span>
-                <span><strong>Centimeter-Precision Topography:</strong> 3D elevation maps optimize drainage paths and prevent soil erosion gullies.</span>
-              </li>
-              <li style="display: flex; gap: 0.75rem; align-items: center;">
-                <span style="color: var(--color-secondary); font-size: 1.25rem;">✔</span>
-                <span><strong>Targeted Bio-Biocontrol Dropping:</strong> Releasing beneficial trichogramma wasps directly onto pest focal points.</span>
+              <li style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+                <span><strong>Insect-Proof Positive Pressure:</strong> Keeps pest thrips and whiteflies out without chemical sprays.</span>
               </li>
             </ul>
           </div>
@@ -170,88 +172,215 @@
       </div>
     </section>
 
-    <!-- SECTION 4: SMART PREDICTIVE AGRONOMY METRICS -->
+    <!-- SECTION 4: MULTISPECTRAL SATELLITE & DRONE ANALYTICS -->
     <section class="section-padding" style="background-color: #FFFFFF;">
       <div class="container">
         <div class="section-header mx-auto text-center" data-animate="fade-up">
-          <span class="section-tag">Hardware & Telemetry Architecture</span>
-          <h2>Integrated Edge Hardware Built For Harsh Outdoor Farm Climates</h2>
-          <p>Engineered to withstand extreme sun, monsoons, and dust with zero maintenance requirements.</p>
+          <span class="section-tag">Aerial Spectral Scouting</span>
+          <h2>Multispectral Vegetation Indices & Stress Mapping</h2>
+          <p>Early symptom detection across broadacre farm plots before visual human scouting can spot disease.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="feature-card tilt-card" data-animate="fade-up">
+            <div class="card-body">
+              <div class="card-icon-pill">🛰️</div>
+              <h4>NDVI Vegetation Vitality</h4>
+              <p>Calibrated near-infrared reflectance reveals cellular chlorophyll vigor. Highlights nitrogen deficiencies up to 10 days before leaf discoloration occurs.</p>
+            </div>
+          </div>
+
+          <div class="feature-card tilt-card" data-animate="fade-up">
+            <div class="card-body">
+              <div class="card-icon-pill">🌿</div>
+              <h4>NDRE Chlorophyll Saturation</h4>
+              <p>Red-edge band analysis penetrates dense mature grain canopies where standard NDVI saturates, providing accurate late-season grain fill metrics.</p>
+            </div>
+          </div>
+
+          <div class="feature-card tilt-card" data-animate="fade-up">
+            <div class="card-body">
+              <div class="card-icon-pill">🌡️</div>
+              <h4>CWSI Water Stress Thermal</h4>
+              <p>Long-wave thermal infrared radiometry measures transpiration stomatal cooling, pinpointing clogged drip emitters and localized dry spots instantly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: HARDWARE & SENSOR ARCHITECTURE -->
+    <section class="section-padding" style="background-color: var(--color-bg);">
+      <div class="container">
+        <div class="section-header mx-auto text-center" data-animate="fade-up">
+          <span class="section-tag">Field Engineering</span>
+          <h2>Industrial-Grade Field Sensors Built For Outdoor Rallies</h2>
+          <p>Zero maintenance hardware engineered for 5+ years of continuous outdoor agricultural operation.</p>
         </div>
 
         <div class="grid grid-3">
           <div class="feature-card tilt-card" data-animate="fade-up">
             <div class="card-body">
               <div class="card-icon-pill">🔋</div>
-              <h3>Solar Self-Sustaining</h3>
-              <p>Monocrystalline solar collectors with integrated LiFePO4 battery packs operating continuously even during 14 consecutive overcast monsoon days.</p>
-              <a href="../404.html" class="card-action-link">Hardware Specs ➔</a>
+              <h3>Solar LiFePO4 Energy Pods</h3>
+              <p>Integrated solar micro-cells with lithium iron phosphate batteries rated for 3,000 charge cycles, operating continuously through 14 overcast monsoon days.</p>
             </div>
           </div>
 
           <div class="feature-card tilt-card" data-animate="fade-up">
             <div class="card-body">
               <div class="card-icon-pill">📶</div>
-              <h3>15km LoRaWAN Range</h3>
-              <p>Long-range low-frequency radio propagation penetrates heavy crop canopies, hills, and dense tree lines without costly SIM cards per node.</p>
-              <a href="../404.html" class="card-action-link">RF Coverage Map ➔</a>
+              <h3>15km LoRaWAN Mesh Range</h3>
+              <p>Sub-gigahertz radio signals effortlessly penetrate dense crop canopies, rolling hillocks, and timber windbreaks without cellular SIM fees per probe.</p>
             </div>
           </div>
 
           <div class="feature-card tilt-card" data-animate="fade-up">
             <div class="card-body">
-              <div class="card-icon-pill">🤖</div>
-              <h3>Machine Learning Models</h3>
-              <p>Predictive disease forecasting models trained on 10 years of Tamil Nadu agronomic weather patterns identify powdery mildew windows with 94% accuracy.</p>
-              <a href="../404.html" class="card-action-link">Explore Models ➔</a>
+              <div class="card-icon-pill">🛡️</div>
+              <h3>IP68 Submersible Enclosures</h3>
+              <p>UV-stabilized ASA enclosures with potted silicone electronics impervious to tractor spray rigs, dust storms, and standing floodwaters.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: ROLE-AWARE DASHBOARD INTEGRATION -->
-    <section class="section-padding" style="background-color: var(--color-bg);">
+    <!-- SECTION 6: CLOSED-LOOP IRRIGATION AUTOMATION -->
+    <section class="section-padding" style="background-color: #FFFFFF;">
       <div class="container">
-        <div class="grid grid-2" style="align-items: center;">
+        <div class="grid grid-2" style="align-items: center; gap: 3rem;">
           <div data-animate="slide-right">
-            <span class="section-tag">Seamless Control</span>
-            <h2>Everything Accessible In Your Farm Manager Dashboard</h2>
-            <p>
-              All field telemetry flows directly into the dedicated Farm Manager portal. Track daily soil tension, dispatch tractor work orders, view live battery health, and log harvest batch yields without switching between complex third-party tools.
+            <span class="section-tag">Water Optimization</span>
+            <h2>Closed-Loop Automated Drip Scheduling Algorithms</h2>
+            <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.25rem;">
+              Traditional timer-based irrigation wastes millions of liters on humid days and starves crops during heat waves. Stackly’s agronomy engine combines real-time ET0 (Penman-Monteith reference evapotranspiration) with subsoil matric tension.
             </p>
-            <div style="margin-top: 1.5rem;">
-              <a href="../404.html" class="btn btn-primary">Log In To Farm Manager Portal ➔</a>
+            <div style="background: var(--color-bg); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--color-primary); margin-bottom: 1rem;">
+              <strong style="color: var(--color-primary); display: block;">Evapotranspiration Forecasting</strong>
+              <p style="font-size: 0.9rem; margin: 0; color: var(--color-text-muted);">Predictive 72-hour weather modeling adjusts valve durations before incoming heatwaves.</p>
             </div>
+            <a href="dashboard-manager-irrigation.html" class="btn btn-primary">Open Irrigation Telemetry Controls ➔</a>
           </div>
           <div data-animate="slide-left">
-            <div class="card-image-wrap" style="height: 380px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-              <img src="../assets/images/female-agronomist-smart-tablet.webp" alt="Agronomist reviewing smart farm telemetry dashboard on tablet">
+            <div style="background: var(--color-bg); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-md);">
+              <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Field Telemetry Telemetry Matrix</h3>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                  <span>Soil Moisture (30cm Root Zone)</span>
+                  <strong style="color: var(--color-primary);">28.4% (Optimal)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                  <span>Electrical Conductivity (EC)</span>
+                  <strong style="color: var(--color-primary);">1.12 dS/m (Normal)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                  <span>Canopy Surface Temperature</span>
+                  <strong style="color: var(--color-primary);">24.8°C (Cooled)</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                  <span>Solar Radiation Flux</span>
+                  <strong style="color: var(--color-primary);">785 W/m² (High)</strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 6: CTA BANNER -->
+    <!-- SECTION 7: ROLE-AWARE CLOUD DASHBOARD INTEGRATION -->
+    <section class="section-padding" style="background-color: var(--color-bg);">
+      <div class="container">
+        <div class="section-header mx-auto text-center" data-animate="fade-up">
+          <span class="section-tag">Centralized Intelligence</span>
+          <h2>Everything Accessible In Your Farm Manager Dashboard</h2>
+          <p>Real-time analytics, automated valve control, and work order dispatching in one unified platform.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="feature-card tilt-card" data-animate="fade-up">
+            <div class="card-body">
+              <div class="card-icon-pill">📊</div>
+              <h4>Real-Time Field Telemetry</h4>
+              <p>Continuous graphical feeds of moisture gradients, ambient humidity, leaf wetness hours, and battery telemetry.</p>
+              <a href="dashboard-manager-soil.html" class="card-action-link">View Soil Logs ➔</a>
+            </div>
+          </div>
+
+          <div class="feature-card tilt-card" data-animate="fade-up">
+            <div class="card-body">
+              <div class="card-icon-pill">🚜</div>
+              <h4>Equipment & Fleet Tracking</h4>
+              <p>GPS tracking of tractors, harvesters, and solar reefer trucks with automated maintenance interval reminders.</p>
+              <a href="dashboard-manager-equipment.html" class="card-action-link">View Equipment Fleet ➔</a>
+            </div>
+          </div>
+
+          <div class="feature-card tilt-card" data-animate="fade-up">
+            <div class="card-body">
+              <div class="card-icon-pill">🌾</div>
+              <h4>Crop Yield & Harvest Forecasting</h4>
+              <p>Machine-learning models calculating expected harvest dates and metric ton yields based on cumulative thermal units.</p>
+              <a href="dashboard-manager-crops.html" class="card-action-link">View Crop Models ➔</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: ACCREDITATIONS & DATA SECURITY -->
+    <section class="section-padding" style="background-color: #FFFFFF;">
+      <div class="container">
+        <div class="section-header mx-auto text-center" data-animate="fade-up">
+          <span class="section-tag">Cybersecurity & Standards</span>
+          <h2>Bank-Grade IoT Security & Agricultural Interoperability</h2>
+          <p>Your agricultural telemetry and crop yield data remain strictly confidential and encrypted.</p>
+        </div>
+
+        <div class="grid grid-4 text-center">
+          <div style="background: var(--color-bg); padding: 1.75rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);" data-animate="fade-up">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🔒</div>
+            <h4>AES-128 Encryption</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">End-to-end encrypted packet transmission from field probe to cloud.</p>
+          </div>
+          <div style="background: var(--color-bg); padding: 1.75rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);" data-animate="fade-up">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🌐</div>
+            <h4>OpenAg Standards</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Full compatibility with ISOBUS tractor displays and third-party ERP tools.</p>
+          </div>
+          <div style="background: var(--color-bg); padding: 1.75rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);" data-animate="fade-up">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">☁️</div>
+            <h4>99.99% Cloud SLA</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Redundant multi-region cloud cluster guaranteeing instant dashboard access.</p>
+          </div>
+          <div style="background: var(--color-bg); padding: 1.75rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);" data-animate="fade-up">
+            <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">📱</div>
+            <h4>Instant SMS & App Alerts</h4>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Threshold alerts for pipe leaks, frost warnings, and sudden pump outages.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CTA BANNER -->
     <section class="section-padding" style="padding-top: 0;">
       <div class="container">
         <div class="cta-banner" data-animate="zoom-in">
           <h2>Equip Your Farmland With Autonomous Precision Agtech</h2>
           <p>Get a custom sensor deployment plan tailored to your soil topography, crop varieties, and irrigation infrastructure.</p>
           <div class="cta-banner-buttons">
-            <a href="../404.html" class="btn btn-accent btn-lg">View Agtech Plans ➔</a>
-            <a href="../404.html" class="btn btn-outline-light btn-lg">Book Telemetry Demo</a>
+            <a href="pricing.html" class="btn btn-accent btn-lg">View Agtech Plans ➔</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg">Book Telemetry Field Demo</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Standard Footer -->
-    <!-- =========================================================================
-       STANDARDIZED FOOTER
-       ========================================================================= -->
+  <!-- =========================================================================
+     STANDARDIZED FOOTER
+     ========================================================================= -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
       <div class="footer-top-grid">
@@ -264,28 +393,43 @@
             Stackly Agriculture & Farming is an industry leader in regenerative crop production, precision farm analytics, and transparent organic supply chains.
           </p>
           <div class="footer-social-row">
-            <a href="../404.html" class="footer-social-pill" aria-label="Facebook"><span>📘</span> Facebook</a>
-            <a href="../404.html" class="footer-social-pill" aria-label="Twitter / X"><span>𝕏</span> Twitter</a>
-            <a href="../404.html" class="footer-social-pill" aria-label="Instagram"><span>📷</span> Instagram</a>
-            <a href="../404.html" class="footer-social-pill" aria-label="LinkedIn"><span>💼</span> LinkedIn</a>
-            <a href="../404.html" class="footer-social-pill" aria-label="YouTube"><span>▶️</span> YouTube</a>
+            <a href="../404.html" class="footer-social-pill" aria-label="Facebook">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href="../404.html" class="footer-social-pill" aria-label="Twitter / X">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Twitter
+            </a>
+            <a href="../404.html" class="footer-social-pill" aria-label="Instagram">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </a>
+            <a href="../404.html" class="footer-social-pill" aria-label="LinkedIn">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn
+            </a>
+            <a href="../404.html" class="footer-social-pill" aria-label="YouTube">
+              <svg class="brand-social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              YouTube
+            </a>
           </div>
         </div>
 
-        <!-- Col 2: Quick Links (All Redirect to 404 per Specification) -->
+        <!-- Col 2: Quick Links -->
         <div>
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-links-list">
-            <li><a href="../404.html">➔ Home</a></li>
-            <li><a href="../404.html">➔ About Us</a></li>
-            <li><a href="../404.html">➔ Our Services</a></li>
-            <li><a href="../404.html">➔ Fresh Produce</a></li>
-            <li><a href="../404.html">➔ Pricing & Plans</a></li>
-            <li><a href="../404.html">➔ Contact Headquarters</a></li>
+            <li><a href="../index.html">➔ Home</a></li>
+            <li><a href="about.html">➔ About Us</a></li>
+            <li><a href="services.html">➔ Our Services</a></li>
+            <li><a href="products.html">➔ Fresh Produce</a></li>
+            <li><a href="pricing.html">➔ Pricing & Plans</a></li>
+            <li><a href="contact.html">➔ Contact Headquarters</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Services (Redirect to 404 per Specification) -->
+        <!-- Col 3: Farming Services -->
         <div>
           <h4 class="footer-heading">Farming Services</h4>
           <ul class="footer-links-list">
@@ -298,7 +442,7 @@
           </ul>
         </div>
 
-        <!-- Col 4: Contact Details (Address + Phone/Email to 404 per Specification, No sign-in button) -->
+        <!-- Col 4: Contact Details -->
         <div>
           <h4 class="footer-heading">Farm Headquarters</h4>
           <div class="footer-contact-item">
@@ -331,7 +475,14 @@
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <button type="button" id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5"/>
+      <path d="m5 12 7-7 7 7"/>
+    </svg>
+  </button>
+
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
-
