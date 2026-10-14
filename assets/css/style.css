@@ -2401,10 +2401,11 @@ p:last-child {
 .dashboard-sidebar {
   width: 280px;
   height: 100vh;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 900;
+  bottom: 0;
+  z-index: 1030;
   background-color: var(--color-primary-dark);
   color: #FFFFFF;
   display: flex;
@@ -2671,6 +2672,15 @@ p:last-child {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  margin-left: 280px;
+  width: calc(100% - 280px);
+  min-width: 0;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-sidebar.collapsed ~ .dashboard-main {
+  margin-left: 82px;
+  width: calc(100% - 82px);
 }
 
 .dashboard-topbar {
@@ -2983,8 +2993,9 @@ body.dash-menu-open .dash-mobile-sidebar-toggle {
     color: #091E13 !important;
   }
   .dashboard-main {
-    width: 100%;
+    width: 100% !important;
     min-width: 0;
+    margin-left: 0 !important;
   }
   .dashboard-topbar {
     padding: 0.8rem 1.15rem;
@@ -3069,20 +3080,24 @@ body.dash-menu-open .dash-mobile-sidebar-toggle {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 0.35rem;
+    gap: 0.4rem;
     flex: 1 1 auto;
     min-width: 0;
   }
   .dash-topbar-actions .btn {
-    padding: 0.34rem 0.55rem;
+    padding: 0.36rem 0.65rem;
     font-size: 0.78rem;
     gap: 0.25rem;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .dash-topbar-actions .dash-action-btn {
-    max-width: 130px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    display: inline-flex !important;
+    align-items: center;
+    max-width: none !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    font-weight: 600;
   }
   .dash-content-body,
   .dashboard-content-body {
@@ -3099,39 +3114,67 @@ body.dash-menu-open .dash-mobile-sidebar-toggle {
   .dash-topbar-left {
     gap: 0.35rem;
   }
+  .dash-mobile-sidebar-toggle {
+    width: 36px;
+    height: 36px;
+    padding: 7px 6px;
+  }
   .dash-mobile-topbar-brand {
-    padding: 0.2rem 0.35rem;
+    padding: 0.2rem 0.4rem;
   }
   .dash-mobile-topbar-brand img {
     height: 18px;
-    max-width: 60px;
+    max-width: 64px;
   }
   .dash-topbar-actions {
-    gap: 0.3rem;
+    gap: 0.35rem;
   }
   .dash-topbar-actions .btn {
-    padding: 0.32rem 0.48rem;
-    font-size: 0.74rem;
+    padding: 0.34rem 0.52rem;
+    font-size: 0.75rem;
   }
   .dash-topbar-actions .dash-action-btn {
-    max-width: 98px;
+    display: inline-flex !important;
+    align-items: center;
+    max-width: none !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
   }
 }
 
 @media (max-width: 360px) {
   .dashboard-topbar {
-    padding: 0.45rem 0.45rem;
+    padding: 0.45rem 0.4rem;
+    gap: 0.25rem;
+  }
+  .dash-topbar-left {
+    gap: 0.25rem;
+  }
+  .dash-mobile-sidebar-toggle {
+    width: 34px;
+    height: 34px;
+    padding: 6px 5px;
+  }
+  .dash-mobile-topbar-brand {
+    padding: 0.18rem 0.35rem;
+  }
+  .dash-mobile-topbar-brand img {
+    height: 17px;
+    max-width: 58px;
+  }
+  .dash-topbar-actions {
     gap: 0.25rem;
   }
   .dash-topbar-actions .btn {
-    padding: 0.3rem 0.4rem;
-    font-size: 0.7rem;
-  }
-  .dash-topbar-actions .btn-nav-home .nav-btn-text {
-    display: none; /* Show 🏠 icon only */
+    padding: 0.3rem 0.45rem;
+    font-size: 0.72rem;
   }
   .dash-topbar-actions .dash-action-btn {
-    max-width: 80px;
+    display: inline-flex !important;
+    align-items: center;
+    max-width: none !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
   }
 }
 
