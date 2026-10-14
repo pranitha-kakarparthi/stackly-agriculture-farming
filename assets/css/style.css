@@ -2766,8 +2766,87 @@ p:last-child {
 .dash-topbar-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   flex-shrink: 0;
+}
+
+.dash-topbar-actions .btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+/* Dedicated Home Button in Dashboard Topbar */
+.btn-nav-home {
+  background: #E8F5E9;
+  color: var(--color-primary) !important;
+  border: 1.5px solid #A3D9B5;
+}
+
+.btn-nav-home:hover {
+  background: var(--color-primary);
+  color: #FFFFFF !important;
+  border-color: var(--color-primary);
+}
+
+/* Sidebar Drawer Footer Actions for Mobile / Drawer Viewports */
+.dash-sidebar-footer {
+  margin-top: auto;
+  padding: 1.15rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.dash-sidebar-footer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #D2E4D7;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.dash-sidebar-footer-btn:hover {
+  background: rgba(46, 184, 114, 0.2);
+  color: #FFFFFF;
+  border-color: #2EB872;
+}
+
+.dash-sidebar-footer-btn.btn-sign-out {
+  color: #FCA5A5;
+  background: rgba(220, 38, 38, 0.12);
+  border-color: rgba(220, 38, 38, 0.28);
+}
+
+.dash-sidebar-footer-btn.btn-sign-out:hover {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+.dashboard-sidebar.collapsed .dash-sidebar-footer {
+  padding: 0.75rem 0.4rem;
+}
+
+.dashboard-sidebar.collapsed .dash-sidebar-footer-btn span:not(:first-child) {
+  display: none;
 }
 
 .dash-mobile-sidebar-toggle {
@@ -2908,8 +2987,19 @@ body.dash-menu-open .dash-mobile-sidebar-toggle {
     min-width: 0;
   }
   .dashboard-topbar {
-    padding: 0.85rem 1.25rem;
-    gap: 1rem;
+    padding: 0.8rem 1.15rem;
+    gap: 0.75rem;
+    min-height: 60px;
+  }
+  .dash-topbar-left {
+    gap: 0.75rem;
+  }
+  .dash-topbar-actions {
+    gap: 0.55rem;
+  }
+  .dash-topbar-actions .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.82rem;
   }
   .dash-greeting-text {
     font-size: 1.05rem;
@@ -2926,67 +3016,122 @@ body.dash-menu-open .dash-mobile-sidebar-toggle {
 
 @media (max-width: 768px) {
   .dashboard-topbar {
-    padding: 0.75rem 1rem;
-    gap: 0.75rem;
+    padding: 0.65rem 0.95rem;
+    gap: 0.65rem;
   }
   .dash-topbar-left {
-    gap: 0.75rem;
+    gap: 0.65rem;
   }
   .dash-greeting-time {
     display: none; /* Hide subtitle so title & actions have full room without collision */
   }
   .dash-greeting-text {
-    font-size: 0.96rem;
+    font-size: 0.94rem;
+    max-width: 140px;
   }
   .dash-topbar-actions {
-    gap: 0.55rem;
+    gap: 0.45rem;
   }
   .dash-topbar-actions .btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.82rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .dash-topbar-actions .dash-action-btn {
-    display: none; /* Keep mobile topbar cleanly focused on hamburger, logo, and sign out */
+    padding: 0.38rem 0.68rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 576px) {
   .dashboard-topbar {
-    padding: 0.65rem 0.85rem;
-    gap: 0.5rem;
+    padding: 0.55rem 0.65rem;
+    gap: 0.45rem;
+    min-height: 54px;
     flex-wrap: nowrap;
-    min-height: 56px;
   }
   .dash-topbar-left {
-    gap: 0.5rem;
+    gap: 0.45rem;
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+  .dash-mobile-sidebar-toggle {
+    width: 38px;
+    height: 38px;
+    padding: 8px 7px;
+  }
+  .dash-mobile-topbar-brand {
+    padding: 0.22rem 0.45rem;
+  }
+  .dash-mobile-topbar-brand img {
+    height: 20px;
+    max-width: 72px;
+  }
+  .dash-greeting-wrap {
+    display: none; /* In compact viewports, hide greeting text so brand logo & all actions fit with zero collision */
+  }
+  .dash-topbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
     flex: 1 1 auto;
     min-width: 0;
   }
-  .dash-mobile-topbar-brand {
-    padding: 0.28rem 0.55rem;
-  }
-  .dash-mobile-topbar-brand img {
-    height: 22px;
-    max-width: 90px;
-  }
-  .dash-greeting-wrap {
-    display: none; /* In very compact viewports, hide greeting text so brand logo & actions fit with zero collision */
-  }
-  .dash-topbar-actions {
-    gap: 0.45rem;
-    flex-shrink: 0;
-  }
   .dash-topbar-actions .btn {
-    padding: 0.38rem 0.7rem;
-    font-size: 0.8rem;
+    padding: 0.34rem 0.55rem;
+    font-size: 0.78rem;
+    gap: 0.25rem;
+  }
+  .dash-topbar-actions .dash-action-btn {
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .dash-content-body,
   .dashboard-content-body {
     padding: 1.25rem 0.85rem !important;
     gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .dashboard-topbar {
+    padding: 0.5rem 0.55rem;
+    gap: 0.35rem;
+  }
+  .dash-topbar-left {
+    gap: 0.35rem;
+  }
+  .dash-mobile-topbar-brand {
+    padding: 0.2rem 0.35rem;
+  }
+  .dash-mobile-topbar-brand img {
+    height: 18px;
+    max-width: 60px;
+  }
+  .dash-topbar-actions {
+    gap: 0.3rem;
+  }
+  .dash-topbar-actions .btn {
+    padding: 0.32rem 0.48rem;
+    font-size: 0.74rem;
+  }
+  .dash-topbar-actions .dash-action-btn {
+    max-width: 98px;
+  }
+}
+
+@media (max-width: 360px) {
+  .dashboard-topbar {
+    padding: 0.45rem 0.45rem;
+    gap: 0.25rem;
+  }
+  .dash-topbar-actions .btn {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.7rem;
+  }
+  .dash-topbar-actions .btn-nav-home .nav-btn-text {
+    display: none; /* Show 🏠 icon only */
+  }
+  .dash-topbar-actions .dash-action-btn {
+    max-width: 80px;
   }
 }
 
