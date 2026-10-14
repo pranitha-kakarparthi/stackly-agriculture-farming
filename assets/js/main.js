@@ -211,6 +211,17 @@ function initMobileNav() {
 
   hamburger.addEventListener('click', toggleMenu);
 
+  // Collapse buttons inside mobile overlay or header
+  const collapseBtns = document.querySelectorAll('.mobile-nav-collapse-btn, .mobile-nav-close-btn, .nav-collapse-btn');
+  collapseBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      overlay.classList.remove('is-active');
+      hamburger.classList.remove('is-active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
   const mobileDropdownTriggers = document.querySelectorAll('.mobile-dropdown-toggle');
   mobileDropdownTriggers.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -230,6 +241,7 @@ function initScrollAnimations() {
   const animatedElements = document.querySelectorAll('[data-animate]');
   if (!animatedElements.length) return;
 
+  const isMobile = window.innerWidth <= 768;
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -237,7 +249,10 @@ function initScrollAnimations() {
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  }, {
+    threshold: isMobile ? 0.05 : 0.1,
+    rootMargin: isMobile ? '0px 0px 40px 0px' : '0px 0px -20px 0px'
+  });
 
   animatedElements.forEach(el => observer.observe(el));
 }

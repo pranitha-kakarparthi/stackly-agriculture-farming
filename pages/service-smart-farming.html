@@ -51,7 +51,7 @@
       </nav>
       <div class="nav-actions">
         <a href="sign-in.html" class="btn btn-outline-light btn-sm btn-login-header">Sign In</a>
-        <a href="sign-up.html" class="btn btn-accent btn-sm">Register Farm</a>
+        <a href="sign-up.html" class="btn btn-accent btn-sm btn-register-header">Register Farm</a>
         <button class="nav-hamburger" aria-label="Toggle Navigation Menu">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -63,25 +63,36 @@
 
   <!-- Mobile Overlay -->
   <div class="mobile-nav-overlay">
-    <ul class="mobile-nav-list">
-      <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
-      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
-      <li>
-        <a href="services.html" class="mobile-nav-link active mobile-dropdown-toggle">Services <span>+</span></a>
-        <div class="mobile-dropdown-list">
-          <a href="service-organic-crops.html" class="mobile-dropdown-sublink">Organic Crop Production</a>
-          <a href="service-smart-farming.html" class="mobile-dropdown-sublink active">Precision Smart Farming</a>
-          <a href="service-livestock.html" class="mobile-dropdown-sublink">Livestock Management</a>
-          <a href="service-supply-chain.html" class="mobile-dropdown-sublink">Direct Produce Supply Chain</a>
-        </div>
-      </li>
-      <li><a href="products.html" class="mobile-nav-link">Fresh Produce</a></li>
-      <li><a href="pricing.html" class="mobile-nav-link">Pricing & Plans</a></li>
-      <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
-    </ul>
-    <div class="mobile-nav-actions">
-      <a href="sign-in.html" class="btn btn-outline-light">Sign In to Dashboard</a>
-      <a href="sign-up.html" class="btn btn-accent">Create New Account</a>
+    <div class="mobile-nav-header">
+      <a href="../index.html" class="nav-brand" aria-label="Stackly Agriculture Home">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </a>
+      <button type="button" class="mobile-nav-collapse-btn" aria-label="Collapse Menu">
+        <span class="collapse-icon">✕</span>
+        <span>Collapse</span>
+      </button>
+    </div>
+    <div class="mobile-nav-body">
+      <ul class="mobile-nav-list">
+        <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li>
+          <a href="services.html" class="mobile-nav-link active mobile-dropdown-toggle">Services <span>+</span></a>
+          <div class="mobile-dropdown-list">
+            <a href="service-organic-crops.html" class="mobile-dropdown-sublink">Organic Crop Production</a>
+            <a href="service-smart-farming.html" class="mobile-dropdown-sublink active">Precision Smart Farming</a>
+            <a href="service-livestock.html" class="mobile-dropdown-sublink">Livestock Management</a>
+            <a href="service-supply-chain.html" class="mobile-dropdown-sublink">Direct Produce Supply Chain</a>
+          </div>
+        </li>
+        <li><a href="products.html" class="mobile-nav-link">Fresh Produce</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Pricing & Plans</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
+      </ul>
+      <div class="mobile-nav-actions">
+        <a href="sign-in.html" class="btn btn-outline-light">Sign In to Dashboard</a>
+        <a href="sign-up.html" class="btn btn-accent">Create New Account</a>
+      </div>
     </div>
   </div>
 
@@ -101,7 +112,7 @@
         </p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
           <a href="#iot-sensing" class="btn btn-accent btn-lg">Explore Telemetry Mesh ➔</a>
-          <a href="dashboard-farm-manager.html" class="btn btn-outline-light btn-lg">Launch Farm Dashboard</a>
+          <a href="../404.html" class="btn btn-outline-light btn-lg">Launch Farm Dashboard</a>
         </div>
       </div>
     </section>
@@ -260,7 +271,7 @@
               <strong style="color: var(--color-primary); display: block;">Evapotranspiration Forecasting</strong>
               <p style="font-size: 0.9rem; margin: 0; color: var(--color-text-muted);">Predictive 72-hour weather modeling adjusts valve durations before incoming heatwaves.</p>
             </div>
-            <a href="dashboard-manager-irrigation.html" class="btn btn-primary">Open Irrigation Telemetry Controls ➔</a>
+            <a href="../404.html" class="btn btn-primary">Open Irrigation Telemetry Controls ➔</a>
           </div>
           <div data-animate="slide-left">
             <div style="background: var(--color-bg); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-md);">
@@ -304,7 +315,7 @@
               <div class="card-icon-pill">📊</div>
               <h4>Real-Time Field Telemetry</h4>
               <p>Continuous graphical feeds of moisture gradients, ambient humidity, leaf wetness hours, and battery telemetry.</p>
-              <a href="dashboard-manager-soil.html" class="card-action-link">View Soil Logs ➔</a>
+              <a href="../404.html" class="card-action-link">View Soil Logs ➔</a>
             </div>
           </div>
 
@@ -313,7 +324,7 @@
               <div class="card-icon-pill">🚜</div>
               <h4>Equipment & Fleet Tracking</h4>
               <p>GPS tracking of tractors, harvesters, and solar reefer trucks with automated maintenance interval reminders.</p>
-              <a href="dashboard-manager-equipment.html" class="card-action-link">View Equipment Fleet ➔</a>
+              <a href="../404.html" class="card-action-link">View Equipment Fleet ➔</a>
             </div>
           </div>
 
@@ -322,7 +333,7 @@
               <div class="card-icon-pill">🌾</div>
               <h4>Crop Yield & Harvest Forecasting</h4>
               <p>Machine-learning models calculating expected harvest dates and metric ton yields based on cumulative thermal units.</p>
-              <a href="dashboard-manager-crops.html" class="card-action-link">View Crop Models ➔</a>
+              <a href="../404.html" class="card-action-link">View Crop Models ➔</a>
             </div>
           </div>
         </div>
@@ -370,8 +381,8 @@
           <h2>Equip Your Farmland With Autonomous Precision Agtech</h2>
           <p>Get a custom sensor deployment plan tailored to your soil topography, crop varieties, and irrigation infrastructure.</p>
           <div class="cta-banner-buttons">
-            <a href="pricing.html" class="btn btn-accent btn-lg">View Agtech Plans ➔</a>
-            <a href="contact.html" class="btn btn-outline-light btn-lg">Book Telemetry Field Demo</a>
+            <a href="../404.html" class="btn btn-accent btn-lg">View Agtech Plans ➔</a>
+            <a href="../404.html" class="btn btn-outline-light btn-lg">Book Telemetry Field Demo</a>
           </div>
         </div>
       </div>

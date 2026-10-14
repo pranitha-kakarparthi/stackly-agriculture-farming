@@ -51,7 +51,7 @@
       </nav>
       <div class="nav-actions">
         <a href="sign-in.html" class="btn btn-outline-light btn-sm btn-login-header">Sign In</a>
-        <a href="sign-up.html" class="btn btn-accent btn-sm">Register Farm</a>
+        <a href="sign-up.html" class="btn btn-accent btn-sm btn-register-header">Register Farm</a>
         <button class="nav-hamburger" aria-label="Toggle Navigation Menu">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -63,25 +63,36 @@
 
   <!-- Mobile Overlay -->
   <div class="mobile-nav-overlay">
-    <ul class="mobile-nav-list">
-      <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
-      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
-      <li>
-        <a href="services.html" class="mobile-nav-link mobile-dropdown-toggle">Services <span>+</span></a>
-        <div class="mobile-dropdown-list">
-          <a href="service-organic-crops.html" class="mobile-dropdown-sublink">Organic Crop Production</a>
-          <a href="service-smart-farming.html" class="mobile-dropdown-sublink">Precision Smart Farming</a>
-          <a href="service-livestock.html" class="mobile-dropdown-sublink">Livestock Management</a>
-          <a href="service-supply-chain.html" class="mobile-dropdown-sublink">Direct Produce Supply Chain</a>
-        </div>
-      </li>
-      <li><a href="products.html" class="mobile-nav-link">Fresh Produce</a></li>
-      <li><a href="pricing.html" class="mobile-nav-link active">Pricing & Plans</a></li>
-      <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
-    </ul>
-    <div class="mobile-nav-actions">
-      <a href="../404.html" class="btn btn-outline-light">Sign In to Dashboard</a>
-      <a href="../404.html" class="btn btn-accent">Create New Account</a>
+    <div class="mobile-nav-header">
+      <a href="../index.html" class="nav-brand" aria-label="Stackly Agriculture Home">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Agriculture Logo">
+      </a>
+      <button type="button" class="mobile-nav-collapse-btn" aria-label="Collapse Menu">
+        <span class="collapse-icon">✕</span>
+        <span>Collapse</span>
+      </button>
+    </div>
+    <div class="mobile-nav-body">
+      <ul class="mobile-nav-list">
+        <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li>
+          <a href="services.html" class="mobile-nav-link mobile-dropdown-toggle">Services <span>+</span></a>
+          <div class="mobile-dropdown-list">
+            <a href="service-organic-crops.html" class="mobile-dropdown-sublink">Organic Crop Production</a>
+            <a href="service-smart-farming.html" class="mobile-dropdown-sublink">Precision Smart Farming</a>
+            <a href="service-livestock.html" class="mobile-dropdown-sublink">Livestock Management</a>
+            <a href="service-supply-chain.html" class="mobile-dropdown-sublink">Direct Produce Supply Chain</a>
+          </div>
+        </li>
+        <li><a href="products.html" class="mobile-nav-link">Fresh Produce</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link active">Pricing & Plans</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
+      </ul>
+      <div class="mobile-nav-actions">
+        <a href="sign-in.html" class="btn btn-outline-light">Sign In to Dashboard</a>
+        <a href="sign-up.html" class="btn btn-accent">Create New Account</a>
+      </div>
     </div>
   </div>
 
@@ -129,7 +140,7 @@
                 <li>✔ Full Farm Manager Dashboard Access</li>
                 <li>✔ WhatsApp Agronomy Hotline Support</li>
               </ul>
-              <a href="sign-up.html" class="btn btn-secondary btn-sm" style="width: 100%;">Enroll Acreage ➔</a>
+              <a href="../404.html" class="btn btn-secondary btn-sm" style="width: 100%;">Enroll Acreage ➔</a>
             </div>
           </div>
 
@@ -152,7 +163,7 @@
                 <li>✔ NPOP/USDA Organic Certification Audits</li>
                 <li>✔ Dedicated Senior Agronomist Visits</li>
               </ul>
-              <a href="sign-up.html" class="btn btn-primary btn-sm" style="width: 100%;">Deploy Estate Package ➔</a>
+              <a href="../404.html" class="btn btn-primary btn-sm" style="width: 100%;">Deploy Estate Package ➔</a>
             </div>
           </div>
 
@@ -174,7 +185,7 @@
                 <li>✔ Custom Co-Branded Returnable Crates</li>
                 <li>✔ Flexible 30-Day Escrow Payment Terms</li>
               </ul>
-              <a href="sign-up.html" class="btn btn-secondary btn-sm" style="width: 100%;">Register As Buyer Partner ➔</a>
+              <a href="../404.html" class="btn btn-secondary btn-sm" style="width: 100%;">Register As Buyer Partner ➔</a>
             </div>
           </div>
         </div>
@@ -275,8 +286,8 @@
             </div>
           </div>
           <div data-animate="slide-left">
-            <div class="card-image-wrap" style="height: 400px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-              <img src="../assets/images/smallholder-farmer-cooperative-gathering.webp" alt="Progressive smallholder farmers discussing cooperative agriculture returns">
+            <div class="card-image-wrap" style="height: 460px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+              <img src="../assets/images/smallholder-farmer-cooperative-gathering.webp" alt="Progressive smallholder farmers discussing cooperative agriculture returns" style="object-position: center top; object-fit: cover; width: 100%; height: 100%;">
             </div>
           </div>
         </div>
@@ -384,8 +395,8 @@
           <h2>Ready To Modernize Your Farm Operations?</h2>
           <p>Create an account today to access your role-specific dashboard and review customized deployment quotes.</p>
           <div class="cta-banner-buttons">
-            <a href="sign-up.html" class="btn btn-accent btn-lg">Create Farm Account ➔</a>
-            <a href="contact.html" class="btn btn-outline-light btn-lg">Talk To An Agronomist</a>
+            <a href="../404.html" class="btn btn-accent btn-lg">Create Farm Account ➔</a>
+            <a href="../404.html" class="btn btn-outline-light btn-lg">Talk To An Agronomist</a>
           </div>
         </div>
       </div>
